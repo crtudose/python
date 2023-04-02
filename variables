@@ -7,4 +7,7 @@ print(age)
 print(speed)
 print(am_i_ugly)
 var = '23' #string
-print(var)
+print(var) 
+print(0.0000000000004) #4e-13
+print(0o123) #83 = 64+16+3 octal
+print(0x123) #291= 256+32+3 hexadecimal
