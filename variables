@@ -1,0 +1,10 @@
+greeting = "Hello, friend!"
+print(greeting)
+age = 35 # integer
+speed = 4.5 # float
+am_i_ugly = False # bool
+print(age)
+print(speed)
+print(am_i_ugly)
+var = '23' #string
+print(var)
