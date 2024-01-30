@@ -1,3 +1,5 @@
 Module 3 - data types, evaluations and basic i/o
 height_cm = float(input('Height converter: enter your height in cm: '))
 print('Your height in feet is:', height_cm / 30.48)
+year_born = int(input('what year were you born?'))
+print('In 2100, you will be', 2100 - year_born, 'years old, provided you live this long!')
