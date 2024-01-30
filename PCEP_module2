@@ -17,3 +17,10 @@ print('Last month, you earned', hours * rate ,'dollars')
 Separators
 first_name = 'john'
 print('your first name is', first_name, 'welcome', sep='-', end='!')
+
+&	Bitwise AND	Result bit 1,if both operand bits are 1;otherwise results bit 0.	x & y
+|	Bitwise OR	Result bit 1,if any of the operand bit is 1; otherwise results bit 0.	x | y
+~	Bitwise NOT	inverts individual bits	~x
+^	Bitwise XOR	Results bit 1,if any of the operand bit is 1 but not both, otherwise results bit 0. x ^ y
+>>	Bitwise right shift.	The left operand’s value is moved toward right by the number of bits specified by the right operand. x>>
+<<	Bitwise left shift. The left operand’s value is moved toward left by the number of bits specified by the right operand. x<<
