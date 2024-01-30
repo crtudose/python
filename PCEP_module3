@@ -1,0 +1,3 @@
+Module 3 - data types, evaluations and basic i/o
+height_cm = float(input('Height converter: enter your height in cm: '))
+print('Your height in feet is:', height_cm / 30.48)
