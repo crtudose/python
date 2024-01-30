@@ -9,3 +9,11 @@ temp_c = input('enter temp in celsius: ')
 temp_f = float(temp_c) * 1.8 + 32
 temp_statement = str(temp_c) + ' degrees celsius equals ' + str(temp_f) + ' degrees fahrenheit '
 print(temp_statement)
+
+hours = float(input('How many hours did you work last month? '))
+rate = float(input('What is your hourly rate? '))
+print('Last month, you earned', hours * rate ,'dollars')
+
+Separators
+first_name = 'john'
+print('your first name is', first_name, 'welcome!', sep='-')
