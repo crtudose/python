@@ -16,4 +16,4 @@ print('Last month, you earned', hours * rate ,'dollars')
 
 Separators
 first_name = 'john'
-print('your first name is', first_name, 'welcome!', sep='-')
+print('your first name is', first_name, 'welcome', sep='-', end='!')
