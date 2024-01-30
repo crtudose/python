@@ -2,6 +2,7 @@ Practising print()
 Let's practice the print() function. Show the following message to the output:
 I'm learning to become a Python developer!
 I'm so excited!
+++++++++++++++++++
 print("I\'m learning to become a Python developer!\nI\'m so excited!")
 
 Variables and Operators
@@ -10,4 +11,20 @@ In a fictional country named Lowtaxland, the income tax is 5%. In another fictio
 2. Print to the output the following (all output on a single line):
 Your income is {income} and you would pay {tax amount in Lowtaxland} income tax in Lowtaxland or {tax amount in Ripoffland} income tax in Ripoffland. You would save {difference between the tax amounts} by paying taxes in Lowtaxland!
 Your solution must replace the curly brackets (e.g. {income}) with the actual values (e.g. 250000). The values must be calculated correctly. The tax amount should be calculated as {income * lowtaxland_rate} for Lowtaxland, and {income * ripoffland_rate} for Ripoffland, respectively.
+++++++++++++++++++
 print('Your income is', income, 'and you would pay', income * lowtaxland_rate, 'income tax in Lowtaxland or', income * ripoffland_rate, 'income tax in Ripoffland. You would save', income * ripoffland_rate - income * lowtaxland_rate, 'by paying taxes in Lowtaxland!')
+
+Practising input()
+Ask the user to provide their login and native language. Use the following prompts:
+Enter your login: << remember to add a space at the end of this prompt!
+Enter your native language: << remember to add a space at the end of this prompt!
+Then, show the user the following message:
+Your login is {login provided} and you speak {language provided}
+For example, if the user provides the login h_potter and language British English, show:
+Your login is h_potter and you speak British English
+Watch out for typos: you must show the output in this particular format!
+Note: Use the "Run tests" button to check your solution and mark it as complete. Do NOT use the "Run code" button as it will most likely show an error if you use an input() statement.
+++++++++++++++++++
+login = input('Enter your login: ')
+language = input('Enter your native language: ')
+print('Your login is', login, 'and you speak', language)
