@@ -1,5 +1,5 @@
 empty_list = []
 
 top_cities = ['NewYork','Chicago','Phoenix']
-print(top_cities) # ['NewYork', 'Chicago', 'Phoenix']
+print(top_cities) # ['NewYork', 'Chicago', 'Phoenix'] with indexes 0-2
 print(top_cities[0]) # NewYork
