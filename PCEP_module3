@@ -93,3 +93,10 @@ while counter < 11:
     print(counter)
     counter += 1
 print('finished!')
+
+secret_number = 14
+user_input = int(input('try to guess the secret number from 0 to 20: '))
+while user_input != secret_number:
+    print('wrong!')
+    user_input = int(input('try to guess the secret number from 0 to 20: '))
+print('perfect! you have guessed the secret number')
