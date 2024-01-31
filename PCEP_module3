@@ -66,6 +66,7 @@ if answer_a == 'y':
 else:      
     print('sorry to hear that!')
 
++++++++++++++++
 Let's help an online store with their new refund policy. In this store, you can return an item and get a refund in 2 cases:
 1. Within 10 days from the day of purchase, given that you have not used the item, or
 2. No matter when you bought it, when the item broke down through no fault of your own.
@@ -133,6 +134,7 @@ for a in range(1,6):
     for b in range(1,6):
         print(a, 'x', b, '=', a * b)
 
++++++++++++++++
 Ask the user to guess the year when Python 1.0 was released (the correct answer is 1994) with the following prompt:
 When was Python 1.0 released? << remember to add a space at the end of this prompt
 If the user answers 1994, show:
