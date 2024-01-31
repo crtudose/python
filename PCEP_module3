@@ -29,4 +29,10 @@ if 1 ==2:
     print('true')  # condition not met
 if 2 == 2.0:
     print('true') # condition met
- 
+
+user_age = int(input('what is your age? '))
+user_country = input('what is your country? ') 
+if user_age < 25 and user_country == 'germany':
+    print('you can apply for a german student exchange programme')
+else:
+    print('sorry, you do not qualify')
