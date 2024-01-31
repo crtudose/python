@@ -36,3 +36,9 @@ if user_age < 25 and user_country == 'germany':
     print('you can apply for a german student exchange programme')
 else:
     print('sorry, you do not qualify')
+
+user_country = input('what is your country? ') 
+if user_country == 'germany' or user_country == 'sweden' or user_country == 'romania' or user_country == 'france':
+    print('you can apply for a german student exchange programme')
+else:
+    print('sorry, you do not qualify')
