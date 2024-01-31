@@ -153,6 +153,7 @@ while True:
     else:
         print('Correct!')
         break
+# to mention that there can only be 1 else statement in a if instruction
 
 x = 1
 x = x == x
