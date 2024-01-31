@@ -48,3 +48,10 @@ if not user_country == 'germany'
     print('you are not from germany')
 else:
     print('you are from germany')
+
+user_age = int(input('what is your age? '))
+user_country = input('what is your country? ') 
+if (not user_country == 'germany' and user_age < 25) or (user_country == 'germany' and user_age < 23)  
+    print('you qualify')
+else:
+    print('you do not qualify')
