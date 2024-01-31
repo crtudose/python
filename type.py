@@ -1,5 +1,0 @@
-a = float(input('How many hours did you work last month? '))
-print(a)
-b = float(input('What is your hourly rate? '))
-print(b)
-print('Last month, you earned' + ' ' + str(a * b) + ' dollars')
