@@ -104,6 +104,9 @@ print('perfect! you have guessed the secret number')
 for letter in 'hello!':
     print('current letter:', letter)
 
-for counter in range(1,11):
+# start, stop value ; 
+# if we specify only 1 number, the default start value will be considered
+# the start value is inclusive and the stop value is exclusive
+for counter in range(1,11):  
     print(counter)
 print('finished!')
