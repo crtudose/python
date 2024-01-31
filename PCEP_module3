@@ -22,3 +22,11 @@ else:
 Boolean
 True = 1
 False = 0 
+
+if 2 == 2:
+    print('true')  #condition met
+if 1 ==2:
+    print('true')  # condition not met
+if 2 == 2.0:
+    print('true') # condition met
+ 
