@@ -4,3 +4,4 @@ top_cities = ['NewYork','Chicago','Phoenix']
 print(top_cities) # ['NewYork', 'Chicago', 'Phoenix'] with indexes 0-2
 print(top_cities[0]) # NewYork
 print(top_cities[-1]) # Phoenix has index -1 or 2
+print(top_cities[0:2]) # prints first 2 elements 
