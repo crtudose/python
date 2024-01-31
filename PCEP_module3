@@ -1,3 +1,14 @@
 user_age = int(input('what is your age? '))
 if user_age > 30:
     print('you are over 30 years old')
+
+user_age = int(inout('what us your age? '))
+if user_age > 30:
+    print('you are over 30 years old')
+    print('you will need to meet additional conditions to qualify')
+elif user_age == 30:
+    print('you are exactly 30 years old')
+    print('you will need to meet additional conditions to qualify')
+else:
+    print('you are 30 years old or younger')
+    print('congratulation, you qualify')
