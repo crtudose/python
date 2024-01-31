@@ -153,3 +153,7 @@ while True:
     else:
         print('Correct!')
         break
+
+x = 1
+x = x == x
+print(x) # prints True
