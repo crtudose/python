@@ -107,6 +107,7 @@ for letter in 'hello!':
 # start, stop value ; 
 # if we specify only 1 number, the default start value will be considered
 # the start value is inclusive and the stop value is exclusive
+# the 3rd number is the increase amount ex. (1,4,11)
 for counter in range(1,11):  
     print(counter)
 print('finished!')
