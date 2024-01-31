@@ -55,3 +55,13 @@ if (not user_country == 'germany' and user_age < 25) or (user_country == 'german
     print('you qualify')
 else:
     print('you do not qualify')
+
+answer_a = input('do you like travelling? y/n: ')
+if answer_a == 'y':
+    answer_b = input('and you like Asia? y/n ')
+    if answer_b == 'y':
+        print('excellent! you can win a ticket to thailand')
+    else: 
+        print('sorry to hear that')
+else:      
+    print('sorry to hear that!')
