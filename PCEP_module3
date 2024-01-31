@@ -42,3 +42,9 @@ if user_country == 'germany' or user_country == 'sweden' or user_country == 'rom
     print('you can apply for a german student exchange programme')
 else:
     print('sorry, you do not qualify')
+
+user_country = input('what is your country? ') 
+if not user_country == 'germany' 
+    print('you are not from germany')
+else:
+    print('you are from germany')
