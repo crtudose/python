@@ -7,3 +7,4 @@ print(top_cities[-1]) # Phoenix has index -1 or 2
 print(top_cities[0:2]) # prints first 2 elements 
 print(top_cities[2:]) # prints from 3rd element to last  
 print(top_cities[:2]) # prints first 2 elements 
+print(top_cities[:]) # prints all elements
