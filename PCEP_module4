@@ -66,3 +66,7 @@ first = second
 second = temp
 print('after swapping', first, second)
 # shortcut: first, second = second, first
+
+top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
+top_cities[0], top_cities[4] = top_cities[4], top_cities[0]
+print(top_cities)
