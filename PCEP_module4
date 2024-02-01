@@ -30,3 +30,9 @@ for city in top_cities:
 top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
 for city_index in range(len(top_cities)):
   print('current city index:', city_index, '| current city:', top_cities[city_index], )
+
+spendings = [43.2,23.7,65.1,41.6,44.9]
+sum = 0.0
+for spending in spendings:
+  sum += spending
+print('money spent:', sum)
