@@ -68,5 +68,7 @@ print('after swapping', first, second)
 # shortcut: first, second = second, first
 
 top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
-top_cities[0], top_cities[4] = top_cities[4], top_cities[0]
+top_cities[0], top_cities[4] = top_cities[4], top_cities[0] # last and first elements will switch positions
+print(top_cities)
+top_cities.sort() # sort aphabetically
 print(top_cities)
