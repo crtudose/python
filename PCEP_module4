@@ -65,4 +65,4 @@ temp = first
 first = second
 second = temp
 print('after swapping', first, second)
-
+# shortcut: first, second = second, first
