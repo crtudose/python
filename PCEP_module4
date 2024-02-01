@@ -23,4 +23,6 @@ book_ratings.append(4) # use the method append to add element to the end of the 
 print(book_ratings) # will print 1,5,3,9,7,4
 book_ratings.insert(1,10) # use the method insert to add element 10 in 2nd position 
 
-
+top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
+for city in top_cities:
+  print('current city:', city)
