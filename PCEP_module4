@@ -16,3 +16,8 @@ print(top_cities) # will print only first 2 elements
 del top_cities[2:] # this will remove from the 3rd element onwards
 del top_cities[:] # delete all elements
 del top_cities # deletes the list
+
+#adding new elements
+book_ratings = [1,5,3,9,7]
+book_ratings.append(4) # use the method append
+print(book_ratings) # will print 1,5,3,9,7,4
