@@ -9,3 +9,7 @@ print(top_cities[2:]) # prints from 3rd element to last
 print(top_cities[:2]) # prints first 2 elements 
 print(top_cities[:]) # prints all elements
 print(top_cities[4:5]) # prints empty output
+
+top_cities = ['NewYork','Chicago','Phoenix']
+del top_cities[2] # this will remove 'Phoenix' element
+print(top_cities) # will print only first 2 elements
