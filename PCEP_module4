@@ -60,4 +60,9 @@ print('Numbers of months with low spendings: ' + str(low) + ', normal spendings:
 
 first = input('enter first number: ')
 second = input('enter second number: ')
+print('before swapping', first, second)
+temp = first
 first = second
+second = temp
+print('after swapping', first, second)
+
