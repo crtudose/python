@@ -26,3 +26,7 @@ book_ratings.insert(1,10) # use the method insert to add element 10 in 2nd posit
 top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
 for city in top_cities:
   print('current city:', city)
+
+top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
+for city_index in range(len(top_cities)):
+  print('current city index:', city_index, '| current city:', top_cities[city_index], )
