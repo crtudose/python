@@ -14,4 +14,5 @@ top_cities = ['NewYork','Chicago','Phoenix']
 del top_cities[2] # this will remove 'Phoenix' element
 print(top_cities) # will print only first 2 elements
 del top_cities[2:] # this will remove from the 3rd element onwards
-
+del top_cities[:] # delete all elements
+del top_cities # deletes the list
