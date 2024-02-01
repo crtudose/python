@@ -57,3 +57,7 @@ for month in spendings:
     else:
         high += 1
 print('Numbers of months with low spendings: ' + str(low) + ', normal spendings: ' + str(normal) + ', high spendings: ' + str(high) + '.')
+
+first = input('enter first number: ')
+second = input('enter second number: ')
+first = second
