@@ -76,3 +76,6 @@ print(top_cities)
 numbers = [0, 5, 3, 7, 4]
 numbers.sort()
 print(numbers)
+numbers = [0, 5, 3, 7, 4]
+numbers.sort(reverse=True)
+print(numbers)
