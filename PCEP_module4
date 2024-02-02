@@ -135,3 +135,11 @@ for x in cells:
 for x in cells:
   for y in x:
     print('element:', y) # prints all 6 elements
+
+# print 2 lines with the 2 rows from list
+table = [['a1','a2','a3'],['a1','a2','a3']]
+for row in table:
+    for cell in row:
+        print(cell, '', end='')
+    print()
+    
