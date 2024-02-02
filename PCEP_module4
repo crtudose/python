@@ -67,6 +67,7 @@ second = temp
 print('after swapping', first, second)
 # shortcut: first, second = second, first
 
+#sorting
 top_cities = ['new york', 'los angeles', 'chicago', 'houston', 'phoenix']
 top_cities[0], top_cities[4] = top_cities[4], top_cities[0] # last and first elements will switch positions
 print(top_cities)
@@ -84,6 +85,7 @@ numbers = [0, 5, 3, 7, 4]
 print(numbers)
 print(sorted(numbers)) #sorted function which keeps the list unmodified
 
+# check element in list
 invited_guests = ['kate', 'adam', 'joe', 'anne', 'marie']
 name = input('what is your name? ')
 if name in invited_guests:
