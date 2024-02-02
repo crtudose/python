@@ -83,3 +83,10 @@ print(numbers)
 numbers = [0, 5, 3, 7, 4]
 print(numbers)
 print(sorted(numbers)) #sorted function which keeps the list unmodified
+
+invited_guests = ['kate', 'adam', 'joe', 'anne', 'marie']
+name = input('what is your name? ')
+if name in invited_guests:
+  print('welcome!')
+else:
+  print('you are not invited!')
