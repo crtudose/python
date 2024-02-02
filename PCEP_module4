@@ -126,3 +126,9 @@ print(numbers)
 numbers = [i for i in range(1,101) if i % 3 != 0]  #quicker version
 print(numbers)
 
+# nested cells
+cells = [['a1','a2','a3'],['a1','a2','a3']]
+print(cells[0][0]) # prints 'a1'
+print(cells[0]) # prints ['a1', 'a2', 'a3']
+for x in cells:
+  print('element:', x)
