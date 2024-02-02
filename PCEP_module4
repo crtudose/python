@@ -79,3 +79,7 @@ print(numbers)
 numbers = [0, 5, 3, 7, 4]
 numbers.sort(reverse=True)
 print(numbers)
+
+numbers = [0, 5, 3, 7, 4]
+print(numbers)
+print(sorted(numbers))
