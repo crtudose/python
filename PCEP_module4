@@ -103,7 +103,7 @@ print('list original:', list_original, '\nNew:' list_new)
 +++++++++ output:  list original: [5, 2, 3]   New: [5, 2, 3]
 
 list_original = [1,2,3]
-list_new = list_original[:]
+list_new = list_original[:]  # when using slicing, the lists will not point to the same reference
 list_original[0] = 5
 print('list original:', list_original, '\nNew:' list_new)
 +++++++++ output:  list original: [5, 2, 3]   New: [1, 2, 3]
