@@ -92,3 +92,11 @@ if name in invited_guests:
   print('welcome!')
 else:
   print('you are not invited!')
+
+# copying list 
+# list1 = list2 -> both lists will reference to the same value
+# the name of the list is the name of the memory location where the list is stored
+list_original = [1,2,3]
+list_new = list_original
+list_original[0] = 5
+print('list original:', list_original, '\nNew:' list_new)
