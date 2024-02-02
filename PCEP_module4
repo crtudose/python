@@ -77,9 +77,9 @@ numbers = [0, 5, 3, 7, 4]
 numbers.sort()
 print(numbers)
 numbers = [0, 5, 3, 7, 4]
-numbers.sort(reverse=True)
+numbers.sort(reverse=True)  # sort reverse 
 print(numbers)
 
 numbers = [0, 5, 3, 7, 4]
 print(numbers)
-print(sorted(numbers))
+print(sorted(numbers)) #sorted function which keeps the list unmodified
