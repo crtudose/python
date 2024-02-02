@@ -114,7 +114,11 @@ list_original[0] = 5
 print('list original:', list_original, '\nNew:' list_new)
 +++++++++ output:  list original: [5, 2, 3]   New: [1, 2]
 
+#list comprehensions
 numbers = []
 for i in range(1,101)
   numbers.append(i)
 print(numbers) # will output list numbers 1-100
+
+numbers = [i for i in range(1,101)]  #quicker version
+print(numbers)
