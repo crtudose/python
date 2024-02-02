@@ -100,3 +100,4 @@ list_original = [1,2,3]
 list_new = list_original
 list_original[0] = 5
 print('list original:', list_original, '\nNew:' list_new)
++++++++++ output:  list original: [5, 2, 3]   New: [5, 2, 3]
