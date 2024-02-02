@@ -72,3 +72,7 @@ top_cities[0], top_cities[4] = top_cities[4], top_cities[0] # last and first ele
 print(top_cities)
 top_cities.sort() # sort aphabetically
 print(top_cities)
+
+numbers = [0, 5, 3, 7, 4]
+numbers.sort()
+print(numbers)
