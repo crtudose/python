@@ -131,4 +131,7 @@ cells = [['a1','a2','a3'],['a1','a2','a3']]
 print(cells[0][0]) # prints 'a1'
 print(cells[0]) # prints ['a1', 'a2', 'a3']
 for x in cells:
-  print('element:', x)
+  print('element:', x) # prints the 2 sublists
+for x in cells:
+  for y in x:
+    print('element:', y) # prints all 6 elements
