@@ -147,3 +147,10 @@ for row in table:
 table = [[i for i in range(1,6)] for j in range(4)]
 print(table)
     
+# adding and multiplying lists
+list_us = ['atlanta','new york']
+list_uk = ['london','manchester']
+list_all = list_us + list_uk
+print(list_all)
+list_numbers = [0,1] * 10
+print(list_numbers)
