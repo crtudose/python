@@ -172,9 +172,12 @@ tuple2[0] = 2  # err tuple object does not support item assignment
 message = 'Welcome'
 message[0] = 'w' # will err string object does not support item assignment
 
+# tuple operations
 user_data = ('mike', 'american', 1964)
 print(len(user_data))
 if 'american' in user_data:
   print('this person comes from the us')
 for element in user_data:
   print(element)
+user_data = ('mike', 'american', 1964) + (runner, mathematician)
+print(user_data)
