@@ -157,4 +157,7 @@ list_numbers = [0,1] * 10
 print(list_numbers)
 +++ output: ['atlanta', 'new york', 'london', 'manchester'] // [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
-#tuples
+#tuples - created with round brackets ()
+empty_tuple = ()
+one_el_tuple = 1, # if it has only 1 element, a comma is required
+one_el_tuple = (1,)
