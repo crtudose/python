@@ -179,5 +179,7 @@ if 'american' in user_data:
   print('this person comes from the us')
 for element in user_data:
   print(element)
-user_data = ('mike', 'american', 1964) + ('runner', 'mathematician')
+user_data = ('mike', 'american', 1964) + ('runner', 'mathematician') # add new elements to tuple
+print(user_data)
+user_data = ('mike', 'american', 1964) * 3 # print the same elements 3 times
 print(user_data)
