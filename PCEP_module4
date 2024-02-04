@@ -157,7 +157,7 @@ list_numbers = [0,1] * 10
 print(list_numbers)
 +++ output: ['atlanta', 'new york', 'london', 'manchester'] // [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
-#tuples - created with round brackets () which are immutable (unchangeable) opposed to lists with are mutable (able to delete, add elements, swap places)
+#tuples - created with round brackets () which are immutable (unchangeable) (just like stringa) opposed to lists with are mutable (able to delete, add elements, swap places)
 empty_tuple = ()
 one_el_tuple = 1, # if it has only 1 element, a comma is required
 one_el_tuple = (1,)
@@ -169,3 +169,5 @@ tuple2 = 5,6,7
 print(tuple2) # prints (5,6,7)
 print(tuple2[1]) # prints 6
 tuple2[0] = 2  # err tuple object does not support item assignment
+message = 'Welcome'
+message[0] = 'w' # will err string object does not support item assignment
