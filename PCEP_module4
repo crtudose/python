@@ -156,3 +156,5 @@ print(list_all)
 list_numbers = [0,1] * 10
 print(list_numbers)
 +++ output: ['atlanta', 'new york', 'london', 'manchester'] // [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+#tuples
