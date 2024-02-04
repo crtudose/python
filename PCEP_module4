@@ -190,3 +190,7 @@ Tuples are used when you want to group together values of different types
 first, second = second, first # these turn out to be tuples
 
 # tuples in lists and lists in tuples
+city1 = ('uk', 'london', 7.3)
+city2 = ('romania', 'bucharest', 4.9)
+city3 = ('germany', 'berlin', 3.5)
+capitals = [('uk', 'london', 7.3), ('romania', 'bucharest', 4.9), ('germany', 'berlin', 3.5)]
