@@ -195,4 +195,8 @@ city2 = ('romania', 'bucharest', 4.9)
 city3 = ('germany', 'berlin', 3.5)
 capitals = [('uk', 'london', 7.3), ('romania', 'bucharest', 4.9), ('germany', 'berlin', 3.5)]
 for capital in capitals:
-  print('country:', capitals[0], 'name:', capitals[1], 'population', capitals[2])
+  print('country:', capital[0], 'name:', capital[1], 'population', capital[2])
++++++++++ output: +++++
+country: uk name: london population 7.3
+country: romania name: bucharest population 4.9
+country: germany name: berlin population 3.5
