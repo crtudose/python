@@ -157,7 +157,9 @@ list_numbers = [0,1] * 10
 print(list_numbers)
 +++ output: ['atlanta', 'new york', 'london', 'manchester'] // [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
-#tuples - created with round brackets ()
+#tuples - created with round brackets () which are immutable (unchangeable) opposed to lists with are mutable (able to delete, add elements, swap places)
 empty_tuple = ()
 one_el_tuple = 1, # if it has only 1 element, a comma is required
 one_el_tuple = (1,)
+tuple2 = 1,2,3  # prints (1, 2, 3)
+
