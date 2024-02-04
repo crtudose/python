@@ -186,3 +186,7 @@ print(user_data)
 
 Lists are used when you want to have a lot of values of the same type.
 Tuples are used when you want to group together values of different types
+
+first, second = second, first # these turn out to be tuples
+
+# tuples in lists and lists in tuples
