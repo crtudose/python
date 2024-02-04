@@ -179,5 +179,5 @@ if 'american' in user_data:
   print('this person comes from the us')
 for element in user_data:
   print(element)
-user_data = ('mike', 'american', 1964) + (runner, mathematician)
+user_data = ('mike', 'american', 1964) + ('runner', 'mathematician')
 print(user_data)
