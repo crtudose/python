@@ -200,3 +200,5 @@ for capital in capitals:
 country: uk name: london population 7.3
 country: romania name: bucharest population 4.9
 country: germany name: berlin population 3.5
+
+# if you have a list in a tuple, the list from the tuple is muttable even though the tuple is itself immutable so you can append to the list new elements
