@@ -183,3 +183,6 @@ user_data = ('mike', 'american', 1964) + ('runner', 'mathematician') # add new e
 print(user_data)
 user_data = ('mike', 'american', 1964) * 3 # print the same elements 3 times
 print(user_data)
+
+Lists are used when you want to have a lot of values of the same type.
+Tuples are used when you want to group together values of different types
