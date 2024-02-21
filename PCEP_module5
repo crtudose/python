@@ -32,3 +32,14 @@ def print_letter_count(text, letter):
 print_letter_count('Welcome', 'e')  # the order of the arguments is important
 # print_letter_count(text='Welcome', letter='e')
 output: Number of e is 2
+# in the case of print function, end argument has the default value of a new line character
+# and the sep argument has the default value of a whitespace character
+
+def print_letter_count(text, letter='a'):
+    counter = 0
+    for char in text:
+        if char == letter:
+            counter += 1
+    print('Number of', letter, 'is', counter)
+print_letter_count('how many letters a are here?')
+output: Number of a is 3
