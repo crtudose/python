@@ -52,3 +52,6 @@ def print_letter_count(text='this is the default string to use', letter='a'): # 
     print('Number of', letter, 'is', counter)
 print_letter_count()
 output: Number of a is 2
+
+print_letter_count(letter='a', 'search here') # err positional argument follows keyword argument
+# positional arguments must appear first and only then can named arguments appear
