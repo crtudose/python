@@ -36,7 +36,7 @@ output: Number of e is 2
 # and the sep argument has the default value of a whitespace character
 
 def print_letter_count(text, letter='a'): # provide default values to the function
-def print_letter_count(text='this is the default string to use', letter='a'): # provide default values to the function
+#def print_letter_count(text='this is the default string to use', letter='a'): # provide default values to the function
     counter = 0
     for char in text:
         if char == letter:
