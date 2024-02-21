@@ -29,5 +29,5 @@ def print_letter_count(text, letter):
         if char == letter:
             counter += 1
     print('Number of', letter, 'is', counter)
-print_letter_count('Welcome', 'e')
+print_letter_count('Welcome', 'e')  # the order of the arguments is important
 output: Number of e is 2
