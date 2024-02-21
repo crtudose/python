@@ -57,3 +57,8 @@ print_letter_count(letter='a', 'search here') # err positional argument follows 
 # positional arguments must appear first and only then can named arguments appear
 
 #scope of a name is the part of the code where the name is properly recognizable and can be used
+def show_truth():
+    misterious_var = 'surprize!'
+    print(misterious_var)
+show_truth()
+output: surprize!
