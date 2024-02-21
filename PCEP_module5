@@ -62,3 +62,4 @@ def show_truth():
     print(misterious_var)
 show_truth()
 output: surprize!
+# we can define the variable outside of the function also because variables that exist outside the function at the time of the call have a scope inside the function's body
