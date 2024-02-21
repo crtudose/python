@@ -55,3 +55,5 @@ output: Number of a is 2
 
 print_letter_count(letter='a', 'search here') # err positional argument follows keyword argument
 # positional arguments must appear first and only then can named arguments appear
+
+#scope of a name is the part of the code where the name is properly recognizable and can be used
