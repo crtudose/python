@@ -22,3 +22,12 @@ def get_average(input_numbers):   # parameter given to the function
 get_average([5.0, 3.5, 7.8, 9.9, 10.0])    # the list passed to the function is called an argument (it can be also a tuple)
 output: 7.24
 # if you call the function with empty brackets you will get err 'missing argument' and also if you pass an integer, will give err 'object not iterable'
+
+def print_letter_count(text, letter):
+    counter = 0
+    for char in text:
+        if char == letter:
+            counter += 1
+    print('Number of', letter, 'is', counter)
+print_letter_count('Welcome', 'e')
+output: Number of e is 2
