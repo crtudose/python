@@ -80,3 +80,18 @@ output: Surprise!
 # the local var inside the function shadows the global var
 # if you define within function the variable as: global mysterious_var, the modification will affect it
 # if we use lists or dictionaries, keep in mind that if we use functions like append, shadowing will not work (not the same case is in using tuples which immutable)
+
+NONE VALUE
+print_return = print('hello world')
+print(print_return)
+output: hello world
+none   >>> this describes a null value or no value (special value, not zero/false/emptystring)
+
+x = None # value returned implicitly by functions that do not return anything meaningful
+if x is None:
+    print('yes')
+if x == None:
+    print('it does')
+output: yes / it does
+
+RETURN
