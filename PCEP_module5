@@ -119,4 +119,4 @@ def is_first_last_equal(number_list):  # check if first and last elements from l
         return True
     else:
         return False
-print(is_first_last_equal(10, 20, 30, 40))  # True
+print(is_first_last_equal(10, 20, 30, 40))  # True ; if we give no elements, will will err with list index out of range message
