@@ -177,3 +177,8 @@ print(next(generator)) # err stopiteration
 
 for x in get_number():
     print(x)
+output: prints 1 2 3
+
+numbers = list(get_number())
+print(numbers)
+output: [1, 2, 3]
