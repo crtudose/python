@@ -78,3 +78,5 @@ output: Surprise!
 # a 2nd temporary var with the same name is created
 # first var is local and the 2nd with the same name is global ; they are 2 diff var with 2 diff values 
 # the local var inside the function shadows the global var
+# if you define within function the variable as: global mysterious_var, the modification will affect it
+# if we use lists or dictionaries, keep in mind that if we use functions like append, shadowing will not work (not the same case is in using tuples which immutable)
