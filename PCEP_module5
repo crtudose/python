@@ -169,7 +169,11 @@ def get_number():
         yield i
 print(get_number()) # <generator object get_number at 0x2bb6760>
 
-generator = get_number() # generate numbers one by one using the next function and generator variable
+generator = get_number() # generate numbers one by one using the next function and generator variable which remembers which value was generated previously
 print(next(generator)) # print 1
 print(next(generator)) # print 2
 print(next(generator)) # print 3
+print(next(generator)) # err stopiteration
+
+for x in get_number():
+    print(x)
