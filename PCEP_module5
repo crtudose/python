@@ -167,5 +167,4 @@ GENERATORS
 def get_number():
     for i in range(1, 4):
         yield i
-print(get_number())
-<generator object get_number at 0x2bb6760>
+print(get_number()) # <generator object get_number at 0x2bb6760>
