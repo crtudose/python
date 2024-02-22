@@ -150,3 +150,11 @@ def get_factorial(number):
     return factorial
 print(get_factorial(5)) 
 output: 120
+
+def get_factorial_recursive(number):
+    return number * get_factorial_recursive(number - 1) # err message maximum recursion depth exceeded
+
+def get_factorial_recursive(number):
+    if number <= 1:
+        return 1
+    return number * get_factorial_recursive(number - 1)
