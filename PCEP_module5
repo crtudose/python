@@ -101,4 +101,14 @@ def get_average(input_numbers):
         sum += number
     average = sum / len(input_numbers)
     return average # nothing is printed, returned value is ignored and we can use a print function
-print('the average is:', get_average([5.0, 7.4, 1.4, 4.9, 9.1]))
+print('the average is:', get_average([5.0, 7.4, 1.4, 4.9, 9.1])) # prints 5.01
+
+def get_average(input_numbers):  
+    sum = 0.0
+    for number in input_numbers:
+        sum += number
+    average = sum / len(input_numbers)
+    return average # nothing is printed, returned value is ignored and we can use a print function
+average = get_average([5.0, 7.4, 1.4, 4.9, 9.1])
+if average > 5.0:
+    print('the average is too high') # output: the average is too high
