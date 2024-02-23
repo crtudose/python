@@ -235,3 +235,7 @@ if user_name == '':
     sys.exit()
 print('hello', user_name)
 print('let us get started...')
+
+while True:
+    print('hi') # will run infinitely
+# if we press stop, it will generate exception keyboardinterrupt
