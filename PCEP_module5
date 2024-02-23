@@ -275,3 +275,5 @@ print('hello, i will collect some info about your bday!')
 user_info = []
 get_user_bday(user_info)
 # if an exception is expected, we can use a single try-except statement for all 3 functions
+# we can say that exceptions in python are propagated if a function that raises the exception does not
+# have a try except block, the exception will be propagated to the function that called it
