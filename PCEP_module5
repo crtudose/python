@@ -242,3 +242,6 @@ while True:
 
 programming_languages = ["java", "python", "C++"]
 print(programming_languages[10]) # IndexError: list index out of range
+
+ages = {'Jim': 30, 'Pam': 29, 'Kevin': 33}
+ages['Michael']
