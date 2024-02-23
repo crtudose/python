@@ -227,3 +227,11 @@ EXCEPTION HIERARCHY
 2. Exception, SystemExit, KeyboardInterrupt
 3. ArithmeticError, LookupError, TypeError, ValueError
 4. ZeroDivisionError
+
+import sys
+user_name = input('what is your name? ')
+if user_name == '':
+    print('empty name? i cannot work with that. I am closing the program. Bye!')
+    sys.exit()
+print('hello', user_name)
+print('let us get started...')
