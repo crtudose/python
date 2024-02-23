@@ -225,7 +225,7 @@ except:
 EXCEPTION HIERARCHY
 1. base exception
 2. Exception, SystemExit, KeyboardInterrupt
-3. ArithmeticError, LookupError, TypeError, ValueError
+3. ArithmeticError, LookupError (IndexError, KeyError), TypeError, ValueError
 4. ZeroDivisionError
 
 import sys
