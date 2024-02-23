@@ -252,3 +252,22 @@ print('in 10 years you will be', age + 10) # TypeError this is expecting a strin
 age = int(input('what is your age? ')) # ValueError if we provide a char/string instead of a int which cannot be converted
 
 PROPAGATING EXCEPTIONS
+- interesting aspect of exception handling is when we have multiple functions calling each other
+
+def get_day(user_info):
+    day = int(input('what is the day of your bday? '))
+    user_info.append(day)
+def get_month(user_info):
+    month = int(input('what is the month(1-12) of your bday? '))
+    user_info.append(month)
+def get_year(user_info):
+    year = int(input('what is the year of your bday? '))
+    user_info.append(year)
+def get_user_bday(user_info):
+    get_day(user_info)
+    get_month(user_info)
+    get_year(user_info)
+    print('so your bday is', user_info)
+print('hello, i will collect some info about your bday!')
+user_info = []
+get_user_bday(user_info)
