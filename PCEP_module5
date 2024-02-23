@@ -277,3 +277,11 @@ get_user_bday(user_info)
 # if an exception is expected, we can use a single try-except statement for all 3 functions
 # we can say that exceptions in python are propagated if a function that raises the exception does not
 # have a try except block, the exception will be propagated to the function that called it
+
+ASSERTION EXCEPTIONS
+- what if we want to raise exceptions by ourselves?
+assertion = assumptions in our program that should always be true
+
+def calculate_inverse(number):
+    assert (number != 0), 'Got 0 as number'
+    return 1/number
