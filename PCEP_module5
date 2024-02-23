@@ -205,4 +205,6 @@ try:
 except ValueError:
     print('you did not provide a number so i will not calculate the inverse')
 except ZeroDivisionError:
-    print('you provided 0 an division by 0 is not possible')
+    print('you provided 0 and division by 0 is not possible')
+except:
+    print('something strange happened')
