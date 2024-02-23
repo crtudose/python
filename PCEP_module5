@@ -283,5 +283,5 @@ ASSERTION EXCEPTIONS
 assertion = assumptions in our program that should always be true
 
 def calculate_inverse(number):
-    assert (number != 0), 'Got 0 as number'
+    assert (number != 0), 'Got 0 as number' # if conditions are true, pytho moves to new line ; if not, it shows error with message that we specify after comma
     return 1/number
