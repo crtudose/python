@@ -250,3 +250,5 @@ age = input('what is the age? ')
 print('in 10 years you will be', age + 10) # TypeError this is expecting a string
 
 age = int(input('what is your age? ')) # ValueError if we provide a char/string instead of a int which cannot be converted
+
+PROPAGATING EXCEPTIONS
