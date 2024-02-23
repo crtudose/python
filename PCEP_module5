@@ -238,4 +238,7 @@ print('let us get started...')
 
 while True:
     print('hi') # will run infinitely
-# if we press stop, it will generate exception keyboardinterrupt
+# if we press stop, it will generate exception KeyboardInterrupt
+
+programming_languages = ["java", "python", "C++"]
+print(programming_languages[10]) # IndexError: list index out of range
