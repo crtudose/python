@@ -264,10 +264,14 @@ def get_year(user_info):
     year = int(input('what is the year of your bday? '))
     user_info.append(year)
 def get_user_bday(user_info):
-    get_day(user_info)
-    get_month(user_info)
-    get_year(user_info)
-    print('so your bday is', user_info)
+    try:
+        get_day(user_info)
+        get_month(user_info)
+        get_year(user_info)
+        print('so your bday is', user_info)
+    except ValueError:
+        print('you entered incorrect data')
 print('hello, i will collect some info about your bday!')
 user_info = []
 get_user_bday(user_info)
+# if an exception is expected, we can use a single try-except statement for all 3 functions
