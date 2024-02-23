@@ -195,3 +195,6 @@ try:
     print('the inverse of', value, 'is', 1/value)
 except:
     print('you did not provide a number so i will not calculate the inverse')
+
+- if we provide a character instead it will generate err: "ValueError: invalid literal for int() with base 10"
+- if we provide value of 0 "ZeroDivisionError: division by zero"
