@@ -225,7 +225,7 @@ except:
 EXCEPTION HIERARCHY
 1. base exception
 2. Exception, SystemExit, KeyboardInterrupt
-3. ArithmeticError, LookupError (IndexError, KeyError), TypeError, ValueError
+3. ArithmeticError, LookupError (IndexError, KeyError), TypeError (type of data is not correct), ValueError (function or method receives an argument of correct type with an actual value that is invalid)
 4. ZeroDivisionError
 
 import sys
@@ -244,4 +244,9 @@ programming_languages = ["java", "python", "C++"]
 print(programming_languages[10]) # IndexError: list index out of range
 
 ages = {'Jim': 30, 'Pam': 29, 'Kevin': 33}
-ages['Michael']
+ages['Michael'] # KeyError
+
+age = input('what is the age? ')
+print('in 10 years you will be', age + 10) # TypeError this is expecting a string
+
+age = int(input('what is your age? ')) # ValueError if we provide a char/string instead of a int which cannot be converted
