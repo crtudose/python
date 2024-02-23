@@ -221,3 +221,9 @@ try:
   5:4 # this line generates a SyntaxError
 except:
   print('Got it!') # SyntaxError is NOT caught here
+
+EXCEPTION HIERARCHY
+1. base exception
+2. Exception, SystemExit, KeyboardInterrupt
+3. ArithmeticError, LookupError, TypeError, ValueError
+4. ZeroDivisionError
