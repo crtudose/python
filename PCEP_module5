@@ -185,3 +185,13 @@ output: [1, 2, 3]
 
 EXCEPTIONS
 an exception is an event which occurs during the execution of a program that disrupts the normal flow of the program instructions
+value = int(input('enter an integer: '))
+print('the inverse of', value, 'is', 1/value)
+# for ex if we provide something diff than a number it raises an exception
+# to handle exceptions we can use a structure called try-except
+
+try:
+    value = int(input('enter an integer: '))
+    print('the inverse of', value, 'is', 1/value)
+except:
+    print('you did not provide a number so i will not calculate the inverse')
