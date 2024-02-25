@@ -1,3 +1,18 @@
 MODULES
 decomposition = breaking code into smaller pieces
 - besides separating into more files, we need to inform python that separate files should cooperate and form a bigger codebase
+- a module is simply a file that contains python definitions and statements
+Such a file can be imported into a second file, and once you import the module, you can use all the
+definitions and statements from that module in that second file.
+- You can create your own modules and you can also use modules created by other Python enthusiasts like you, 
+- most importantly, you can use a lot of modules that are delivered together with Python.
+- These modules form the so called Python Standards Library and you can go to Python documentation online
+to see what the library contains.
+I've got the link here. docs.python.org/3/library/index.html#the-python-standard-library
+
+Let's take an example of a module called sys.
+As you can see, it has system specific parameters and functions.
+If you enter the module description page, you can find all the module entities like AB flags, adduaditbhook etc.
+The entities are all the definitions, like variables and methods that you can use when you decide to use this module in your code.
+
+Among other things, there is sys.exit. in practice, this function closes your program by raising an exception.
