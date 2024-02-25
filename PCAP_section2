@@ -80,32 +80,17 @@ And you can see that in each case we simply get the number before the decimal pa
 You can use the round function, but it's not required for the examination.
 You also need to know the factorial function.
 What is a factorial in maths?
-
 It is the multiplication of all positive integers less than or equal to the given number.
-
-So I have some examples here.
-
 The factorial for three is three times two times one, which is six.
 
-And now another example, the factorial of four is four times three times two times one, which is 24.
+print(math.factorial(6)) # output 120
 
-So now Python can compute that for you using the factorial function.
-
-Let's say print math, factorial of three, which is six.
-
-And if we do that for four, you get 24.
-
-All right.
-
-The next function that you need to know is Askew Art, which stands for the square root.
-
+The next function that you need to know is sqrt(), which stands for the square root.
 As the name suggests, the function simply returns the square root of a given number.
-
 So, for example, print math asked of 16 would give us 4.0 because four times four is 16.
-
-And now the square root of I don't know, 100 would be ten because ten times ten is 100.
-
 Note that even though we provide an integer, we get a float in the result.
+
+print(math.sqrt(16)) # output 4.0
 
 Finally, you need to know the high port function.
 
