@@ -25,4 +25,4 @@ for name in dir(sys):
 # in our case, this function allows us to see all the entities that this module makes available
 
 import sys
-sys.exit()
+sys.exit() # exception occurs of type SystemExit
