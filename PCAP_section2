@@ -19,6 +19,7 @@ Among other things, there is sys.exit. in practice, this function closes your pr
 
 IMPORT MODULE
 import sys, math
-for name in dir(sys)
+for name in dir(sys):
     print(name, end='\t')
 # The dir() function returns all properties and methods of the specified object, without the values.
+# in our case, this function allows us to see all the entities that this module makes available
