@@ -16,3 +16,9 @@ If you enter the module description page, you can find all the module entities l
 The entities are all the definitions, like variables and methods that you can use when you decide to use this module in your code.
 
 Among other things, there is sys.exit. in practice, this function closes your program by raising an exception.
+
+IMPORT MODULE
+import sys, math
+for name in dir(sys)
+    print(name, end='\t')
+# The dir() function returns all properties and methods of the specified object, without the values.
