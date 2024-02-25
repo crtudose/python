@@ -37,3 +37,5 @@ from sys import exit
 def exit():
     print('i wanna exit')
 exit() # this function will be called instead of the imported one as it is overwritten by the one we defined with same name
+
+from sys import * # this is not recommended as many functions will be replaced and conflicts will appear
