@@ -32,3 +32,8 @@ sys.exit() # exception occurs of type SystemExit
 # we no longer need to specify the module before the function using this syntax
 from sys import exit
 exit()
+
+from sys import exit
+def exit():
+    print('i wanna exit')
+exit() # this function will be called instead of the imported one as it is overwritten by the one we defined with same name
