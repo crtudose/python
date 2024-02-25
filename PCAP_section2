@@ -92,24 +92,8 @@ Note that even though we provide an integer, we get a float in the result.
 
 print(math.sqrt(16)) # output 4.0
 
-Finally, you need to know the high port function.
-
+Finally, you need to know the hypot() function.
 This one has to do with geometry and triangles to be precise.
-
 If you have a right angle triangle and you know the length of the two shortest sites, you can use the
-
-high function to find the longest side, which is also called the hypotenuse.
-
-So for let's say, hi port three and four, you will get five and so on.
-
-Starting from Python 3.8, you can provide more arguments to the hybrid function to calculate their
-
-so called Euclidean norm.
-
-This usage is however quite rare, so you do need to worry about it too much.
-
-And that's it.
-
-Python's math module has much more to offer, but these six functions are everything you need to know
-
-for the AP exam.
+hypot() function to find the longest side, which is also called the hypotenuse.
+print(math.hypot(3, 4)) # output 5.0
