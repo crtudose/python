@@ -26,3 +26,4 @@ for name in dir(sys):
 
 import sys
 sys.exit() # exception occurs of type SystemExit
+# we use the name of the module before calling the function in order to not be mistaken by another function with the same name
