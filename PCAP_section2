@@ -1,1 +1,3 @@
-decomposition
+MODULES
+decomposition = breaking code into smaller pieces
+- besides separating into more files, we need to inform python that separate files should cooperate and form a bigger codebase
