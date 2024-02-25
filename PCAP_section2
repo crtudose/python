@@ -44,3 +44,10 @@ exit() # this function will be called instead of the imported one as it is overw
 # both statements input all the entities from CIS module
 # using first option you need to remember about sys prefix/namespace, to add sys.x
 # using the 2nd option we do not need to specify the namespace but we can get a lot of conflicts
+
+# we can use aliases when importing
+import sys as s
+s.exit()
+
+from sys import exit as bye
+bye()
