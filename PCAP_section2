@@ -190,29 +190,9 @@ That's why you can use the sample() function.
 This function takes to arguments, a sequence and the number of elements that should be randomly taken
 from the sequence without duplicates.
 
-
-So let's say that we have the names and these are the participants.
-
-And now we'll do the following random sample from names.
-
-And we want to get three names like this.
+names = ['Alan','Kate','Mary','Kate','Jo','John']
+random.sample(names, 3)
 
 This code picks three random names from the list and returns them as a new list.
-
 Note that the names will always be unique.
-
 Naturally, the second argument might not be greater than the number of elements in the sequence.
-
-Here, our list has six elements, so the best that you can do is six.
-
-And this returns basically all the elements.
-
-But if you try to go with seven.
-
-You will see an error value error sample larger than population or is negative a right.
-
-That's it.
-
-The random module provides more possibilities, but you only need to know these four functions for the
-
-Pcap exam, random seat sample and choice.
