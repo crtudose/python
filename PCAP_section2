@@ -120,54 +120,36 @@ And how do you ensure that the seed changes over time?
 The easiest way is to use time.
 
 Python can take the current time and change it into a number that will become the seed for pseudo random
-
 number generation.
-
 And because the current time is always different, the seed will also be different.
-
 As a result, you will get different random numbers.
 
-Okay, now let's get back to the random module.
-
 The most general function in this module is also called random.
-
 It produces a float number between zero and one.
-
 Let's call this function three times in a row and see what we get.
 
-Import random and now we'll do print random random.
-
-And we'll repeat that three times.
+import random
+print(random.random())
+print(random.random())
+print(random.random())
+output: 0.27 0.73 0.30
 
 You can see that we got three different numbers.
+If we rerun the cells, you can see that the numbers change. 0.47 0.65 0.98
+That's because by default, Python changes the seat for you, usually based on the local time stamp on your machine.
+If for any reason you want to set the seed yourself, you can use the seat function.
 
-If we rerun the cells, you can see that the numbers change.
-
-That's because by default, Python changes the seat for you, usually based on the local time stamp
-
-on your machine.
-
-If for any reason you want to set the seat yourself, you can use the seat function.
-
-See what happens when we add the seat function now.
-
-So we'll do the following.
-
-We'll copy paste this.
-
-And now, before asking for random numbers, we'll do a random seat and we'll set the seat to zero.
-
-We don't actually need to print this one like this.
-
-Now, if we rerun the cell, I'm doing that.
+import random
+print(random.seed(0)) # set the seat to zero.
+print(random.random())
+print(random.random())
+print(random.random())
+output: 0.84 0.75 0.42
 
 Now, you can see that the pseudo random values don't change.
-
-They are all based on the same set of zero.
-
+They are all based on the same seed of zero.
 So the series of numbers will receive is always the same.
-
-Two more functions that you need to know for the Pcap exam choice and sample.
+Two more functions that you need to know for the Pcap exam are choice and sample.
 
 They are a bit similar because both of them take a sequence as an input.
 
