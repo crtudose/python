@@ -160,58 +160,36 @@ print(random.choice(numbers))
 print(random.choice(names))
 
 And now we have, as you can see, two sample lists, one with integers and one with strings.
-
 The choice function works with both of them.
-
 It accepts a sequence as the input and outputs a random element from this sequence.
-
 Naturally, we can use sequences other than lists.
-
 These could be strings or something else.
-
-So for example, you can pick a random character from a string using random dot choice.
+So for example, you can pick a random character from a string using random.choice().
 
 And now I have something like this prepared to get a long string.
-
 Can you feel the power of Python and you get a random letter and each time you run the cell you get
+something different.
 
-something different and so on.
+random.choice('CanYoufeelThePowerOfPython')
 
-But now take a look at the following code where we print ten random elements from the list.
-
-So we'll do the following.
-
-We'll use numbers from here.
-
-Perhaps we'll do four eye in the range ten print random choice numbers.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in range(10):
+    print(random.choice(numbers))
+output: 10 4 9 3 5 3 2 10
 
 You can see that the choice function doesn't care about duplicates.
-
 It returns one random element at a time.
-
-But that element can be any element, also an element that was already returned in one of the previous
-
-invocations.
-
-So for example, we can see number ten twice, we can also see number five twice and so on.
-
-This behavior may or may not be what you need.
+But that element can be any element, also an element that was already returned in one of the previous invocations.
 
 Imagine that you have a list of participants in a contest and you want to generate a random order for
-
 their appearance on stage.
-
 In this case, you can't get the same person twice.
-
 You need to ensure that the order is random, but that each participant is only shown once.
 
-That's why you can use the sample function.
-
+That's why you can use the sample() function.
 This function takes to arguments, a sequence and the number of elements that should be randomly taken
-
 from the sequence without duplicates.
 
-Take a look.
 
 So let's say that we have the names and these are the participants.
 
