@@ -97,3 +97,162 @@ This one has to do with geometry and triangles to be precise.
 If you have a right angle triangle and you know the length of the two shortest sites, you can use the
 hypot() function to find the longest side, which is also called the hypotenuse.
 print(math.hypot(3, 4)) # output 5.0
+
+RANDOM FUNCTION
+Another frequently used module in Python is called random. It provides random values.
+Computers can't use imagination to think of a random number.
+They can only follow an algorithm with some clear predefined steps, and it's difficult to come up with
+something random when the steps you take are always predefined.
+The algorithms will typically start with a seed. The seed can be treated as a starting value from which Python 
+does some fancy computations to output pseudo random numbers.
+If you use the same seed, you will typically always get the same pseudo random numbers.
+Python can output more than one number based on the same seed.
+
+For example, you could start with a seed of one and then get a pseudo random number of five when you
+first ask for a random number.
+The second time you ask for a random number, you could get, let's say, three.
+The third time it could be something like 11 and so on.
+The numbers may seem perfectly random, but if you close your program and start it again, you will get the same numbers.
+Not really random anymore, right?
+That's why ideally the seed should also change over time.
+This way you will get different random numbers if you run your program again later on.
+And how do you ensure that the seed changes over time?
+The easiest way is to use time.
+
+Python can take the current time and change it into a number that will become the seed for pseudo random
+
+number generation.
+
+And because the current time is always different, the seed will also be different.
+
+As a result, you will get different random numbers.
+
+Okay, now let's get back to the random module.
+
+The most general function in this module is also called random.
+
+It produces a float number between zero and one.
+
+Let's call this function three times in a row and see what we get.
+
+Import random and now we'll do print random random.
+
+And we'll repeat that three times.
+
+You can see that we got three different numbers.
+
+If we rerun the cells, you can see that the numbers change.
+
+That's because by default, Python changes the seat for you, usually based on the local time stamp
+
+on your machine.
+
+If for any reason you want to set the seat yourself, you can use the seat function.
+
+See what happens when we add the seat function now.
+
+So we'll do the following.
+
+We'll copy paste this.
+
+And now, before asking for random numbers, we'll do a random seat and we'll set the seat to zero.
+
+We don't actually need to print this one like this.
+
+Now, if we rerun the cell, I'm doing that.
+
+Now, you can see that the pseudo random values don't change.
+
+They are all based on the same set of zero.
+
+So the series of numbers will receive is always the same.
+
+Two more functions that you need to know for the Pcap exam choice and sample.
+
+They are a bit similar because both of them take a sequence as an input.
+
+A sequence could be a list, a string, and the output randomly selected items from the sequence.
+
+So first of all, I'll have some lists that I prepared earlier, and now we'll have the following random
+
+choice numbers and random choice names, and let's use print statements to see them both in the output.
+
+And now we have, as you can see, two sample lists, one with integers and one with strings.
+
+The choice function works with both of them.
+
+It accepts a sequence as the input and outputs a random element from this sequence.
+
+Naturally, we can use sequences other than lists.
+
+These could be strings or something else.
+
+So for example, you can pick a random character from a string using random dot choice.
+
+And now I have something like this prepared to get a long string.
+
+Can you feel the power of Python and you get a random letter and each time you run the cell you get
+
+something different and so on.
+
+But now take a look at the following code where we print ten random elements from the list.
+
+So we'll do the following.
+
+We'll use numbers from here.
+
+Perhaps we'll do four eye in the range ten print random choice numbers.
+
+You can see that the choice function doesn't care about duplicates.
+
+It returns one random element at a time.
+
+But that element can be any element, also an element that was already returned in one of the previous
+
+invocations.
+
+So for example, we can see number ten twice, we can also see number five twice and so on.
+
+This behavior may or may not be what you need.
+
+Imagine that you have a list of participants in a contest and you want to generate a random order for
+
+their appearance on stage.
+
+In this case, you can't get the same person twice.
+
+You need to ensure that the order is random, but that each participant is only shown once.
+
+That's why you can use the sample function.
+
+This function takes to arguments, a sequence and the number of elements that should be randomly taken
+
+from the sequence without duplicates.
+
+Take a look.
+
+So let's say that we have the names and these are the participants.
+
+And now we'll do the following random sample from names.
+
+And we want to get three names like this.
+
+This code picks three random names from the list and returns them as a new list.
+
+Note that the names will always be unique.
+
+Naturally, the second argument might not be greater than the number of elements in the sequence.
+
+Here, our list has six elements, so the best that you can do is six.
+
+And this returns basically all the elements.
+
+But if you try to go with seven.
+
+You will see an error value error sample larger than population or is negative a right.
+
+That's it.
+
+The random module provides more possibilities, but you only need to know these four functions for the
+
+Pcap exam, random seat sample and choice.
