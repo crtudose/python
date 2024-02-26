@@ -194,5 +194,5 @@ names = ['Alan','Kate','Mary','Kate','Jo','John']
 random.sample(names, 3)
 
 This code picks three random names from the list and returns them as a new list.
-Note that the names will always be unique.
+Note that the names will always be unique (when referring to the index, not the value).
 Naturally, the second argument might not be greater than the number of elements in the sequence.
