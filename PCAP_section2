@@ -200,3 +200,123 @@ Naturally, the second argument might not be greater than the number of elements 
 PLATFORM MODULE
 - it has access to underlying platform identifying data and can give you data about python version, OS, HW 
 (it shows the layers between your code and the hw your computer is using)
+
+The documentation describes it as access to underlying platforms identifying data.
+
+In other words, the platform module can tell you a little bit about your Python version, the operating
+
+system, and the hardware you're using.
+
+Take a look at the diagram.
+
+It shows the layers between your code and the hardware that your computer is using.
+
+Your code is located at the very top one level below.
+
+There's the running environment of Python.
+
+The next layer is the operating system or OS for short.
+
+Python uses a lot of helpers from the operating system for things such as processing files or communicating
+
+with physical devices.
+
+At the very bottom, there's the hardware, the processor, the RAM, memory network interfaces, user
+
+keyboard and mice and others.
+
+All of the four layers cooperate so we can write Python programs.
+
+For example, when you want to get some user data, your code can invoke the input function.
+
+The Python environment accepts the order and adapted to meet the requirements of the local operating
+
+system.
+
+These can be different for Windows, Linux or Macintosh, but you do need to worry about it.
+
+The OS checks if the request from Python is valid and it uses the hardware in this case the keyboard
+
+to complete your request.
+
+The platform module allows us to access some basic information about the underlying layers the Python
+
+environment, the operating system and the hardware.
+
+Let's look at the functions that you need to know for the examination.
+
+First of all, we'll import the module and now we'll start with platform.
+
+This function returns a string that identifies the underlying platform.
+
+The input is intended to be human readable.
+
+As you can see here, the platform that I'm using is Windows ten with this specific version.
+
+The function actually takes two parameters that have some default values.
+
+That's why I didn't have to provide any arguments when alias is set to true or any non-zero value.
+
+The function may present alternative underlying names.
+
+This parameter will not do anything on certain platforms while on others it can show system names that
+
+differ from common names when test is set to true in turn or any non-zero value.
+
+The function will try to present a briefer form if any such form is available.
+
+So for instance, if I set both of these to true, you can see a brief form Windows ten.
+
+All right.
+
+The next function is called machine.
+
+Platform.
+
+Machine.
+
+It returns the generic name of the processor which runs your OS.
+
+A similar function is called processor.
+
+It returns the real name of the processor.
+
+For some processors, it will print the exact same information as machine.
+
+But as you can see in my case, the info is different.
+
+Next there is a function named system.
+
+And this function returns the generic operating system name.
+
+In my case it is Windows.
+
+And then there are two more functions that you need to know.
+
+These functions relate to the Python implementation itself.
+
+Python implementation returns the name of your Python implementation.
+
+The default value here that you should expect is C Python.
+
+C Python is the default and most widely used implementation of the Python language written in the C
+
+language.
+
+If you installed Anaconda the way I requested, I would be very much surprised if you had anything different
+
+than c python here in the output.
+
+Finally Python version tuple.
+
+Unlike all other functions presented in this video, this function does not return a string.
+
+Instead it returns a topple with three elements.
+
+The first element is the major part of the Python version.
+
+The second one is the minor part, and the last one is the patch.
+
+So in this case, my python version is 3.9.7.
+
+And that's it.
