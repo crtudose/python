@@ -216,7 +216,6 @@ keyboard and mice and others.
 All of the four layers cooperate so we can write Python programs.
 For example, when you want to get some user data, your code can invoke the input function.
 The Python environment accepts the order and adapted to meet the requirements of the local operating system.
-These can be different for Windows, Linux or Macintosh, but you do need to worry about it.
 The OS checks if the request from Python is valid and it uses the hardware in this case the keyboard
 to complete your request.
 The platform module allows us to access some basic information about the underlying layers the Python
@@ -225,49 +224,48 @@ environment, the operating system and the hardware.
 Let's look at the functions that you need to know for the examination.
 First of all, we'll import the module and now we'll start with platform.
 
+import platform
+print(platform.platform())
+output: Windows-10-10.0.17763-SP0
+
 This function returns a string that identifies the underlying platform.
-
 The input is intended to be human readable.
-
 As you can see here, the platform that I'm using is Windows ten with this specific version.
+The function actually takes two parameters that have some default values. That's why I didn't have to provide any arguments.
 
-The function actually takes two parameters that have some default values.
-
-That's why I didn't have to provide any arguments when alias is set to true or any non-zero value.
-
-The function may present alternative underlying names.
-
+When alias is set to true or any non-zero valu, the function may present alternative underlying names.
 This parameter will not do anything on certain platforms while on others it can show system names that
+differ from common names when terse is set to true in turn or any non-zero value, the function will try 
+to present a briefer form if any such form is available.
 
-differ from common names when test is set to true in turn or any non-zero value.
-
-The function will try to present a briefer form if any such form is available.
+platform.platform(aliased = False, terse = False)
 
 So for instance, if I set both of these to true, you can see a brief form Windows ten.
 
-All right.
+import platform
+print(platform.platform(True, True))
+output: Windows-10
 
 The next function is called machine.
 
-Platform.
-
-Machine.
+import platform
+print(platform.machine())
+output: AMD64
 
 It returns the generic name of the processor which runs your OS.
+A similar function is called processor. It returns the real name of the processor.
+For some processors, it will print the exact same information as machine. But as you can see in my case, the info is different.
 
-A similar function is called processor.
-
-It returns the real name of the processor.
-
-For some processors, it will print the exact same information as machine.
-
-But as you can see in my case, the info is different.
+import platform
+print(platform.processor())
+AMD64 Family 23 Model 49 Stepping 0, AuthenticAMD
 
 Next there is a function named system.
+And this function returns the generic operating system name. In my case it is Windows.
 
-And this function returns the generic operating system name.
-
-In my case it is Windows.
+import platform
+print(platform.system())
+output: Windows
 
 And then there are two more functions that you need to know.
 
