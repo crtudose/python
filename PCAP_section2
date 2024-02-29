@@ -204,47 +204,25 @@ PLATFORM MODULE
 The documentation describes it as access to underlying platforms identifying data.
 
 In other words, the platform module can tell you a little bit about your Python version, the operating
-
 system, and the hardware you're using.
-
-Take a look at the diagram.
-
-It shows the layers between your code and the hardware that your computer is using.
-
+Take a look at the diagram. It shows the layers between your code and the hardware that your computer is using.
 Your code is located at the very top one level below.
-
 There's the running environment of Python.
-
 The next layer is the operating system or OS for short.
-
 Python uses a lot of helpers from the operating system for things such as processing files or communicating
-
 with physical devices.
-
 At the very bottom, there's the hardware, the processor, the RAM, memory network interfaces, user
-
 keyboard and mice and others.
-
 All of the four layers cooperate so we can write Python programs.
-
 For example, when you want to get some user data, your code can invoke the input function.
-
-The Python environment accepts the order and adapted to meet the requirements of the local operating
-
-system.
-
+The Python environment accepts the order and adapted to meet the requirements of the local operating system.
 These can be different for Windows, Linux or Macintosh, but you do need to worry about it.
-
 The OS checks if the request from Python is valid and it uses the hardware in this case the keyboard
-
 to complete your request.
-
 The platform module allows us to access some basic information about the underlying layers the Python
-
 environment, the operating system and the hardware.
 
 Let's look at the functions that you need to know for the examination.
-
 First of all, we'll import the module and now we'll start with platform.
 
 This function returns a string that identifies the underlying platform.
