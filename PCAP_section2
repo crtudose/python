@@ -268,31 +268,21 @@ print(platform.system())
 output: Windows
 
 And then there are two more functions that you need to know.
-
 These functions relate to the Python implementation itself.
-
 Python implementation returns the name of your Python implementation.
 
-The default value here that you should expect is C Python.
+import platform
+print(platform.implementation())
+output: CPython
 
-C Python is the default and most widely used implementation of the Python language written in the C
+C Python is the default and most widely used implementation of the Python language written in the C language.
 
-language.
+Python version tuple.
+import platform
+print(platform.python_version_tuple())
+output: ('3', '9', '7')
 
-If you installed Anaconda the way I requested, I would be very much surprised if you had anything different
-
-than c python here in the output.
-
-Finally Python version tuple.
-
-Unlike all other functions presented in this video, this function does not return a string.
-
-Instead it returns a topple with three elements.
-
+Unlike all other functions, this function does not return a string. Instead it returns a tuple with three elements.
 The first element is the major part of the Python version.
-
 The second one is the minor part, and the last one is the patch.
-
 So in this case, my python version is 3.9.7.
-
-And that's it.
