@@ -436,6 +436,19 @@ def sum_elements(user_list):
     for el in user_list
         element_sum += el
     return element_sum
+
+def double_each_element(user_list):
+    global __usage_counter
+    __usage_counter += 1
+    return [element * 2 for element in user_list]
+
+def get_usage_counter():
+    global __usage_counter
+    return __usage_counter
+
+if __name__ == '__main__':
+    print('module executed independently, running tests...')
+    entry_list = [1,2,3,4,5]
 ------------------------------------
 
 The line at the top of the file is called a shebang.
