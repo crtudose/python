@@ -406,31 +406,16 @@ Naturally, we don't want to run these tests when the module is imported in anoth
 However, when the module is executed independently, then the tests are activated.
 Now let's talk about public and private variables.
 In many programming languages, you can specify whether a given variable is public or private.
-
 If it's public, then everybody can use it.
-
 If it's private, then usually only the creator of the variable can use it instead.
-
 This can be useful when the creator of a module has some internal variables that are necessary for the
-
 proper functioning of the module.
-
 But those variables may be very sensitive and the users of the module should never touch them.
-
 The bad news is that Python has no mechanism to hide variables from the users of a module.
+There is, however, a convention that most people follow - if you start a variable name with one or two underscores.
 
-There is, however, a convention that most people follow if you start a variable name with one or two
-
-underscores.
-
-Like this.
-
-Or like this.
-
+Like this - _my_private_ 
 It means that the users of a module should never modify the variable.
-
 Keep in mind, however, that this is just a convention.
-
 The users can technically do whatever they want with the variable, the underscore simply inform them
-
 that it's a bad idea.
