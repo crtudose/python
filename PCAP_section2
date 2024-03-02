@@ -389,39 +389,22 @@ main.py
 import own_module
 
 If name equals main, then print file executed directly else.
-
-Print file executed as a module.
-
 Save the file note we check the content of the variable named name and if it's main it means we are
-
 executing the file directly.
-
 If it's anything else, it means the files executed as a module.
 
-The own module is still imported from main at PY.
-
-So now if we try to run python main py, you will see file executed as a module.
-
-But if we change the invocation in the terminal window and we'll do python on module dot py you can
-
+So now if we try to run python main.py, you will see file executed as a module.
+But if we change the invocation in the terminal window and we'll do python own_module.py you can
 see file executed directory.
-
-That's because this time we don't use own module as a module imported in the main file.
-
+That's because this time we don't use own_module as a module imported in the main file.
 We use it directly and independently.
-
 In practice, many modules use the name variable to decide whether to run tests or not.
-
 Good modules don't only contain useful functions, they also contain some automated tests to verify
-
 whether the functions work correctly.
 
 Naturally, we don't want to run these tests when the module is imported in another file.
-
 However, when the module is executed independently, then the tests are activated.
-
 Now let's talk about public and private variables.
-
 In many programming languages, you can specify whether a given variable is public or private.
 
 If it's public, then everybody can use it.
