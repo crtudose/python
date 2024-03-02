@@ -314,3 +314,16 @@ import module
 
 module.py
 ---------
+
+
+PS Microsoft.PowerShell.Core\FileSystem::\\oro-vdiprof-01.luxoft.com\home$\CTudose\Downloads\python\__pycache__> ls
+    Directory:
+    \\oro-vdiprof-01.luxoft.com\home$\CTudose\Downloads\python\__pycache__
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         3/2/2024  12:34 PM            165 module.cpython-312.pyc
+>>>>>>> the content of this file is semicomplied code for the module and thanks to this process, the code
+is ready to be executed by python and a lot of checks required for pure source files can be skipped here
+
+PS Microsoft.PowerShell.Core\FileSystem::\\oro-vdiprof-01.luxoft.com\home$\CTudose\Downloads\python\__pycache__> & C:/Users/CTudose/AppData/Local/Programs/Python/Python312/python.exe -V
+Python 3.12.2
