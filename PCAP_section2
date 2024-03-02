@@ -369,25 +369,24 @@ How many times will you see 'Hello' printed to the output if you run main?
 Theoretically speaking, python should first show hello when you import module one because module1
 imports module2 and then python should show 'hello' for the second time when you import module2 directly.
 
-But fortunately Python remembers the modules that are imported, which means you will see.
-
-Hello printer to the output only once.
-
-Each module has a special name created for us by Python name.
-
+But fortunately Python remembers the modules that are imported, which means you will see 'Hello' printed 
+to the output only once.
+Each module has a special name created for us by Python - name.
+__name__ == name1 __name__ == name2
 Note that before and after the word name there are double underscores.
-
 Python sets the value of this variable for us and the value depends on how the file is run.
-
-When the given file is run directly, the name variable is set to main when a given file is imported
-
-as a module.
-
-Instead, the name variable is set to the module name that is it is set to the file's name without the
-
-PY extension.
+When the given file is run directly, the name variable is set to main when a given file is imported as a module.
+Instead, the name variable is set to the modules name that is set to the file's name without the PY extension.
 
 Let's see that in practice we'll write the following code in the module.
+own_module.py
+if __name__ == '__main__':
+    print('file executed directly')
+else:
+    print('file is executed as a module')
+
+main.py
+import own_module
 
 If name equals main, then print file executed directly else.
 
