@@ -327,3 +327,128 @@ is ready to be executed by python and a lot of checks required for pure source f
 
 PS Microsoft.PowerShell.Core\FileSystem::\\oro-vdiprof-01.luxoft.com\home$\CTudose\Downloads\python\__pycache__> & C:/Users/CTudose/AppData/Local/Programs/Python/Python312/python.exe -V
 Python 3.12.2
+
+main.py
+------
+import module
+
+module.py
+---------
+print('I am a module')
+
+PS Microsoft.PowerShell.Core\FileSystem::\\oro-vdiprof-01.luxoft.com\home$\CTudose\Downloads\python> & C:/Users/CTudose/AppData/Local/Programs/Python/Python312/python.exe //oro-vdiprof-01.luxoft.com/home$/CTudose/Downloads/python/module.py
+I am a module
+
+You can see that the print invocation from the module has been executed, even though the main file
+only includes it as an import.
+When a module is imported, its content is executed by Python.
+Automatically, Python reads whatever is inside the module line by line.
+If there are any print invocations, Python will execute them.
+If there are any variables or functions, Python will simply invoke them.
+Or if they are just definitions, Python will remember them so that you can invoke them in your code.
+This gives the module a chance to initialize some of its internal aspects.
+
+In practice, modules typically don't use functions like print to show anything to the output.
+If you import the math module, it's because you want to use some of the mathematical functions and
+variables in your applications, not because you want the module to print something to the output.
+Having a module print something usually means that you have no control over it.
+Once you import the module, the content is automatically executed.
+That's why most modules only contain function and variable definitions.
+This way, if you import the module, nothing will be shown to the output.
+But because Python will run through the code of the module, you will have access to all the functions
+and variables defined there.
+
+And one more important rule - each module is only initialized once.
+Even if you have a lot of files within your application and too many of them call a given module or
+they call themselves, Python will remember all the modules that have already been initialized.
+
+Take a look at the diagram.
+In this example, there is ModuleTwo that prints hello to the output.
+That module is imported into module1 and then both modules are imported into main.py.
+How many times will you see 'Hello' printed to the output if you run main?
+Theoretically speaking, python should first show hello when you import module one because module1
+imports module2 and then python should show 'hello' for the second time when you import module2 directly.
+
+But fortunately Python remembers the modules that are imported, which means you will see.
+
+Hello printer to the output only once.
+
+Each module has a special name created for us by Python name.
+
+Note that before and after the word name there are double underscores.
+
+Python sets the value of this variable for us and the value depends on how the file is run.
+
+When the given file is run directly, the name variable is set to main when a given file is imported
+
+as a module.
+
+Instead, the name variable is set to the module name that is it is set to the file's name without the
+
+PY extension.
+
+Let's see that in practice we'll write the following code in the module.
+
+If name equals main, then print file executed directly else.
+
+Print file executed as a module.
+
+Save the file note we check the content of the variable named name and if it's main it means we are
+
+executing the file directly.
+
+If it's anything else, it means the files executed as a module.
+
+The own module is still imported from main at PY.
+
+So now if we try to run python main py, you will see file executed as a module.
+
+But if we change the invocation in the terminal window and we'll do python on module dot py you can
+
+see file executed directory.
+
+That's because this time we don't use own module as a module imported in the main file.
+
+We use it directly and independently.
+
+In practice, many modules use the name variable to decide whether to run tests or not.
+
+Good modules don't only contain useful functions, they also contain some automated tests to verify
+
+whether the functions work correctly.
+
+Naturally, we don't want to run these tests when the module is imported in another file.
+
+However, when the module is executed independently, then the tests are activated.
+
+Now let's talk about public and private variables.
+
+In many programming languages, you can specify whether a given variable is public or private.
+
+If it's public, then everybody can use it.
+
+If it's private, then usually only the creator of the variable can use it instead.
+
+This can be useful when the creator of a module has some internal variables that are necessary for the
+
+proper functioning of the module.
+
+But those variables may be very sensitive and the users of the module should never touch them.
+
+The bad news is that Python has no mechanism to hide variables from the users of a module.
+
+There is, however, a convention that most people follow if you start a variable name with one or two
+
+underscores.
+
+Like this.
+
+Or like this.
+
+It means that the users of a module should never modify the variable.
+
+Keep in mind, however, that this is just a convention.
+
+The users can technically do whatever they want with the variable, the underscore simply inform them
+
+that it's a bad idea.
