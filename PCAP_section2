@@ -423,49 +423,45 @@ that it's a bad idea.
 PRACTICAL EXAMPLE OWNMODULE
 -------------------------------
 lists_utils.py
----------------
-#
+------------------------------------
+#!/usr/bin/env python3
+""" list_utils.py is a sample python module that exposes list utility functions
+
+__usage_counter = 0
+
+def sum_elements(user_list):
+    global __usage_counter
+    __usage_counter +=1
+    element_sum =0
+    for el in user_list
+        element_sum += el
+    return element_sum
+------------------------------------
 
 The line at the top of the file is called a shebang.
 It also has other names shebang, pound bang or hash coupling.
 However, in systems based on Unix, such as Mac, OS or Linux, this line instructs the operating system
-
 that it needs to use Python three to interpret the file.
-
 In many operating systems, this line is not required at all.
-
 However, there are some systems where this line is necessary for the module to work correctly, and
-
 because modules are typically written for broad audiences and we want them to be as universal as possible,
-
 it's a good idea to put this line at the top of your file.
 
 The next line is a special kind of string.
-
 In triple quotes, it may be a single line or multi line when placed somewhere near the top of a module.
-
 We call it a docstring.
-
 In other words, this is a brief description of what the file is.
-
 Many Python tools identify such dog strings automatically, so it's a good idea to put one in your module.
 
 Then we have a variable, starting with a double underscore.
-
 This convention means that the user should not modify the variable.
-
 Again, this is only a convention and the user is actually able to modify it.
-
 In our case, the variable is a counter that counts.
-
 How many times we have used one of the functions available in this module.
 
 Then we have three functions that are available for import.
-
 Some elements double each element and get usage counter.
-
 You are welcome to use these functions as many times as you need in your file when you import the module.
-
 And then at the very end we have some tests that verify.
 
 If the functions are correct, the test will only be invoked when we run the file independently.
