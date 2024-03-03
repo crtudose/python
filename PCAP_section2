@@ -685,25 +685,19 @@ project_modules
 We already have some directories in place and this is what Python treats as packages, as simple as that.
 this directory structure works as package structure for our Python project and now
 
-we can go to the top level and here create a new file named main packages dot py now in this file.
-
-Let's have a terminal window here for later.
-
-And now in this file, we will want to import some of the projects from the packages now because we
-
+We will want to import some of the projects from the packages now because we
 actually want to use something from the packages.
 
-Let's open up project modules, communication comm py.
-
 And here we will just write a very simple function like fun
-
 that will only print something to the output.
 
-Don't forget to save the file.
+com.py
+------------
+def my_fun():
+    print('a')
 
-And now let's go back to our main packages file.
-
-And here we want to use the function from the command py module.
+And now let's go back to our main-packages.py.
+And here we want to use the function from the com.py module.
 
 So this function is located in the PY module, which is located in the package project modules and then
 
