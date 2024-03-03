@@ -560,3 +560,148 @@ quotes = ['Being happy never goes out of style.',
 'The time is always right to do what is right.']
 print(strings_utils.halve_strings(quotes))
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Module locations - sys.path
+------------------------------
+So far we could see two types of modules imported into our Python files.
+Modules from the standard Python library and our own custom modules.
+
+In both cases, we only had to write a single line such as import, followed by the name of the module.
+
+Without the file extension, we did not need to specify where Python could actually find the module.
+
+We know that the custom modules created by ourselves could be found in the same directory as the main
+
+file.
+
+But how about the standard library?
+
+How did Python know where to look for the random module, for example?
+
+In fact, there's a special variable in Python which stores a list with all the directories that Python
+
+should check in order to find a module that we request with the import keyword.
+
+We can check that variable by importing the CIS module and accessing the path variable.
+
+Take a look here.
+
+I have a new file opened up in Jupyter Lab called Modules Path py and I'll do the following.
+
+Import CIS and now print cis dot path.
+
+Save the file.
+
+In the terminal window.
+
+Navigate to the specific folder and now run python modules.
+
+Path.
+
+Take a look at the output.
+
+Python prints a list of all locations that it checks for.
+
+Modules such as this one.
+
+Such as this one or such as this one.
+
+There are a lot of places, as you can see in this specific list, the locations are checked in the
+
+same order as they appear in the list.
+
+As soon as Python finds a given module, it imports it and doesn't check the rest of the list.
+
+This means that if you have two versions of the same module in two different locations from the list,
+
+Python will simply take the first one that it finds and will ignore the other one completely.
+
+If Python can't find the module in any of the specified locations.
+
+The input fails and we can see an error in the output.
+
+Interestingly, we can add new locations to the path variable.
+
+You could use that functionality if you wanted to place your modules into a non-standard folder and
+
+still ask Python to look for the modules there.
+
+Let's see that in practice.
+
+So let's create a new folder here named Secret that will navigate to the folder and inside it will create
+
+an empty file named Secret Module dot.
+
+By now we would like to import this module in the folder above here.
+
+So now in this file we'll go into simply to import secret module, save the file and try to run it now
+
+and you can see an error.
+
+Python can't find the module.
+
+That's because the folder secret is not part of the path list.
+
+Let's change that.
+
+We'll do the following.
+
+First above we'll do import cis and then cis path append secret and only, then import secret module.
+
+Let's try.
+
+Let's save the file and let's try to run it now.
+
+And you can see everything works fine because path is a standard python list.
+
+We can use standard python methods on the list such as append or insert.
+
+Append adds an element at the end of the list.
+
+You can also use insert to add the new element at any place in the list that you want.
+
+And once we add secret as a location to check, you can see that everything works fine.
+
+Note that we first need to import the CIS module and modify the path variable, and only then can we
+
+import the secret module.
+
+If you try to write import cis comma secret module on line one, you will get an error because on this
+
+line the secret folder is not added to the path variable yet.
+
+Additionally, you can add both relative and absolute paths and absolute path is the full address of
+
+the folder, starting from the hard drive label.
+
+Such as?
+
+I don't know.
+
+Something like this.
+
+A relative path in turn is a path relative to the current folder with the main file.
+
+In this case, the secret folder is just inside the same directory.
+
+So we just need to specify the directory name like here and this becomes a relative path.
+
+Note that we use double slashes here.
+
+That's because a slash itself is a special character in Python, so you need to escape it with an additional
+
+slash if you want to use it.
+
+Lastly, if you want to have a relative path that goes up in the folder hierarchy, keep in mind that
+
+the command go one folder up in Python is represented by two dots.
+
+So for example, if you're now here in modules on module and you would like to import something from
+
+the one folder which is one level above, you would have to have an address for one.
+
+Something like this.
+
+Two dots and then I dunno, secret if the folder was located there for example.
+
+So this would go one level up and then look for a folder named Secret.
