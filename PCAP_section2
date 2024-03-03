@@ -61,7 +61,7 @@ import math
 
 For the PCP examination, though, you need to know just six functions from these.
 We can start with three similar functions used to round numbers.
-These are ceil(), floor() and trunk().
+These are ceil(), floor() and trunc().
 What's the difference between them?
 
 Let's analyze a simple example.
@@ -73,7 +73,7 @@ to the nearest integer, never less than the number itself. (3.1 -> 4 ; -5.6 -> -
 Floor function does the opposite. It rounds the number downwards to the nearest integer. (3.1 -> 3 ; -5.6 -> -6)
 Returns three because three is not less than 3.0.
 
-trunk() is the easiest function of the three.
+trunc() is the easiest function of the three.
 This function is simply removes the decimal part and returns the integer from the number.
 And you can see that in each case we simply get the number before the decimal part. (3.1 -> 3 ; -5.6 -> -5)
 
