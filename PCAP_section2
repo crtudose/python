@@ -691,7 +691,7 @@ actually want to use something from the packages.
 And here we will just write a very simple function like fun
 that will only print something to the output.
 
-com.py
+project_modules/communication/com.py
 ------------
 def my_fun():
     print('a')
@@ -700,41 +700,24 @@ And now let's go back to our main-packages.py.
 And here we want to use the function from the com.py module.
 
 So this function is located in the PY module, which is located in the package project modules and then
-
 in the sub package communication.
 
-So in order to import that, we need to use the following import project modules.
+main-packages.py
+---------------
+from project_modules.communication.com import my_fun
+my_fun()
 
-So the top package here followed by a dot, then communication.
+So in order to import that, we need to use import project_modules. The top package/communication.com  
+which is the name of the module itself.
+This instructs python to look into the project-modules package, then into the communication subpackage
+and then to import the com module.
+Now to use the function we have just defined, we need to provide the full package path again which is the name
+of the function that we defined here in this module and now in this folder where the main packages file is located.
 
-And then.
-
-Com which is the name of the module itself.
-
-This instructs python to look into the project modules package, then into the communication sub package
-
-and then to import the comm module.
-
-Now to use the function we have just defined, we need to provide the full package path again.
-
-So I'll just copy paste it here.
-
-And to my fun, which is the name of the function that we defined here in this module and now in this
-
-folder.
-
-Where the main packages file is located.
-
-We want to do python space main packages dot by oops.
-
-I'm actually not in the right folder.
-
-I need to go into modules code module and execute python main packages dot py again.
-
+# python main-packages.py
+output: a
 You can see a in the output, which is exactly the function defined here.
-
 Now, if you don't want to write such a long name for the function with all the packages and the module
-
 name, you can use a different kind of input from project modules.
 
 Communication dot com.
