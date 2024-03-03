@@ -682,21 +682,8 @@ project_modules
         event.py
         queue.py
 
-We already have some directories in place and this is what Python treats as packages, as simple as
-
-that.
-
-So inside the project modules there are three sub packages, communication core and messaging.
-
-Inside the communication package there is a module named com pi.
-
-Inside the package core there is a module named util dot py and another sub package named additional
-
-with security dot py inside.
-
-And at the very end we've got messaging with two modules event py and q.
-
-PY All right, so this directory structure works as package structure for our Python project and now
+We already have some directories in place and this is what Python treats as packages, as simple as that.
+this directory structure works as package structure for our Python project and now
 
 we can go to the top level and here create a new file named main packages dot py now in this file.
 
