@@ -485,75 +485,38 @@ You are welcome to use these functions as many times as you need in your file wh
 And then at the very end we have some tests that verify.
 
 If the functions are correct, the test will only be invoked when we run the file independently.
-
 To do that, we use the underscore name, underscore variable and check if its value is main.
-
 If you input the file as a module, they will not be executed.
-
 Okay, let's see how the module works in practice.
-
 First, we'll run it independently.
 
-So in the terminal window, I'm now in this particular folder where the file is located and I'm going
-
-to do Python space lists.
-
-Utils by.
+# python lists_utils.py
+output: Module executed independently, running tests... 
+Sum list OK
+Doubled list OK
+Usage counter OK
 
 You can see that the tests were executed after the file was executed independently.
-
 And now let's see how we can import the file as a module.
+We'll create a new file and this folder named main_lists.py
 
-We'll create a new file and this folder named Main Lists.
+main_lists.py
+---------------
+import lists_utils
+my_list == [23, 21, 2, 5, 72]
+print(list_utils.sum_elements(my_list))
 
-I am typically using something starting with Main for these files, but this is just a convention.
-
-You can use any file name that you want.
-
-Really?
-
-And now in this new file, let's put it here.
-
-We'll do import list.
-
-Utils save the file.
-
-And now let's try to run this particular file.
-
-So we'll do python space.
-
-Main list start by and you can see that there are no tests run now.
+# python main_lists.py
+output: 
 
 Python detected that the file is imported as a module and so the tests were simply skipped.
-
-You can of course use the functions now the way you want.
-
-For example, let's say that we'll create a very random list with some numbers.
-
-Something like this.
-
-And now we want to print the list after we do lists.
-
-Utils.
-
-Dot.
-
-And we'll use, let's say.
-
-This function some elements and provide the list as the argument so as the name of the function suggests,
-
-it should return the total amount after adding all the elements in the list.
-
+We want to print the list after we do lists.
+We created a random list and want to use sum_elements function
+the function should return the total amount after adding all the elements in the list.
 To check that, we'll save the file and rerun it now.
+
+# python main_lists.py
+output: 123
 
 And you can see the sum of all elements in the list.
 
-Excellent.
-
-Everything works fine.
-
-And that's basically how you use modules when you create them yourself.
-
-In Python, you can now save all the files and clothes.
-
-Jupyter Lab.
