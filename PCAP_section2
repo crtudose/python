@@ -704,8 +704,8 @@ in the sub package communication.
 
 main-packages.py
 ---------------
-from project_modules.communication.com import my_fun
-my_fun()
+from project_modules.communication.com 
+project_modules.communication.com.my_fun()
 
 So in order to import that, we need to use import project_modules. The top package/communication.com  
 which is the name of the module itself.
@@ -720,114 +720,48 @@ You can see a in the output, which is exactly the function defined here.
 Now, if you don't want to write such a long name for the function with all the packages and the module
 name, you can use a different kind of input from project modules.
 
-Communication dot com.
+main-packages.py
+---------------
+from project_modules.communication.com import my_fun
+my_fun()
 
-Import my fun.
-
-Without the brackets.
-
-And now you can invoke the function like this.
-
-Let's run it again.
-
-Wax as well.
-
-One important thing you need to remember is that you must always provide specific modules in the import
-
-statements.
+One important thing you need to remember is that you must always provide specific modules in the import statements.
 
 You could be tempted to write something like this.
-
-Let me comment this out for a second.
-
-Import projects.
-
-Project modules.
-
-And you could hope that this will automatically import all the modules that can be found starting in
-
-this folder.
-
+import project_modules
+And you could hope that this will automatically import all the modules that can be found starting in this folder.
 Unfortunately, Python doesn't work like this.
-
-You can technically import the package itself like this without specifying any modules, but this has
-
-no practical usage.
-
+You can technically import the package itself like this without specifying any modules, but this has no practical usage.
 The modules will not be imported.
 
 Let's make an experiment.
-
-As you can see.
-
-Attribute Error.
-
-Module project modules has no attribute communication.
+# python main-packages.py
+AttributeError = modules project-module has no attribute communication
 
 So you can see that this statement actually instructs Python to import that package itself, not the
-
 modules inside the package.
 
-All right.
-
-Let's go back to the previous version now.
-
-Save the file.
-
-Run it again.
-
-Also without the slash.
-
-And that works like a charm.
-
-Finally, let's talk about a file named in it, Dot Pi.
-
+Finally, let's talk about a file named __init__.py
 It's a very special kind of file that you can add in a package directory when you create a package.
+So you could do something like this - create the file in project_modules directory.
 
-So you could do something like this
-
-in it.
-
-Dot by and here.
-
-You could write some statements.
+__init__.py
+------------
 
 This file can be used to initialize the package if this is necessary.
-
 This file is executed by Python.
-
-When any of the packages modules is or are imported, the file can also be empty and then Python will
-
-simply ignore it.
-
-In recent versions of Python, the init py file has become optional.
-
+When any of the packages modules is or are imported, the file can also be empty and then Python will simply ignore it.
+In recent versions of Python, the __init__.py file has become optional.
 Previously it had to be present for every package without the file.
 
 Python did not treat a given folder as a package.
-
-That's why in some older courses staging python you will see a statement that the init py file must
-
+That's why in some older courses staging python you will see a statement that the __init__.py file must
 be present in the package directory or else python will not treat a given directory as a package.
-
 However, this is no longer true.
-
 Starting from Python 3.3, you don't need this file to create a package.
 
-All you need is to create a directory in your operating system and Python will automatically treat that
-
-as a package.
-
+All you need is to create a directory in your operating system and Python will automatically treat that as a package.
 But you can of course still use any pile files if you need some sort of initialization for your modules.
-
-All right.
-
-And that's actually it.
-
 As you can see, it's actually pretty simple to use packages in Python.
-
 You just need to create directories.
 
-This finishes up the series about modules and packages.
-
-In this course we will no longer need Jupyter Lab for now so you can save it and return to Jupyter Notebook
