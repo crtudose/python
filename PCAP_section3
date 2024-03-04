@@ -1,1 +1,223 @@
 INTERNAL STRING REPRESENTATION
+--------------------
+You already know that there are various variable types in Python, such as integers or strings.
+You know that a string is a text value and that they are introduced with either single or double quotes.
+You need to find out how string values are stored internally in Python.
+
+Deep down, computers store characters as numbers.
+
+Every character has a unique number, and every unique number corresponds to a unique character.
+
+There are some characters that may seem obvious, such as small literary or capital literary, but there
+
+are also some other characters which are less obvious.
+
+There is a dedicated number for a space that we usually use between words in a sentence and another
+
+number for a character that indicates the end of a line something like an enter character.
+
+This representation of characters as numbers is often called character encoding.
+
+Of course, every computer manufacturer could come up with their own numbers for all the characters,
+
+but that would be very complicated.
+
+In practice, there are some standard encoding that almost all computers in operating systems have in
+
+common.
+
+One of the most widely used in coatings in the world is called ASCII, which is short for American Standard
+
+Code for information exchange.
+
+This code provides space for 256 different characters, of which the first half, the first 128 characters
+
+are the most significant ones.
+
+Take a look at the asking coding table.
+
+Now, for instance, you can see that a small letter has a code of 97.
+
+A big letter A has a different number, 65.
+
+A plus sign is assigned to the number 43, and a space character can be found under 32.
+
+These numbers represent the concrete characters are called code points.
+
+And of course, internally, deep down in your computer, those integer numbers are translated into
+
+bits.
+
+Long sequences of zeros and ones.
+
+ASCII encoding allows you to represent 256 characters to 156 character possibilities translates to eight
+
+bits or one byte.
+
+I know the binary system always looks a bit scary, but don't worry, just keep in mind that one ASCII
+
+character takes eight bits, or in other words, one bite.
+
+All right, this ASCII table looks very sweet, but there is a problem.
+
+It's only covers the basic Latin alphabet that we mostly use in English.
+
+How about special characters that you will find in other languages?
+
+How about the Spanish sound, the German SW Chavez or the Polish sound?
+
+How about languages that use completely different characters like Russian or Japanese?
+
+I told you that the ASCII encoding has enough space for 256 characters and I have only shown you the
+
+first half.
+
+But could we fit all the remaining special characters in the other half?
+
+Definitely not.
+
+For instance, the Japanese language makes use of thousands of kanji characters, so it would be impossible
+
+to keep them all within the ASCII bounds.
+
+It's not enough to keep all the characters for all the languages within ASCII, but in many cases ASCII
+
+could be enough for one particular language or for a group of similar languages that share similar characters.
+
+In this case, we use the concept of a code page.
+
+A code page is a standard for using the remaining 128 code points for ASCII to store specific national
+
+characters.
+
+All of the code pages share the first 128 code points that you have seen already.
+
+You will find different code pages for languages from Western Europe, Eastern Europe, Cyrillic or
+
+Greek.
+
+This means that the same codes point or in other words, the same number in the ASCII table could represent
+
+different characters depending on the code page.
+
+For instance, the ISO IEC 885992 code page for languages such as German, Polish or Czech.
+
+In these languages, in this code page, the code point 223 means as sharp as the character used in
+
+German.
+
+But the same codes point to 123 in ISO IEC 885954.
+
+Cyrillic is the letter per.
+
+In this particular alphabet, all of this means that if you want to know the character behind a given
+
+number, behind a given code point, and that code point is higher than 128, you need to know which
+
+code page we are talking about.
+
+The concept of finding a solution to the problem with multiple alphabets for multiple languages is known
+
+as I 18, and it is short for internationalization.
+
+Internationalization starts with IE is followed by 18 characters and finishes with n.
+
+That's how the shortcut I 18 and was created.
+
+The code pages for different alphabets in ASCII helped solve the problem of ising and for some time,
+
+but it was actually a pain in the -- to always remember about the proper code page.
+
+Chances are that you have seen that somewhere already.
+
+Maybe you've seen a text file that used the wrong encoding.
+
+Maybe you had that problem with the subtitles to your favorite film.
+
+The end result is usually that many characters are substituted with ones from another code page and
+
+they look funny.
+
+At some point, computer scientists decided it was time to find a better, more universal encoding.
+
+This universal encoding is called Unicode.
+
+Unicode doesn't use code pages, so there is no choosing between specific encoding for specific languages.
+
+Each character has its own unique number, and Unicode can store more than a million different code
+
+points.
+
+The first 128 code points in Unicode are identical with ASCII, and the next 128 code points are identical
+
+with the code page designed for Western languages.
+
+But Unicode is actually just a standard.
+
+It doesn't explain how to code or store all the characters in the memory of your computer.
+
+Unicode only lists all the available characters, and each character can be placed in a plane.
+
+A plane is a group of similar characters.
+
+There are 17 planes in total.
+
+For instance, the first plane is the so called basic multilingual plane.
+
+Plane two in turn is the supplementary geographic plane for languages such as Japanese or Korean.
+
+There is more than one technique to actually implement Unicode and specific computers.
+
+One of the most widely known standards is UX for u, c.
+
+S is short for universal character set in UX for each character uses 32 bits or four bytes to store
+
+a character.
+
+The problem with UX four, however, is that it takes a lot of space.
+
+You need as many as 32 bits to keep a single character.
+
+If you compare that to eight bits in ASCII.
+
+You will quickly see that your files grow in size four times.
+
+Fortunately, there are other forms of encoding Unicode.
+
+One of them is called UTF eight.
+
+It's a name you may have already come across somewhere.
+
+The good thing about UTF eight is that it only uses as many bits for each character as are really needed.
+
+All standard ASCII characters occupies exactly eight bits, just like in the ASCII format.
+
+Non Latin characters from other languages like Polish or Spanish occupy 16 bits and the characters used
+
+in China, Japan and Korea occupy 24 bits.
+
+Python fully supports UTF eight.
+
+You can use UTF eight characters to name your variables.
+
+In practice, this means that your variables could be written in English, Spanish, or even Japanese
+
+characters.
+
+And Python will do just fine.
+
+Although keep in mind that we always try to use English names in programming so that others could understand
+
+your code.
+
+You can also use all UTF eight characters during input and output.
+
+If you ask a user to provide their name using the input function and they provide something in Japanese
+
+characters, Python will take care of that without any problems.
+
+All right.
+
+That was a short introduction to how strings are represented internally.
+
+Now that we know the theory in the next video, we're going to dive deep into the code.
