@@ -46,114 +46,57 @@ In this case, we use the concept of a code page.
 A code page is a standard for using the remaining 128 code points for ASCII to store specific national characters.
 
 All of the code pages share the first 128 code points that you have seen already.
-
-You will find different code pages for languages from Western Europe, Eastern Europe, Cyrillic or
-
-Greek.
-
+You will find different code pages for languages from Western Europe, Eastern Europe, Cyrillic or Greek.
 This means that the same codes point or in other words, the same number in the ASCII table could represent
-
 different characters depending on the code page.
-
 For instance, the ISO IEC 885992 code page for languages such as German, Polish or Czech.
-
-In these languages, in this code page, the code point 223 means as sharp as the character used in
-
-German.
-
-But the same codes point to 123 in ISO IEC 885954.
-
-Cyrillic is the letter per.
-
+In these languages, in this code page, the code point 223 means as sharp as the character used in German.
+But the same codes point to 123 in ISO IEC 885954. Cyrillic is the letter per.
 In this particular alphabet, all of this means that if you want to know the character behind a given
-
 number, behind a given code point, and that code point is higher than 128, you need to know which
-
 code page we are talking about.
 
 The concept of finding a solution to the problem with multiple alphabets for multiple languages is known
-
-as I 18, and it is short for internationalization.
-
+as I18n, and it is short for internationalization.
 Internationalization starts with IE is followed by 18 characters and finishes with n.
-
-That's how the shortcut I 18 and was created.
-
+That's how the shortcut I18n and was created.
 The code pages for different alphabets in ASCII helped solve the problem of ising and for some time,
-
-but it was actually a pain in the -- to always remember about the proper code page.
-
+but it was actually a pain to always remember about the proper code page.
 Chances are that you have seen that somewhere already.
-
 Maybe you've seen a text file that used the wrong encoding.
-
 Maybe you had that problem with the subtitles to your favorite film.
-
-The end result is usually that many characters are substituted with ones from another code page and
-
-they look funny.
+The end result is usually that many characters are substituted with ones from another code page and they look funny.
 
 At some point, computer scientists decided it was time to find a better, more universal encoding.
-
 This universal encoding is called Unicode.
-
 Unicode doesn't use code pages, so there is no choosing between specific encoding for specific languages.
-
-Each character has its own unique number, and Unicode can store more than a million different code
-
-points.
-
+Each character has its own unique number, and Unicode can store more than a million different code points.
 The first 128 code points in Unicode are identical with ASCII, and the next 128 code points are identical
-
 with the code page designed for Western languages.
-
 But Unicode is actually just a standard.
 
 It doesn't explain how to code or store all the characters in the memory of your computer.
-
 Unicode only lists all the available characters, and each character can be placed in a plane.
-
-A plane is a group of similar characters.
-
-There are 17 planes in total.
-
+A plane is a group of similar characters. There are 17 planes in total.
 For instance, the first plane is the so called basic multilingual plane.
-
 Plane two in turn is the supplementary geographic plane for languages such as Japanese or Korean.
 
 There is more than one technique to actually implement Unicode and specific computers.
-
-One of the most widely known standards is UX for u, c.
-
-S is short for universal character set in UX for each character uses 32 bits or four bytes to store
-
-a character.
-
-The problem with UX four, however, is that it takes a lot of space.
-
+One of the most widely known standards is UCS4
+S is short for universal character set in UX for each character uses 32 bits or four bytes to store a character.
+The problem with UCS4, however, is that it takes a lot of space.
 You need as many as 32 bits to keep a single character.
-
-If you compare that to eight bits in ASCII.
-
-You will quickly see that your files grow in size four times.
-
+If you compare that to eight bits in ASCII. You will quickly see that your files grow in size four times.
 Fortunately, there are other forms of encoding Unicode.
 
-One of them is called UTF eight.
-
+One of them is called UTF-8.
 It's a name you may have already come across somewhere.
-
-The good thing about UTF eight is that it only uses as many bits for each character as are really needed.
-
+The good thing about UTF-8 is that it only uses as many bits for each character as are really needed.
 All standard ASCII characters occupies exactly eight bits, just like in the ASCII format.
-
 Non Latin characters from other languages like Polish or Spanish occupy 16 bits and the characters used
-
 in China, Japan and Korea occupy 24 bits.
-
-Python fully supports UTF eight.
-
-You can use UTF eight characters to name your variables.
+Python fully supports UTF-8.
+You can use UTF-8 characters to name your variables.
 
 In practice, this means that your variables could be written in English, Spanish, or even Japanese
 
