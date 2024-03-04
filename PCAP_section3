@@ -104,3 +104,180 @@ your code.
 You can also use all UTF-8 characters during input and output.
 If you ask a user to provide their name using the input function and they provide something in Japanese
 characters, Python will take care of that without any problems.
+
+STRING OPERATIONS
+----------------
+Keep in mind that python strings are immutable sequences.
+It means that you can, for example, use the length function to get the number of characters in a string.
+If you have an empty string, its length will be zero.
+You can also use brackets with an index to access any given character in a string.
+Remember that indexes start at zero.
+
+# len('hi there!') #output 9
+# len('') # output 0 
+# print('hi there!'[1]) # output i
+
+You can also use slicing to get a substring, for example.
+# print('hi there!'[1:]) # output: i there! 
+# get all the characters starting a character with index one.
+
+# print('hi there!'[:5]) # output: i there! 
+We can do something like this to get all the characters until the character with Index five exclusive.
+
+# print('hi there!'[3:6]) # output: i there! 
+Or you can do 3 to 6 and then you will get characters from the character with index three inclusive
+until index six exclusive.
+
+Keep in mind that certain characters are special characters and that you need to put a backslash before them.
+One of them is an apostrophe.nSo if I want to print, I'm Adrian.
+I will have to do \ before and now it works fine. print('I\'m Adrian')
+Keep in mind that the escape character is not included in the string length.
+It is not encoded as a character in the string internally.
+It's just a piece of info for Python to know that the character coming after the backslash is a special one.
+
+Remember how we talked about ASCII and Unicode encoding?
+We mentioned that each character has a certain number assigned to it, also known as a code point to
+get to know the code point for a given character.
+You can use the Ord() function.
+This function can only accept a one character string.
+If you try to provide anything else, you'll get an error.
+
+# ord('a')
+output: 97
+# ord('A') 
+output: 65
+
+A reverse function is chr()
+If you provide a number as its argument, you will find the character behind it.
+# chr(65)
+output: 'A'
+
+A python allows you to use multi-line strings too, but you need to be careful.
+
+The syntax is a bit different.
+
+So if you tried this,
+
+this will actually cause an error for multi-line strings.
+
+You need to start and end the string with triple quotes.
+
+Like this, and everything works fine.
+
+Now, let's see how many characters there are in this string.
+
+Is this the way you expect it?
+
+13.
+
+You can see that there are six characters on the first line, including a space between the words.
+
+There are another six characters on the second line.
+
+This gives 12, but Python shows 13.
+
+How is that possible?
+
+The answer is an invisible character between line one and two, which instructs Python that a new line
+
+should be introduced without the special character.
+
+Python would simply interpret this string as line one, line two with no spaces between them.
+
+The special character is called Line Feet and it is frequently expressed as backslash, and this character
+
+is included in the length of the string and has a length of one.
+
+Strings can also be concatenated or in other words, joint with the plus sign.
+
+For example, a plus PBB gives a new string and they can also be multiplied repeated multiple times
+
+using the asterisk sign and an integer two times.
+
+C CC gives six letters.
+
+C Normally the plus sign is used to add numbers and the asterisk sign is used to multiply them with
+
+strings.
+
+As you can see, there are used differentially this phenomenon where the same plus operator can be used
+
+for different kinds of data to produce different results is called operator overloading.
+
+We say that the plus sign is overloaded so that it can be used with strings to join them together into
+
+a bigger string.
+
+Note that in the case of numbers, the order of numbers doesn't matter.
+
+So two plus three is the same as three plus two.
+
+That gives the same result.
+
+However, the order starts to matter when the operator is overloaded to work with strings.
+
+So a plus b-bbee, as you can see here, is this string.
+
+But if you try to reverse the elements like this, you get a different result.
+
+If the order doesn't matter, we can say that the operator is commutative.
+
+If the order is important, the operator is not commutative.
+
+You can also iterate over a string.
+
+For example, for car in.
+
+Let's say hello from the world of python.
+
+Okay.
+
+We will print the car and finish it with a dash.
+
+Like this.
+
+Keep in mind that python strings are immutable.
+
+This means that once you create a given string, you can't change it.
+
+You can only replace it with a new one.
+
+For example, you can't use the DL keyword to delete a character from a string.
+
+So let's say we have a string with an obvious typo at the beginning and we would like to get rid of
+
+it using the DEL operator.
+
+But this unfortunately doesn't work.
+
+You can't use insert or append either, so there is no way to add a new character into a string either.
+
+Now let's try some less obvious examples.
+
+For instance, the main function looks for the smallest element in the sequence.
+
+How will it work with a string?
+
+I have an example here and now.
+
+If we run the code, you can see the letter a y.
+
+That's because if we convert all the characters into numbers according to the ASCII encoding, the letter
+
+A will have the lowest number.
+
+Note that if we add any space into the string.
+
+Such as here.
+
+You will get a space printed to the output.
+
+And that's because a space has a lower number than any letter from the English alphabet.
+
+Consequently, the max function fights the character with the highest code point.
+
+So if we change to max, you can see w All right.
+
+There was a short recap of basic string operations and the next videos will dive deeper into strings
+
+and start searching them, joining them, splitting them and comparing them.
