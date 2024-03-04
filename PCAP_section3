@@ -95,27 +95,12 @@ The good thing about UTF-8 is that it only uses as many bits for each character 
 All standard ASCII characters occupies exactly eight bits, just like in the ASCII format.
 Non Latin characters from other languages like Polish or Spanish occupy 16 bits and the characters used
 in China, Japan and Korea occupy 24 bits.
-Python fully supports UTF-8.
-You can use UTF-8 characters to name your variables.
+Python fully supports UTF-8.nYou can use UTF-8 characters to name your variables.
 
-In practice, this means that your variables could be written in English, Spanish, or even Japanese
-
-characters.
-
+In practice, this means that your variables could be written in English, Spanish, or even Japanese characters.
 And Python will do just fine.
-
 Although keep in mind that we always try to use English names in programming so that others could understand
-
 your code.
-
-You can also use all UTF eight characters during input and output.
-
+You can also use all UTF-8 characters during input and output.
 If you ask a user to provide their name using the input function and they provide something in Japanese
-
 characters, Python will take care of that without any problems.
-
-All right.
-
-That was a short introduction to how strings are represented internally.
-
-Now that we know the theory in the next video, we're going to dive deep into the code.
