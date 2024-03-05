@@ -286,18 +286,11 @@ It works the same way as find, but it starts looking for the given substring fro
 not from the beginning.
 
 If there is zero or just one place in the string where the given substring occurs.
-
-This function will work the same way as find.
-
-But if the given phrase is repeated more than once, it will return a different index than find.
-
-And just like with find, you can use a version with one two of three arguments.
-
+This function will work the same way as find().
+But if the given phrase is repeated more than once, it will return a different index than find().
+And just like with find(), you can use a version with one two of three arguments.
 The second and third arguments will indicate the beginning and the end of the place in the string where
-
 the occurrence should be found.
-
-Now is a good time for you to stop the video and experiment a bit with both find and ah, find.
 
 Try to invoke something like this where we have the words work in a string repeated multiple times and
 
