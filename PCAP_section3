@@ -281,10 +281,8 @@ stop at character 15 exclusive.
 my_text = 'This is my sample string'
 my_text.find('is', 10, 15)
 
-There is also a function named R find which is short for right find.
-
+There is also a function named rfind() which is short for right find.
 It works the same way as find, but it starts looking for the given substring from the end of the string,
-
 not from the beginning.
 
 If there is zero or just one place in the string where the given substring occurs.
