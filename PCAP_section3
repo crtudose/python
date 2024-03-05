@@ -269,17 +269,17 @@ Find also has a two argument and a three argument version.
 You can use them to limit the range of characters to check in the string.
 
 my_text = 'This is my sample string'
-my_text.find('is')
+my_text.find('is', 10)
 
 Starting at index ten, this version will start looking for the substring from character with index
-
 ten inclusive until the end of the string.
 
 And a third option with three arguments.
-
 Just three arguments version will start looking for the substring and character ten inclusive and will
-
 stop at character 15 exclusive.
+
+my_text = 'This is my sample string'
+my_text.find('is', 10, 15)
 
 There is also a function named R find which is short for right find.
 
