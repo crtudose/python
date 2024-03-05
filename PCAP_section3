@@ -230,3 +230,141 @@ Consequently, the max function finds the character with the highest code point.
 max('ilovetravellingaroundtheworld')
 output: 'w'
 
+Searching inside strings
+--------------------
+First, there's an index function which returns the index of the first occurrence of the given value.
+I have a string here and now if we run the code, you can see number seven in the output.
+# 'ilovetravellingaroundtheworld'.index('a')
+output: 7
+- this function returns the index of the first letter A in the string.
+
+Even if there are more letters A in the string, a similar function to index is called find().
+Just like index(), find() looks for a given character or substring and returns the index of its first occurrence.
+However, there are two differences.
+First of all, it's safer to use.
+Index() raises an error if a given value can't be found in the string.
+In turn, find() returns -1 in such cases.
+
+Second of all, you can use index() with various types of sequences like strings or lists, but find() only
+works with strings.
+Here I have a string prepared and now I'm going to do print my text index of is.
+
+my_text = 'This is my sample string'
+print(my_text.index('is'))
+print(my_text.find('is'))
+
+In this case, both methods behave in the same way.
+Let's look for something else which is not there.
+
+my_text = 'This is my sample string'
+print(my_text.index('are'))  # returns ValueError subsctring not found
+print(my_text.find('are'))
+
+my_text = 'This is my sample string'
+#print(my_text.index('are')) 
+print(my_text.find('are'))
+output: -1
+
+Find also has a two argument and a three argument version.
+You can use them to limit the range of characters to check in the string.
+
+my_text = 'This is my sample string'
+my_text.find('is')
+
+Starting at index ten, this version will start looking for the substring from character with index
+
+ten inclusive until the end of the string.
+
+And a third option with three arguments.
+
+Just three arguments version will start looking for the substring and character ten inclusive and will
+
+stop at character 15 exclusive.
+
+There is also a function named R find which is short for right find.
+
+It works the same way as find, but it starts looking for the given substring from the end of the string,
+
+not from the beginning.
+
+If there is zero or just one place in the string where the given substring occurs.
+
+This function will work the same way as find.
+
+But if the given phrase is repeated more than once, it will return a different index than find.
+
+And just like with find, you can use a version with one two of three arguments.
+
+The second and third arguments will indicate the beginning and the end of the place in the string where
+
+the occurrence should be found.
+
+Now is a good time for you to stop the video and experiment a bit with both find and ah, find.
+
+Try to invoke something like this where we have the words work in a string repeated multiple times and
+
+then you try with both find and ah, find.
+
+And you try that with the two arguments and three argument versions.
+
+Make sure that you understand all of the invocations.
+
+If you have a problem with one of them, just use the courses Q&A section to ask and I'll be happy to
+
+help.
+
+And also there are a lot of is something methods for strings for example is al num.
+
+This method will check if the string contains only alphanumeric characters.
+
+In other words, it checks.
+
+If the string only contains alphabetical characters and digits, you'll get true or false as the result
+
+of this method, for example.
+
+Adrian.
+
+As a string is alum.
+
+True?
+
+If you try a turn 30, it also returns true.
+
+But if you try a different space 30, you will get to false.
+
+And if you try a different underscore 30, you will also get false.
+
+There are two similar methods to S alum.
+
+One is called is alpha.
+
+So for example.
+
+Is Alpha.
+
+And it checks for letters only.
+
+And there is also is digit.
+
+I'll use the same string is digit.
+
+That checks four digits only.
+
+There are three more methods that are very similar, so we won't give any examples.
+
+The methods are is lower, is upper and is space is lower, returns true of all the characters are lowercase,
+
+letters is upper, is the opposite.
+
+It only accepts uppercase letters is space checks if the given string contains white spaces.
+
+Only note that the space character is not the only white space character accepted by this method.
+
+A new line character backslash n is also accepted, for example.
+
+All right.
+
+That's it for this video.
+
+You can now save the notebook and close it.
