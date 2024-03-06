@@ -447,26 +447,15 @@ output: False
 'Python' != 'python'
 output: True
 
-And now finally, let's try this one where we forget and here at the end of this string.
-
+And now finally, let's try this one where we omit one letter here at the end of this string.
 So two strings are equal if and only if they are identical, they need to contain the exactly same characters
-
-if the letters are the same, but one of them is uppercase and the other one's lowercase, then the
-
+If the letters are the same, but one of them is uppercase and the other one's lowercase, then the
 strings are considered not equal.
 
-All right, that was quite intuitive.
-
 But how about relations such as greater than or less than?
-
 What does it mean when one string is greater than the other?
-
-Remember how we taught you that internally, each character in a string is represented by a number named
-
-Code Point.
-
+Remember how we taught you that internally, each character in a string is represented by a number named Code Point.
 Python will simply compare the numbers behind the letters when there are two strings.
-
 Python compares to characters at the same indexes in both strings until it finds a difference.
 
 So for instance, in this case, the first differing characters are lowercase P and uppercase P.
