@@ -425,3 +425,126 @@ def get_longest_word(input_string):
     
     return temp_max_word
 ++++++++++++++++++++++++++++++++++++++
+
+COMPARING STRINGS
+-------------------
+Python allows you to compare strings using the same operate just like you know from numbers such as
+== != > < <= >=
+ 
+Now we need to understand what it means for Python that two strings are equal, not equal, that one
+of them is greater than the other one, and so on.
+Let's run some tests.
+
+'Python' == 'Python'
+output: True
+
+Now let's try something similar.
+But this time the first p here is lowercase.
+
+'Python' == 'python'
+output: False
+
+'Python' != 'python'
+output: True
+
+And now finally, let's try this one where we forget and here at the end of this string.
+
+So two strings are equal if and only if they are identical, they need to contain the exactly same characters
+
+if the letters are the same, but one of them is uppercase and the other one's lowercase, then the
+
+strings are considered not equal.
+
+All right, that was quite intuitive.
+
+But how about relations such as greater than or less than?
+
+What does it mean when one string is greater than the other?
+
+Remember how we taught you that internally, each character in a string is represented by a number named
+
+Code Point.
+
+Python will simply compare the numbers behind the letters when there are two strings.
+
+Python compares to characters at the same indexes in both strings until it finds a difference.
+
+So for instance, in this case, the first differing characters are lowercase P and uppercase P.
+
+So Python checks the ASCII codes for those two characters.
+
+For uppercase P, it's 80.
+
+For lowercase B, it's 112.
+
+112 is greater than 80.
+
+So Python treats this string with lowercase p as greater than the string with uppercase p.
+
+So this evaluation will be true.
+
+And what happens if one of the strings is identical with the other one but has some extra characters
+
+at the end?
+
+The longer string is then considered greater.
+
+Both strings start with Python, but the longest string here will be considered greater.
+
+But remember that this rule only applies if the shortest string is identical with the beginning of the
+
+longest string.
+
+If it's not, then Python checks the first differing indexes and compares the characters.
+
+The length of the string doesn't matter.
+
+So for instance.
+
+Here.
+
+This is false.
+
+The string that is shorter than Python is, but the first differing character is set versus P and Z
+
+has a greater code, so the whole string is considered greater.
+
+Now keep in mind that if your string contains digits only, it's not treated as a number.
+
+It is compared character by character the way I have explained.
+
+So for instance.
+
+This evaluation gives false.
+
+Quite surprising, right?
+
+That's because Python searches for the first different character in both strings, in this case at index
+
+zero.
+
+There is number two in the first string and number eight and the second string eight is greater than
+
+two.
+
+So Python treats string eight as greater than string 20.
+
+Oh, right.
+
+There was a string comparison.
+
+But what happens when you try to compare a string with a number?
+
+The only two operators that you can use are equal to and not equal to.
+
+Note that a string in Python can never be equal to a number.
+
+So you will always get false.
+
+Such as here.
+
+Oh, here.
+
+If you try any other operator like greater than you will get a type error.
+
+So for example, if we try to change that to greater than you will see a type error.
