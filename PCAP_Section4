@@ -143,3 +143,345 @@ Object oriented approach allows you to organize this case with objects.
 You clearly define what types of data is used in your application.
 It is also clearly defined what you can do about the various kinds of data.
 The extra effort that you need to put into designing and creating objects really pays off in bigger applications.
+
+Classes and objects
+-----------------
+Even though we talk about object oriented programming, objects in Python can't exist without classes.
+Classes are templates used to create objects.
+For example, you can create a class named user.
+Classes can contain two types of entities - variables called attributes and functions called methods.
+
+In our simple example, we'll say that each user is characterized by a username and a city.
+Each user is also able to introduce themselves.
+So we will create a method named introduce.
+This gloss will serve as a template to generate specific uses.
+You could then have a specific user with username motorknight New York City.
+Then you can create another user named Ruler of Darkness London.
+
+These specific users, created on the basis of the user class, are called objects.
+Objects contain the attributes and methods specified in the class, so we know that each user object
+has a nickname and a city, and we also know that each user object can invoke the introduce method to introduce itself.
+This is true at the moment when we create an object because later on we can change the properties and
+methods in the object, but we'll get to that later on.
+
+So that's the main difference between classes and objects. Classes are templates used to create specific objects.
+We sometimes use the term instantiate. We instantiate objects from classes.
+We can also say that objects are instances of the class.
+You can't create objects if there is no class, but you can create a class and then never instantiate an object from it.
+In other words, a class is an idea which can be used to create specific inclinations called objects.
+Each object has a name, a set of properties and a set of methods.
+
+It's time to create the use of class in code and see the syntax when defining class.
+We always start with the class keyword followed by the name of the class and the colon by convention.
+Class name starts with capital letters.
+Class names typically only use letters with no digits or special characters like I have here.
+Each class has its own block of code after the colon.
+As with any other block of code, you need to use indentation for that.
+Now, as we said before, we want each user object to have a username and a city.
+If we want to have that, we need to make use of a special function, a special method inside the user class.
+
+This method is generally called constructor because it is used to construct objects of a given class.
+
+The constructor definition needs to begin in a very specific way.
+
+Take a look def init self.
+
+The constructors name is always in it.
+
+That's double underscore in it.
+
+Double underscore always like this.
+
+If you use any other name, Python will not treat that method as a constructor and it will not use it
+
+to construct new objects.
+
+Just like with any other function in Python, you need to precede the function name with the keyword
+
+def.
+
+After the name you need to provide a pair of brackets and provide the arguments.
+
+Finally, you need to add a colon.
+
+You may be wondering what this self parameter is.
+
+Here is a very important rule.
+
+All Python constructors must have at least one parameter.
+
+It is absolutely obligatory for a constructor to have it.
+
+You can give it any name that you want, but the convention that you should always follow is self.
+
+This self parameter is always pointing to the object that you are currently creating within the constructor.
+
+All of this may sound complicated, but I'm sure you'll get used to this strange syntax after a few
+
+examples.
+
+We want each object of the user class to have two attributes user name and asset.
+
+Remember that attributes are just variables in classes.
+
+The way to signify that in Python is as follows.
+
+So inside the definition of in it we're going to write self dot nickname equals sample nickname and
+
+then below self city equals sample city.
+
+This syntax might seem a bit strange and I agree with you.
+
+I also think the creators of Python could have chosen something easier to read, but well, it is what
+
+it is.
+
+In order to inform Python that each object created from class user should have two properties nickname
+
+and city.
+
+We need to use the self argument inside the constructor and provide the name for the attributes after
+
+single dots.
+
+In general, we use dots in Python objects to refer to the attributes and methods of that object.
+
+This way we are telling Python.
+
+Whenever you create a user, give them two properties.
+
+Nickname and City.
+
+For now, you can see that each user created from this class will have the same nickname, sample nickname
+
+and the same city.
+
+Sample City.
+
+All right.
+
+That's a very simple definition of the user class.
+
+This definition only tells us that there will be two properties or fields in each user.
+
+Object and nickname and a city.
+
+Now we also mention that each user should be able to introduce themselves.
+
+In order to do that, we need to create another function inside the user class.
+
+Remember that a function within a class is called a method.
+
+So down here.
+
+Will right def introduce self.
+
+And now will to print.
+
+Hello.
+
+I am.
+
+Then after a comma, self-doubt nickname and after a comma.
+
+And I live in.
+
+And then self taught city.
+
+This time we are not creating a constructor so we can give the function any name that we want.
+
+In this case introduce.
+
+We again use the self parameter here and again this self parameter refers to the current object.
+
+Thanks to it we can use self nickname and self city to access the variables or in other words, the
+
+properties of the current object.
+
+Again, we use dots to access specific attributes of the object.
+
+All right, our simple classes.
+
+Ready?
+
+So it's time to create our first object from this class user.
+
+To do that, all we need to do is to following.
+
+So down here, after the class definition with no indentation will write sample user.
+
+This will be our variable and we'll write user with a pair of brackets.
+
+We create a variable named sample user just like we always do with any other kind of variable.
+
+After the assignment operator, however, we do something new, we provide the name of the class followed
+
+by a pair of empty brackets.
+
+Whenever we provide a name of an existing class and we put a pair of brackets afterwards, Python knows
+
+that it should create a new object from the class.
+
+And how does it do that?
+
+By calling the constructor.
+
+In the constructor, we instructed Python to create two variables inside the object, nickname and City.
+
+We also instructed Python to put some default values for the nickname and the city.
+
+Sample nickname and Sample City.
+
+Note one very, very important thing.
+
+Even though the constructor has a parameter called self defined here.
+
+We do not provide a value for that parameter when creating an object of the class.
+
+That first argument of the constructor is filled for us automatically and it will always contain a reference
+
+to the object which is being created.
+
+So even though it looks like the constructor requires a single value for the self parameter, in reality
+
+we don't provide anything when we create the object.
+
+Right now that we have a sample user, one thing that we can do is call it introduce method to see how
+
+that works.
+
+To do that, we use the same dot notation on the sample user variable.
+
+So sample user dot introduce and a pair of brackets.
+
+So in order to call a method on an object, we need to provide the variable in which the object is stored.
+
+Then we need to use a dot and after the dot we need to provide the name of the method followed by a
+
+pair of brackets.
+
+All right, I can see a small typo here, so I'll do a nickname like this.
+
+And now everything works like a charm.
+
+So, again, even though there is a self parameter here defined in this introduced method, this very
+
+first parameter is always provided by Python for us.
+
+So we don't have to provide it when we call the method here.
+
+And you can see that Python prints an introduction statement for us and it uses the nickname and the
+
+city of the given object.
+
+If you want to.
+
+You can also inspect what is hidden in the properties or the fields of the given object.
+
+We use the same dot notation, so we'll do the following.
+
+We'll print sample user, dot nickname, and that's the nickname.
+
+And we can do the very same operation with this city.
+
+And you can see Sample City, no note.
+
+That's no matter if you want to access an attribute or a method inside an object, you use the dot notation.
+
+The only difference is that accessing methods requires the use of square brackets like here, just like
+
+with any other function in Python.
+
+And remember that when you create an object from a class, you use the class name followed by a pair
+
+of brackets and here python will know to call this specific method named double underscore init.
+
+Double underscore which is the constructor.
+
+All right, everything looks fine, but our user class is not really sophisticated.
+
+In particular, all the users have the same nickname, sample nickname and the same city.
+
+Sample City.
+
+We would like to provide our own values in the constructor when we create user objects.
+
+And it's actually very simple.
+
+So we'll create a new version of this class here and will do the following.
+
+So we'll add two parameters here user nickname and User City.
+
+And now, instead of the default values, will do the following.
+
+As you can see, we simply add two new parameters to the constructor and we can then use these parameters
+
+inside the constructor to create the properties of the object.
+
+The parameter names can have well any name that you want, just like with any other function in Python.
+
+One interesting thing is that the parameter names can be even identical with the fields in the object.
+
+So you can do the following.
+
+You can use nickname and you can use set a and then set it like this.
+
+This may look a bit weird because it looks like the same variables really, but they're actually different.
+
+The self dots nickname variable refers to the property of the object and the nickname variable without
+
+the self prefix is the argument passed to the constructor.
+
+Now if you try to run the code, you will see a type error.
+
+The constructor of the user class expects to get the nickname and the city, but we didn't provide any
+
+here when we instantiated the class.
+
+Let's quickly fix that.
+
+So the username will be Dark Knight and the city will be hell.
+
+Now you can see that our user has the exact nickname and city that we provide it in the bracket when
+
+we created the user.
+
+Again, note that the constructor has three parameters self, nickname and city, but we only provide
+
+two parameters when we create the object.
+
+That's because the first argument is the reference to the object being created and Python provides that
+
+automatically for us.
+
+Once we create a class, we can instantiate many different objects from it.
+
+Let's create two more users here.
+
+I'll create a new cell, maybe, and I'll use the following code.
+
+I have it prepared.
+
+Looks like this.
+
+So now we have three new users first user, second user, and third user.
+
+And I'm going to get rid of it here.
+
+All right.
+
+If we run the code, you can see that there are no errors.
+
+And now we can do first user introduce than second user introduce and third user introduce.
+
+And you can see that all three objects have a methods named introduce because all of them were created
+
+based on the class.
+
+User defined here.
+
+However, all three of them are independent.
+
+Each user has its own nickname and city, and so their introductions are different.
+
+All right.
