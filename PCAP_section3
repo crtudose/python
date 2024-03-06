@@ -459,22 +459,16 @@ Python will simply compare the numbers behind the letters when there are two str
 Python compares to characters at the same indexes in both strings until it finds a difference.
 
 So for instance, in this case, the first differing characters are lowercase P and uppercase P.
-
 So Python checks the ASCII codes for those two characters.
-
 For uppercase P, it's 80.
-
 For lowercase B, it's 112.
-
 112 is greater than 80.
-
 So Python treats this string with lowercase p as greater than the string with uppercase p.
-
 So this evaluation will be true.
 
-And what happens if one of the strings is identical with the other one but has some extra characters
+'I love Python' < 'I love python'
 
-at the end?
+And what happens if one of the strings is identical with the other one but has some extra characters at the end?
 
 The longer string is then considered greater.
 
