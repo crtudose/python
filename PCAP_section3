@@ -337,3 +337,84 @@ isupper(), is the opposite - It only accepts uppercase letters
 isspace() checks if the given string contains white spaces.
 Only note that the space character is not the only white space character accepted by this method.
 A new line character \n is also accepted, for example.
+
+STRING - JOIN, SPLIT, SORT
+-------------------------
+join() - Basically, it is used to join multiple strings together into a bigger string, but the usage syntax
+is a bit weird.
+Let's say that we have the following three strings that we want to join.
+
+'This is'
+'a spectacular'
+'place to be'
+
+We want to create a bigger string from these three strings, and we want them to be separated with spaces.
+To get that, we need to do the following a space character as a string.
+
+' '.join(['This is', 'a spectacular', 'place to be'])
+
+We need to start with the separator that we want to put between the strings.
+
+A space character in this case.
+
+Then, after adult, we need to call the joint method and we need to provide a list of strings as its
+
+arguments.
+
+It is only then that the method will work properly to produce a bigger string for us.
+
+Next in the line is the split function.
+
+It takes a string and splits it into a list of smallest strings.
+
+The method assumes that the strings are limited by white spaces such as the space character or new line
+
+characters, for example.
+
+So for instance, when we have this separated with tabulators and newline characters, if we use split,
+
+you will see that not only the spaces we use as separators, but also the tabulators and the new line
+
+characters.
+
+Finally, let's talk about sorting.
+
+Sorting is a very popular operation in the world of computer science.
+
+So let's talk about sorting lists of strings.
+
+Generally speaking, Python offers two ways of sorting.
+
+The first one is a function named sorted.
+
+This function takes a list as its argument and returns a new list with the elements sorted.
+
+The original list remains unchanged.
+
+Take a look at this example.
+
+So here we have a list with names and we create a new variable named name sorted and we use the sorted
+
+function.
+
+And inside we put the original list.
+
+You can see that the new variable contains the same elements, but they are sorted now.
+
+The second option is to use sort not sorted.
+
+So it is a bit different because it changes the original list.
+
+No new list is created.
+
+The syntax is therefore also a bit different.
+
+Take a look at this example.
+
+Again, we have the initial list, but now we do names dot sort and we print the original variable.
+
+Which version to choose depends on what you need to achieve.
+
+Of course, if you want to create a sorted copy of the original list, you're sorted.
+
+If you want to change the order of elements in the original list, use sort.
