@@ -1,2 +1,242 @@
 OOP Intro
 ---------
+You may not need to use object oriented programming yourself, but you may need to use some Python modules
+that are written to utilize objects.
+So far, nearly everything we wrote in Python was classified as procedural programming.
+Procedural programming was a widely used approach to writing code for decades, and it's still in use
+today in some situations.
+It is the best choice for many types of projects in general.
+If you're looking to write a smaller Python program quickly, the procedural approach may be the best
+choice.
+The basic idea behind procedural programming is that we have procedures.
+Procedures in the Python language would be functions.
+
+Functions simply have a series of steps to be carried out while you write a program in Python, any
+
+function can be invoked at any point.
+
+You can even make one function, call another one.
+
+Functions in this approach typically work on data, so the whole procedural approach is about calling
+
+functions that do something with data.
+
+One of the problems with procedural programming is that there are no restrictions.
+
+Any function can call any other function and the functions can work on any tighter.
+
+For instance, someone may provide you with a function that converts temperature decrease from Celsius
+
+to Fahrenheit.
+
+The function is meant to work on numbers that represent temperature, but if you instead provide the
+
+function with a bank account number, it will also work.
+
+It's just that the result of this function will not make much sense.
+
+Object oriented programming tries to eliminate such problems.
+
+This programming technique is much younger than procedural programming, but is the de facto standard
+
+approach for most big applications nowadays in object oriented programming, data and functions are
+
+enclosed together, forming something called objects.
+
+An object is a structure that has some data in the form of traits.
+
+These traits are called properties, attributes or fields in the world of programming.
+
+Objects are also able to invoke some functions in the form of methods in programs that use object oriented
+
+programming.
+
+Objects interact with each other, exchange data, or call each others methods.
+
+All of this may sound very theoretical and vague, so let's come up with a simple example.
+
+Suppose that we need a program that asks the user for the width and height of a rectangle.
+
+Then the program calculates the area of that rectangle.
+
+Nothing complicated, really.
+
+In procedural programming, we can do something like this.
+
+I have a small piece of code prepared here.
+
+So here we defined a function named calculate area.
+
+This function takes two arguments width and height and returns the width multiplied by the height,
+
+which is the area for the rectangle.
+
+Finally, the area is shown to the user here.
+
+As we said, one of the disadvantages of the procedural approach is that the functions that we define
+
+know nothing about the data.
+
+We could ask the user for their age and pass that age as the first argument of the function.
+
+The function would still work and to produce something that doesn't really make sense.
+
+But because the function and the data are not tied together in any way, the function doesn't know that.
+
+It just does what it is asked to do.
+
+So first, let's try to run this code, which is 100% correct.
+
+What is the width?
+
+Let's say ten and what is the height?
+
+Let's say three and the area is 30.
+
+Everything is fine.
+
+But now take a look at this code, which is similar.
+
+But after we calculate the area, we also ask for the age and we do a strange operation.
+
+We calculate the area by providing the age and the height.
+
+All right, let's see that in practice.
+
+So what does the width ten?
+
+What is the height?
+
+Three and two?
+
+What is your age say 30?
+
+Your age multiplied by the height is 90.
+
+So you can see that the function works fine, even though we passed an argument, that doesn't make
+
+much sense.
+
+Now let's take a look at the object oriented approach.
+
+Don't get scared with the code.
+
+We will explain everything step by step in the next videos.
+
+Just try to get the general concept for now.
+
+So in the object approach, this would look something like this.
+
+Again.
+
+Don't concentrate on the code too much here.
+
+We will get to that for now.
+
+All you need to know is that this part of the code is a class.
+
+A class is a template for creating objects of the same type.
+
+Our class is named Rectangle and it allows us to create rectangle objects.
+
+When we create the objects, we provide the height and the width.
+
+So here we ask the user to provide a width and height here down below.
+
+Then using the code like here we create a new rectangle object with the width and the height that we
+
+got from the user.
+
+From this moment on, Python keeps in memory an object, a structure, a rectangle with a specific width
+
+and a specific height.
+
+The width and the height are tied together.
+
+They are no longer two separate variables, like in their procedural approach.
+
+Instead, they are kept together.
+
+Of course, you could argue that the procedural approach allows us to keep the width and the height
+
+together too.
+
+You could, for example, put them into a tuple, into a list or into a dictionary, and you would achieve
+
+a similar result.
+
+But the difference here with the object is that the object not only has the width and the height, it
+
+also has its own function defined within the class get area.
+
+This function can be used to return the area of this specific rectangle, not any rectangle, but only
+
+this specific rectangle that we created.
+
+You can no longer try to provide the age of the user as one of the arguments.
+
+In fact, there are no arguments when we call the method here.
+
+The method only works in the context of the specific rectangle, and it only works on this specific
+
+object, this specific rectangle with this specific width and this specific height.
+
+And if we run the program now, we can see that it works in the very same way.
+
+But the structure is a bit better.
+
+At first, you could say that there is not much difference between these two approaches.
+
+So the object approach here and the procedural approach here.
+
+You can only say that the object approach looks more complicated than the procedural approach.
+
+It uses some new fancy keywords that you don't know yet, and it generally seems over complicated.
+
+You still get the area of a rectangle by multiplying the width by the height.
+
+So what is all the fuss about?
+
+Actually, you could see that the actual logic that the actual area calculation is the same.
+
+You multiply two numbers by themselves here and you multiply two numbers by themselves here.
+
+So why bother creating a rectangle object from a rectangle class?
+
+Just as I said, the procedural approach is still in use and it is sometimes the best option, typically
+
+in smaller applications, because it's very simple and quick to write.
+
+But trust me, when you start creating bigger applications, when you start working on the code with
+
+other people and you have hundreds or thousands of functions, it's very easy to get lost with bigger
+
+applications.
+
+People tend to use functions in the wrong way.
+
+They either use functions that are not meant to be used at all, or they use functions with the wrong
+
+kinds of arguments.
+
+The end result is chaos.
+
+Object oriented approach allows you to organize this case with objects.
+
+You clearly define what types of data is used in your application.
+
+It is also clearly defined what you can do about the various kinds of data.
+
+The extra effort that you need to put into designing and creating objects really pays off in bigger
+
+applications, and I'm sure you will see that for yourself pretty soon.
+
+That was only a theoretical introduction to object oriented programming.
+
+I wanted to give you a little bit of background as to why we use objects in the first place.
+
+If you didn't understand everything from this video in particular, if you did not understand this piece
+
+of code, don't worry.
+
+We will learn how to create objects together from scratch, step by step in the next videos.
