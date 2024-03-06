@@ -75,7 +75,6 @@ But now take a look at this code, which is similar.
 But after we calculate the area, we also ask for the age and we do a strange operation.
 We calculate the area by providing the age and the height.
 So you can see that the function works fine, even though we passed an argument, that doesn't make much sense.
-
 Now let's take a look at the object oriented approach.
 
 Don't get scared with the code.
