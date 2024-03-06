@@ -74,32 +74,30 @@ print('your age multiplied by the height is', strange_operation)
 But now take a look at this code, which is similar.
 But after we calculate the area, we also ask for the age and we do a strange operation.
 We calculate the area by providing the age and the height.
-So you can see that the function works fine, even though we passed an argument, that doesn't make much sense.
+So you can see that the function works fine, even though we passed an argument that doesn't make much sense.
 Now let's take a look at the object oriented approach.
 
-Don't get scared with the code.
+class Rectangle:
+    def __init__(self, width, height):
+      self.width = width
+      self.height = height # class definition (template for creating rectangles)
 
-We will explain everything step by step in the next videos.
+    def get_area(self):
+        return self.width * self.height
+
+a = int(input('what is the width? ')) # So here we ask the user to provide a width and height here down below.
+b = int(input('what is the height? '))
+
+rectangle = Rectangle(a, b)
+print('the area is', rectangle.get_area())
 
 Just try to get the general concept for now.
-
 So in the object approach, this would look something like this.
-
-Again.
-
-Don't concentrate on the code too much here.
-
-We will get to that for now.
-
 All you need to know is that this part of the code is a class.
 
 A class is a template for creating objects of the same type.
-
 Our class is named Rectangle and it allows us to create rectangle objects.
-
 When we create the objects, we provide the height and the width.
-
-So here we ask the user to provide a width and height here down below.
 
 Then using the code like here we create a new rectangle object with the width and the height that we
 
