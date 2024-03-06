@@ -295,12 +295,20 @@ the occurrence should be found.
 Try to invoke something like this where we have the words work in a string repeated multiple times and
 then you try with both find() and rfind().
 
-print('work work work', find('work'))
-print('work work work', rfind('work'))
-print('work work work', find('work', 2))
-print('work work work', rfind('work', 2))
-print('work work work', find('work', 2, 5))
-print('work work work', rfind('work', 2, 5))
+print('work work work'.find('work'))
+print('work work work'.rfind('work'))
+print('work work work'.find('work', 2))
+print('work work work'.rfind('work', 2))
+print('work work work'.find('work', 2, 5))
+print('work work work'.rfind('work', 2, 5))
+
+Output:
+0
+10
+5
+10
+-1
+-1
 
 And also there are a lot of is-something methods for strings for example isalnum().
 This method will check if the string contains only alphanumeric characters.
