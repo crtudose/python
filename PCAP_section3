@@ -467,29 +467,24 @@ So Python treats this string with lowercase p as greater than the string with up
 So this evaluation will be true.
 
 'I love Python' < 'I love python'
+Output: True
 
 And what happens if one of the strings is identical with the other one but has some extra characters at the end?
 The longer string is then considered greater.
+
+'Pythonist' > 'Python'
+Output: True
+
 Both strings start with Python, but the longest string here will be considered greater.
-
-But remember that this rule only applies if the shortest string is identical with the beginning of the
-
-longest string.
-
+But remember that this rule only applies if the shortest string is identical with the beginning of the longest string.
 If it's not, then Python checks the first differing indexes and compares the characters.
-
 The length of the string doesn't matter.
 
-So for instance.
-
-Here.
-
-This is false.
+'Pythonist' > '2'
+Output: False
 
 The string that is shorter than Python is, but the first differing character is set versus P and Z
-
 has a greater code, so the whole string is considered greater.
-
 Now keep in mind that if your string contains digits only, it's not treated as a number.
 
 It is compared character by character the way I have explained.
