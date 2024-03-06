@@ -12,66 +12,42 @@ The basic idea behind procedural programming is that we have procedures.
 Procedures in the Python language would be functions.
 
 Functions simply have a series of steps to be carried out while you write a program in Python, any
-
 function can be invoked at any point.
-
 You can even make one function, call another one.
-
 Functions in this approach typically work on data, so the whole procedural approach is about calling
-
 functions that do something with data.
-
 One of the problems with procedural programming is that there are no restrictions.
 
 Any function can call any other function and the functions can work on any tighter.
-
-For instance, someone may provide you with a function that converts temperature decrease from Celsius
-
-to Fahrenheit.
-
+For instance, someone may provide you with a function that converts temperature decrease from Celsius to Fahrenheit.
 The function is meant to work on numbers that represent temperature, but if you instead provide the
-
 function with a bank account number, it will also work.
-
 It's just that the result of this function will not make much sense.
 
 Object oriented programming tries to eliminate such problems.
-
-This programming technique is much younger than procedural programming, but is the de facto standard
-
-approach for most big applications nowadays in object oriented programming, data and functions are
-
-enclosed together, forming something called objects.
-
+This programming technique is much younger than procedural programming, but is the standard approach for most big 
+applications nowadays in object oriented programming, data and functions are enclosed together, forming something called objects.
 An object is a structure that has some data in the form of traits.
 
 These traits are called properties, attributes or fields in the world of programming.
-
-Objects are also able to invoke some functions in the form of methods in programs that use object oriented
-
-programming.
-
+Objects are also able to invoke some functions in the form of methods in programs that use object oriented programming.
 Objects interact with each other, exchange data, or call each others methods.
 
-All of this may sound very theoretical and vague, so let's come up with a simple example.
-
 Suppose that we need a program that asks the user for the width and height of a rectangle.
-
 Then the program calculates the area of that rectangle.
 
-Nothing complicated, really.
-
 In procedural programming, we can do something like this.
-
-I have a small piece of code prepared here.
-
-So here we defined a function named calculate area.
-
+here we defined a function named calculate area.
 This function takes two arguments width and height and returns the width multiplied by the height,
-
 which is the area for the rectangle.
-
 Finally, the area is shown to the user here.
+
+def calculate_area(width, height):
+  return width * height
+width = int(input('what is the width? '))
+height = int(input('what is the height? '))
+area = calculate_area(width, height)
+print('the area is', area)
 
 As we said, one of the disadvantages of the procedural approach is that the functions that we define
 
