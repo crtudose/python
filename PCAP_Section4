@@ -181,16 +181,13 @@ Now, as we said before, we want each user object to have a username and a city.
 If we want to have that, we need to make use of a special function, a special method inside the user class.
 
 This method is generally called constructor because it is used to construct objects of a given class.
-
 The constructor definition needs to begin in a very specific way.
 
 Take a look def init self.
+The constructors name is always __init__.
 
-The constructors name is always in it.
+class user:
 
-That's double underscore in it.
-
-Double underscore always like this.
 
 If you use any other name, Python will not treat that method as a constructor and it will not use it
 
