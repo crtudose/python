@@ -486,41 +486,26 @@ Output: False
 The string that is shorter than Python is, but the first differing character is set versus P and Z
 has a greater code, so the whole string is considered greater.
 Now keep in mind that if your string contains digits only, it's not treated as a number.
-
 It is compared character by character the way I have explained.
 
 So for instance.
-
 This evaluation gives false.
 
-Quite surprising, right?
+'20' > '8'
+Output: False
 
-That's because Python searches for the first different character in both strings, in this case at index
-
-zero.
-
-There is number two in the first string and number eight and the second string eight is greater than
-
-two.
-
+That's because Python searches for the first different character in both strings, in this case at index zero.
+There is number two in the first string and number eight and the second string eight is greater than two.
 So Python treats string eight as greater than string 20.
 
-Oh, right.
-
 There was a string comparison.
-
 But what happens when you try to compare a string with a number?
-
 The only two operators that you can use are equal to and not equal to.
-
 Note that a string in Python can never be equal to a number.
-
 So you will always get false.
 
-Such as here.
-
-Oh, here.
+10 == '10' False
+10 != '10' True
 
 If you try any other operator like greater than you will get a type error.
-
 So for example, if we try to change that to greater than you will see a type error.
