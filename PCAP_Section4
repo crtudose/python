@@ -114,37 +114,21 @@ But the difference here with the object is that the object not only has the widt
 also has its own function defined within the class get_area.
 
 This function can be used to return the area of this specific rectangle, not any rectangle, but only
-
 this specific rectangle that we created.
-
 You can no longer try to provide the age of the user as one of the arguments.
-
 In fact, there are no arguments when we call the method here.
-
 The method only works in the context of the specific rectangle, and it only works on this specific
-
 object, this specific rectangle with this specific width and this specific height.
 
 And if we run the program now, we can see that it works in the very same way.
-
 But the structure is a bit better.
-
 At first, you could say that there is not much difference between these two approaches.
-
 So the object approach here and the procedural approach here.
-
 You can only say that the object approach looks more complicated than the procedural approach.
-
 It uses some new fancy keywords that you don't know yet, and it generally seems over complicated.
-
 You still get the area of a rectangle by multiplying the width by the height.
-
-So what is all the fuss about?
-
-Actually, you could see that the actual logic that the actual area calculation is the same.
-
+you could see that the actual logic that the actual area calculation is the same.
 You multiply two numbers by themselves here and you multiply two numbers by themselves here.
-
 So why bother creating a rectangle object from a rectangle class?
 
 Just as I said, the procedural approach is still in use and it is sometimes the best option, typically
