@@ -52,3 +52,45 @@ def interact_password_type():
 
 if __name__ == '__main__':
     interact_main_menu()
+
+'''
+Character Sets:
+The code defines three character sets:
+alpha: Contains lowercase letters from “a” to “z”.
+num: Contains digits from “0” to “9”.
+special: Contains special characters like “!@#$%&*^|()_+”.
+get_available_chars Function:
+This function takes two boolean parameters: include_digits and include_special.
+It constructs a string called available_chars by combining the alpha set with additional characters based on the input flags.
+If include_digits is True, it appends the num set to available_chars.
+If include_special is True, it appends the special set to available_chars.
+The function returns the combined set of characters.
+generate_password Function:
+This function generates a random password based on the specified parameters.
+It takes the following parameters:
+length: Desired password length (default is 16 characters).
+mixed_case: Whether to include mixed-case letters (default is False).
+include_digits: Whether to include digits (default is False).
+include_special: Whether to include special characters (default is False).
+It initializes an empty list called password.
+It gets the available characters using the get_available_chars function.
+For each position in the password (controlled by the range(length) loop):
+A random character is chosen from the available_chars.
+If mixed_case is True and the character is an alphabet letter, there’s a 50% chance it will be converted to uppercase.
+The chosen character is appended to the password list.
+Finally, the function joins the characters in the password list to form the final password and returns it.
+User Interaction Functions:
+interact_main_menu:
+This function displays a menu with two options:
+Generate a password.
+Exit the program.
+It repeatedly prompts the user for their choice until they choose to exit.
+interact_password_type:
+This function prompts the user for password parameters:
+Length, whether to use uppercase letters, digits, and special characters.
+It then generates and prints a password based on the user’s input.
+Main Execution:
+The code checks if it’s being run as the main program (i.e., not imported as a module).
+If so, it calls interact_main_menu() to start the password generator.
+Feel free to try running this code! You can customize the password length and character types according to your preferences. 
+'''
