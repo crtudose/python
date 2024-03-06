@@ -293,69 +293,47 @@ The second and third arguments will indicate the beginning and the end of the pl
 the occurrence should be found.
 
 Try to invoke something like this where we have the words work in a string repeated multiple times and
+then you try with both find() and rfind().
 
-then you try with both find and ah, find.
+print('work work work', find('work'))
+print('work work work', rfind('work'))
+print('work work work', find('work', 2))
+print('work work work', rfind('work', 2))
+print('work work work', find('work', 2, 5))
+print('work work work', rfind('work', 2, 5))
 
-And you try that with the two arguments and three argument versions.
-
-Make sure that you understand all of the invocations.
-
-If you have a problem with one of them, just use the courses Q&A section to ask and I'll be happy to
-
-help.
-
-And also there are a lot of is something methods for strings for example is al num.
-
+And also there are a lot of is-something methods for strings for example isalnum().
 This method will check if the string contains only alphanumeric characters.
+In other words, it checks if the string only contains alphabetical characters and digits, you'll get 
+true or false as the result of this method, for example.
 
-In other words, it checks.
+'Adrian'.isalnum()
+output: True
 
-If the string only contains alphabetical characters and digits, you'll get true or false as the result
+'Adrian30'.isalnum()
+output: True
 
-of this method, for example.
+'Adrian 30'.isalnum()
+output: False
 
-Adrian.
+'Adrian_30'.isalnum()
+output: False
 
-As a string is alum.
+There are two similar methods to isalum(). One is called isalpha().
 
-True?
+'Adrian'.isalpha()
+output: True
 
-If you try a turn 30, it also returns true.
-
-But if you try a different space 30, you will get to false.
-
-And if you try a different underscore 30, you will also get false.
-
-There are two similar methods to S alum.
-
-One is called is alpha.
-
-So for example.
-
-Is Alpha.
+'Adrian'.isdigit()
+output: False
 
 And it checks for letters only.
-
-And there is also is digit.
-
-I'll use the same string is digit.
-
-That checks four digits only.
+And there is also isdigit(). That checks for digits only.
 
 There are three more methods that are very similar, so we won't give any examples.
-
-The methods are is lower, is upper and is space is lower, returns true of all the characters are lowercase,
-
-letters is upper, is the opposite.
-
-It only accepts uppercase letters is space checks if the given string contains white spaces.
-
+The methods are islower(), isupper() and isspace()
+islower(), returns true if all the characters are lowercase letters 
+isupper(), is the opposite - It only accepts uppercase letters 
+isspace() checks if the given string contains white spaces.
 Only note that the space character is not the only white space character accepted by this method.
-
-A new line character backslash n is also accepted, for example.
-
-All right.
-
-That's it for this video.
-
-You can now save the notebook and close it.
+A new line character \n is also accepted, for example.
