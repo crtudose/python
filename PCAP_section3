@@ -415,3 +415,13 @@ This means that abbreviated forms with apostrophes (e.g. I'm) are considered to 
 If there is more than one word with the maximum number of characters, return the first such word that exists in the string.
 Example: For input Once I'm awaken, I'll sacrifice your soul to the ruler of darkness. the output should be sacrifice.
 +++++++++++++++++++++++++++++++++++++
+def get_longest_word(input_string):
+    words = input_string.replace('.', ' ').replace(',', ' ').split()
+    temp_max_word = ''
+ 
+    for word in words:
+      if len(word) > len(temp_max_word):
+        temp_max_word = word
+    
+    return temp_max_word
+++++++++++++++++++++++++++++++++++++++
