@@ -44,54 +44,37 @@ Finally, the area is shown to the user here.
 
 def calculate_area(width, height):
   return width * height
+
 width = int(input('what is the width? '))
 height = int(input('what is the height? '))
 area = calculate_area(width, height)
 print('the area is', area)
 
 As we said, one of the disadvantages of the procedural approach is that the functions that we define
-
 know nothing about the data.
-
 We could ask the user for their age and pass that age as the first argument of the function.
-
 The function would still work and to produce something that doesn't really make sense.
-
 But because the function and the data are not tied together in any way, the function doesn't know that.
-
 It just does what it is asked to do.
 
-So first, let's try to run this code, which is 100% correct.
+If we input 10 and 3, it would result 30.
 
-What is the width?
+def calculate_area(width, height):
+  return width * height
 
-Let's say ten and what is the height?
+width = int(input('what is the width? '))
+height = int(input('what is the height? '))
+area = calculate_area(width, height)
+print('the area is', area)
 
-Let's say three and the area is 30.
-
-Everything is fine.
+age = int(input('hey, and what is your age? '))
+strange_operation = calculate_area(age, height)
+print('your age multiplied by the height is', strange_operation)
 
 But now take a look at this code, which is similar.
-
 But after we calculate the area, we also ask for the age and we do a strange operation.
-
 We calculate the area by providing the age and the height.
-
-All right, let's see that in practice.
-
-So what does the width ten?
-
-What is the height?
-
-Three and two?
-
-What is your age say 30?
-
-Your age multiplied by the height is 90.
-
-So you can see that the function works fine, even though we passed an argument, that doesn't make
-
-much sense.
+So you can see that the function works fine, even though we passed an argument, that doesn't make much sense.
 
 Now let's take a look at the object oriented approach.
 
