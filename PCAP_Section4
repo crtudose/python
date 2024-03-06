@@ -88,7 +88,7 @@ class Rectangle:
 a = int(input('what is the width? ')) # So here we ask the user to provide a width and height here down below.
 b = int(input('what is the height? '))
 
-rectangle = Rectangle(a, b)
+rectangle = Rectangle(a, b) # we create a new rectangle object with the width and the height that we got from the user.
 print('the area is', rectangle.get_area())
 
 Just try to get the general concept for now.
@@ -100,30 +100,18 @@ Our class is named Rectangle and it allows us to create rectangle objects.
 When we create the objects, we provide the height and the width.
 
 Then using the code like here we create a new rectangle object with the width and the height that we
-
 got from the user.
-
 From this moment on, Python keeps in memory an object, a structure, a rectangle with a specific width
-
 and a specific height.
-
 The width and the height are tied together.
-
 They are no longer two separate variables, like in their procedural approach.
-
 Instead, they are kept together.
 
-Of course, you could argue that the procedural approach allows us to keep the width and the height
-
-together too.
-
+Of course, you could argue that the procedural approach allows us to keep the width and the height together too.
 You could, for example, put them into a tuple, into a list or into a dictionary, and you would achieve
-
 a similar result.
-
 But the difference here with the object is that the object not only has the width and the height, it
-
-also has its own function defined within the class get area.
+also has its own function defined within the class get_area.
 
 This function can be used to return the area of this specific rectangle, not any rectangle, but only
 
