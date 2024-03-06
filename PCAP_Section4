@@ -132,39 +132,14 @@ You multiply two numbers by themselves here and you multiply two numbers by them
 So why bother creating a rectangle object from a rectangle class?
 
 Just as I said, the procedural approach is still in use and it is sometimes the best option, typically
-
 in smaller applications, because it's very simple and quick to write.
-
-But trust me, when you start creating bigger applications, when you start working on the code with
-
-other people and you have hundreds or thousands of functions, it's very easy to get lost with bigger
-
-applications.
-
-People tend to use functions in the wrong way.
-
-They either use functions that are not meant to be used at all, or they use functions with the wrong
-
-kinds of arguments.
-
+But, when you start creating bigger applications, when you start working on the code with
+other people and you have hundreds or thousands of functions, it's very easy to get lost. 
+With bigger applications, People tend to use functions in the wrong way.
+They either use functions that are not meant to be used at all, or they use functions with the wrong kinds of arguments.
 The end result is chaos.
 
 Object oriented approach allows you to organize this case with objects.
-
 You clearly define what types of data is used in your application.
-
 It is also clearly defined what you can do about the various kinds of data.
-
-The extra effort that you need to put into designing and creating objects really pays off in bigger
-
-applications, and I'm sure you will see that for yourself pretty soon.
-
-That was only a theoretical introduction to object oriented programming.
-
-I wanted to give you a little bit of background as to why we use objects in the first place.
-
-If you didn't understand everything from this video in particular, if you did not understand this piece
-
-of code, don't worry.
-
-We will learn how to create objects together from scratch, step by step in the next videos.
+The extra effort that you need to put into designing and creating objects really pays off in bigger applications.
