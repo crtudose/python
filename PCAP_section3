@@ -469,9 +469,7 @@ So this evaluation will be true.
 'I love Python' < 'I love python'
 
 And what happens if one of the strings is identical with the other one but has some extra characters at the end?
-
 The longer string is then considered greater.
-
 Both strings start with Python, but the longest string here will be considered greater.
 
 But remember that this rule only applies if the shortest string is identical with the beginning of the
