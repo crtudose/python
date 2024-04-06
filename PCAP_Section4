@@ -482,3 +482,273 @@ However, all three of them are independent.
 Each user has its own nickname and city, and so their introductions are different.
 
 All right.
+
+---------------------------------------------
+
+The Notebook for this lesson is named P Encapsulation Abstraction.
+
+All right, let's create a new simple class now.
+
+The class will be called core.
+
+It will be a very simple class that describes a very generic column.
+
+It will have three properties modal color and current speed.
+
+So we'll start by creating a constructor for this class.
+
+Like this.
+
+As we said before, the constructor must always have a special name.
+
+Double underscore in it.
+
+Double underscore.
+
+The first argument is by convention name to self and to references the object that is being created.
+
+The next three arguments are the modal color and the initial speech of the call.
+
+These three arguments will be provided by the user of the class when they create new car objects.
+
+So let's run the cell and now we'll create a new object.
+
+My lovely car equals car, t rock and then red.
+
+And the initial speed of let's say five.
+
+And when you run the code, you can see that everything works fine.
+
+Now do you remember how to provide default values for function parameters?
+
+Turns out that it works with constructor and other methods within classes too.
+
+So all we need to do is the following.
+
+And now every car that is created without providing an initial speed will be given the default value
+
+of zero.
+
+So now it's possible to create a new car using one argument less and Python will fill that automatically
+
+for us.
+
+Let's try it out so we'll delete the initial speed and everything works like a charm.
+
+Perfect.
+
+Our class is defined, but it doesn't do anything useful yet.
+
+We'll add two new methods to the class that will make the class speed up or slow down.
+
+So we'll do the following.
+
+Def speed up self self speed plus equals five and the similar method def slow down self self speech
+
+minus equals five.
+
+All right, we're on the cell.
+
+And remember that each method in your class should contain a single parameter at least, which is by
+
+convention named self.
+
+This argument allows you to access the object's properties and increase or decrease the speed by five
+
+respectively.
+
+All right, we'll add one more method that will present the current speed to the user.
+
+So we'll do def show speed self and it will do print current speed and after a comma cell speed round
+
+the cell.
+
+Right.
+
+And now let's run some tests.
+
+So using the my lovely car object, we're going to do the following.
+
+My lovely car speed up, then my lovely car speed up again.
+
+And after these two operations, we want to show the speed to the output.
+
+Run the cell and you can see, oh, there is a typo here and you can see that the current speed is ten.
+
+After increasing the speed twice perfect.
+
+We can see the speed of ten.
+
+But now this one problem.
+
+If the current speed is zero, it shouldn't be possible to slow down.
+
+But let's see that in practice.
+
+So instead of speed up we'll do slowed down after creating the object and will do that actually twice.
+
+And you can see that the current speed is minus ten.
+
+A speed of minus ten.
+
+Doesn't really make much sense.
+
+We should modify our code so that it doesn't decrease the speed below zero.
+
+Fortunately, that's pretty simple.
+
+So in the slow down method, we're going to do the following if cell speed is slower than five.
+
+Self speed equals zero.
+
+Otherwise decrease this speed.
+
+By five.
+
+All right.
+
+If we now run the program, we can see that the speed never goes below zero.
+
+Perfect.
+
+But there's one more problem.
+
+What happens if the user provides a value below zero when they create a call?
+
+Take a look now.
+
+So instead of the two argument version and the default value of zero for this speech, we're going to
+
+do the following -50.
+
+And now if we try to show the speed without slowing down or speeding up, you can see the value of -50.
+
+Well, that doesn't make much sense either.
+
+We need to also modify our constructor so that it doesn't allow speech values below zero.
+
+One way of dealing with that could be as follows.
+
+So here.
+
+After setting model or color, we can check if initial speed below zero then self speed should be equal
+
+to zero.
+
+Else it should be equal to the argument passed around this cell and now run this one.
+
+And you can see that even though we provided a value of -50, the current speed is actually zero.
+
+So the constructor modification worked fine.
+
+If the user creates the car with a speech value below zero, we will simply put zero as the initial
+
+value.
+
+Our class is now almost bulletproof in terms of speed, but unfortunately, there's one more way that
+
+the user may try to hack our class.
+
+Take a look.
+
+So here, after creating, the object, will do my lovely car speed.
+
+Equals minus ten.
+
+As you can see, the user can simply access the speech property directly using the dot notation and
+
+set any speech value that they want.
+
+Oopsie.
+
+What can we do about it?
+
+The user does not call any method defined in the clause, so there is no place where we could add some
+
+checks for speeds below zero.
+
+Luckily, there is a way to kind of stop the user from changing the speech property directly.
+
+We need to make the property private.
+
+A private property is a property that can only be accessed from within the class.
+
+In one of the methods, but never outside the class after the object is created.
+
+So in the properties private, you can't do an operation like this.
+
+Different programming languages implement the concept of private properties differentially in Python.
+
+If you want a private property, you need to give it a name that starts with two underscore signs.
+
+So we'll need to do a lot of refactoring now in the class itself.
+
+So take a look here instead of speed will do to underscore speed.
+
+Same here, here and in all the places.
+
+Right.
+
+Let's run the class and now let's run this cell.
+
+And you can see the current speed of zero.
+
+Now, with the double underscore in front of the property, the code works fine.
+
+We couldn't change the value of the speech property, as you could see, and the speed was still zero
+
+after this line.
+
+In reality, there's a bit more happening behind the scenes, but we'll get back to that later.
+
+Incidentally, there are four main principles behind object oriented programming in most modern programming
+
+languages encapsulation, abstraction, inheritance and polymorphism.
+
+These names may sound scary to you, but don't worry, we'll explain them over time in this video.
+
+The usage of private properties mainly addresses the concept of encapsulation, and encapsulation says
+
+that objects should keep their state private and only expose a set of public functions to the outside
+
+world.
+
+This is exactly what we did here.
+
+We made the speech property private, so we heard the state of the object from the outside world and
+
+we exposed two methods speed up and slow down to manipulate the property in a way we previously defined.
+
+This also shows the second principle behind object oriented programming.
+
+Abstraction.
+
+Abstraction says that objects should keep the details of how they work to themselves and only expose
+
+some high level operations to the outside world.
+
+A good analogy could be a smartphone.
+
+Your smartphone comprises a lot of electronic parts, on top of which there are millions of lines of
+
+code so that it can work properly.
+
+But you do need to know that the details of how your phone works are hidden from you.
+
+You only get access to some high level operations, like making a phone call or sending a text message.
+
+You are not aware of how your phone does all of this.
+
+In other words, the details are abstracted from you.
+
+The same thing goes for our car closely.
+
+Theoretically speaking, if someone uses your car clause, they don't even need to know that there is
+
+a speech property in sight.
+
+They can create a car object without providing any speed, and then they can only use the speech up
+
+and slow down methods.
+
+The details of what happens inside the object when you call these methods are abstracted away from you.
