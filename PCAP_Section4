@@ -365,34 +365,23 @@ third_user.introduce()
 And you can see that all three objects have a methods named introduce because all of them were created
 based on the class.
 ---------------------------------------------
-
-The Notebook for this lesson is named P Encapsulation Abstraction.
-
 All right, let's create a new simple class now.
-
-The class will be called core.
-
+The class will be called car.
 It will be a very simple class that describes a very generic column.
-
 It will have three properties modal color and current speed.
-
 So we'll start by creating a constructor for this class.
+As we said before, the constructor must always have a special name. Double underscore in it.
 
-Like this.
-
-As we said before, the constructor must always have a special name.
-
-Double underscore in it.
-
-Double underscore.
+class Car()Ș
+  def __init__(self, model, colour, initial_speed)
+    self.model = model
+    self.colour = colour
+    self.speed = initial_speed
 
 The first argument is by convention name to self and to references the object that is being created.
-
-The next three arguments are the modal color and the initial speech of the call.
-
+The next three arguments are the model color and the initial speech of the car.
 These three arguments will be provided by the user of the class when they create new car objects.
-
-So let's run the cell and now we'll create a new object.
+So let's run the cell and now we'll create new car objects.
 
 My lovely car equals car, t rock and then red.
 
