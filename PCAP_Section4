@@ -353,29 +353,17 @@ Let's create two more users here.
 
 first_user = User('Martin', 'Luther')
 second_user = User('Winston', 'Churchil')
+third_user = User('Willie', 'King')
 
 So now we have three new users first user, second user, and third user.
-
-And I'm going to get rid of it here.
-
-All right.
-
-If we run the code, you can see that there are no errors.
-
 And now we can do first user introduce than second user introduce and third user introduce.
 
+first_user.introduce()
+second_user.introduce()
+third_user.introduce()
+
 And you can see that all three objects have a methods named introduce because all of them were created
-
 based on the class.
-
-User defined here.
-
-However, all three of them are independent.
-
-Each user has its own nickname and city, and so their introductions are different.
-
-All right.
-
 ---------------------------------------------
 
 The Notebook for this lesson is named P Encapsulation Abstraction.
