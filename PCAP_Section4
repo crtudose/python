@@ -216,35 +216,21 @@ after single dots.
 In general, we use dots in Python objects to refer to the attributes and methods of that object.
 This way we are telling Python. Whenever you create a user, give them two properties - Nickname and City.
 
-For now, you can see that each user created from this class will have the same nickname, sample nickname
-
-and the same city.
-
-Sample City.
-
-All right.
-
-That's a very simple definition of the user class.
-
-This definition only tells us that there will be two properties or fields in each user.
-
-Object and nickname and a city.
+For now, you can see that each user created from this class will have the same nickname, samplenickname
+and the same city - sampleCity.
+This definition only tells us that there will be two properties or fields in each user object - nickname
+and a city.
 
 Now we also mention that each user should be able to introduce themselves.
-
 In order to do that, we need to create another function inside the user class.
-
 Remember that a function within a class is called a method.
 
-So down here.
-
-Will right def introduce self.
-
-And now will to print.
-
-Hello.
-
-I am.
+class User:  
+  def __init__(self):
+    self.nickname = 'sampleNickname'
+    self.city = 'sampleCity'
+  def introduce(self):
+    print('Hello, I am', self.nickname, 'and I live in', self.city)
 
 Then after a comma, self-doubt nickname and after a comma.
 
