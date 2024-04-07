@@ -343,26 +343,16 @@ print(sample_user.nickname)
 print(sample_user.city)
 
 Now you can see that our user has the exact nickname and city that we provide it in the bracket when
-
 we created the user.
-
 Again, note that the constructor has three parameters self, nickname and city, but we only provide
-
 two parameters when we create the object.
-
 That's because the first argument is the reference to the object being created and Python provides that
-
 automatically for us.
-
 Once we create a class, we can instantiate many different objects from it.
-
 Let's create two more users here.
 
-I'll create a new cell, maybe, and I'll use the following code.
-
-I have it prepared.
-
-Looks like this.
+first_user = User('Martin', 'Luther')
+second_user = User('Winston', 'Churchil')
 
 So now we have three new users first user, second user, and third user.
 
