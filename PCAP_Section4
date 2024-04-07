@@ -284,6 +284,8 @@ class User:
 sample_user = User()
 sample_user.introduce()
 
+Output: Hello, I am sampleNickname and I live in sampleCity
+
 So, again, even though there is a self parameter here defined in this introduced method, this very
 first parameter is always provided by Python for us.
 So we don't have to provide it when we call the method here.
@@ -291,20 +293,13 @@ And you can see that Python prints an introduction statement for us and it uses 
 city of the given object.
 
 You can also inspect what is hidden in the properties or the fields of the given object.
-
-We use the same dot notation, so we'll do the following.
-
-We'll print sample user, dot nickname, and that's the nickname.
-
-And we can do the very same operation with this city.
-
-And you can see Sample City, no note.
-
 That's no matter if you want to access an attribute or a method inside an object, you use the dot notation.
-
 The only difference is that accessing methods requires the use of square brackets like here, just like
-
 with any other function in Python.
+
+print(sample_user.nickname) 
+print(sample_user.city)
+Output: sampleNicknname  sampleCity
 
 And remember that when you create an object from a class, you use the class name followed by a pair
 
