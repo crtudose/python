@@ -232,82 +232,46 @@ class User:
   def introduce(self):
     print('Hello, I am', self.nickname, 'and I live in', self.city)
 
-Then after a comma, self-doubt nickname and after a comma.
-
-And I live in.
-
-And then self taught city.
-
 This time we are not creating a constructor so we can give the function any name that we want.
-
 In this case introduce.
-
 We again use the self parameter here and again this self parameter refers to the current object.
-
-Thanks to it we can use self nickname and self city to access the variables or in other words, the
-
+Thanks to it we can use self.nickname and self.city to access the variables or in other words, the
 properties of the current object.
-
 Again, we use dots to access specific attributes of the object.
 
-All right, our simple classes.
-
-Ready?
-
 So it's time to create our first object from this class user.
-
-To do that, all we need to do is to following.
-
-So down here, after the class definition with no indentation will write sample user.
-
+Down here, after the class definition with no indentation will write sample user.
 This will be our variable and we'll write user with a pair of brackets.
+We create a variable named sample_user just like we always do with any other kind of variable.
 
-We create a variable named sample user just like we always do with any other kind of variable.
+  def __init__(self):
+    self.nickname = 'sampleNickname'
+    self.city = 'sampleCity'
+  def introduce(self):
+    print('Hello, I am', self.nickname, 'and I live in', self.city)
+sample_user = User()
 
 After the assignment operator, however, we do something new, we provide the name of the class followed
-
 by a pair of empty brackets.
-
 Whenever we provide a name of an existing class and we put a pair of brackets afterwards, Python knows
-
 that it should create a new object from the class.
-
-And how does it do that?
-
-By calling the constructor.
-
+And how does it do that? By calling the constructor.
 In the constructor, we instructed Python to create two variables inside the object, nickname and City.
 
-We also instructed Python to put some default values for the nickname and the city.
-
-Sample nickname and Sample City.
-
-Note one very, very important thing.
-
 Even though the constructor has a parameter called self defined here.
-
 We do not provide a value for that parameter when creating an object of the class.
-
 That first argument of the constructor is filled for us automatically and it will always contain a reference
-
 to the object which is being created.
-
 So even though it looks like the constructor requires a single value for the self parameter, in reality
-
 we don't provide anything when we create the object.
 
 Right now that we have a sample user, one thing that we can do is call it introduce method to see how
-
 that works.
-
 To do that, we use the same dot notation on the sample user variable.
-
 So sample user dot introduce and a pair of brackets.
 
-So in order to call a method on an object, we need to provide the variable in which the object is stored.
-
+So in order to call a method and an object, we need to provide the variable in which the object is stored.
 Then we need to use a dot and after the dot we need to provide the name of the method followed by a
-
 pair of brackets.
 
 All right, I can see a small typo here, so I'll do a nickname like this.
