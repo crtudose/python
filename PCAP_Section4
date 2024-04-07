@@ -378,90 +378,53 @@ class Car()Ș
     self.colour = colour
     self.speed = initial_speed
 
+  def speed_up(self):  
+    self.speed += 5
+
+  def slow_down(self):  
+    self.speed -= 5
+
+  def show_speed(self):  
+    print('current speed', self.speed)
+
+my_lovely_car = Car('T-roc', 'red')
+my_lovely_car.speed_up() 
+my_lovely_car.speed_up()
+my_lovely_car.show_speed() 
+
+output: 
+Current speed: 10
+
 The first argument is by convention name to self and to references the object that is being created.
 The next three arguments are the model color and the initial speech of the car.
 These three arguments will be provided by the user of the class when they create new car objects.
 So let's run the cell and now we'll create new car objects.
-
-My lovely car equals car, t rock and then red.
-
-And the initial speed of let's say five.
-
 And when you run the code, you can see that everything works fine.
 
 Now do you remember how to provide default values for function parameters?
-
 Turns out that it works with constructor and other methods within classes too.
 
-So all we need to do is the following.
-
 And now every car that is created without providing an initial speed will be given the default value
-
 of zero.
-
 So now it's possible to create a new car using one argument less and Python will fill that automatically
-
 for us.
-
 Let's try it out so we'll delete the initial speed and everything works like a charm.
 
-Perfect.
-
 Our class is defined, but it doesn't do anything useful yet.
-
 We'll add two new methods to the class that will make the class speed up or slow down.
-
-So we'll do the following.
-
 Def speed up self self speed plus equals five and the similar method def slow down self self speech
-
 minus equals five.
-
-All right, we're on the cell.
-
-And remember that each method in your class should contain a single parameter at least, which is by
-
-convention named self.
-
+each method in your class should contain a single parameter at least, which is by convention named self.
 This argument allows you to access the object's properties and increase or decrease the speed by five
-
 respectively.
-
 All right, we'll add one more method that will present the current speed to the user.
-
 So we'll do def show speed self and it will do print current speed and after a comma cell speed round
-
 the cell.
-
-Right.
-
-And now let's run some tests.
-
-So using the my lovely car object, we're going to do the following.
-
-My lovely car speed up, then my lovely car speed up again.
-
-And after these two operations, we want to show the speed to the output.
-
-Run the cell and you can see, oh, there is a typo here and you can see that the current speed is ten.
-
-After increasing the speed twice perfect.
-
 We can see the speed of ten.
 
-But now this one problem.
-
 If the current speed is zero, it shouldn't be possible to slow down.
-
-But let's see that in practice.
-
 So instead of speed up we'll do slowed down after creating the object and will do that actually twice.
-
 And you can see that the current speed is minus ten.
-
-A speed of minus ten.
-
-Doesn't really make much sense.
 
 We should modify our code so that it doesn't decrease the speed below zero.
 
