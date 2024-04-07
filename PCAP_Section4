@@ -186,68 +186,35 @@ The constructor definition needs to begin in a very specific way.
 Take a look def init self.
 The constructors name is always __init__.
 
-class user:
-
+class User:  
+  def __init__(self):
 
 If you use any other name, Python will not treat that method as a constructor and it will not use it
-
 to construct new objects.
-
-Just like with any other function in Python, you need to precede the function name with the keyword
-
-def.
-
+Just like with any other function in Python, you need to precede the function name with the keyword def.
 After the name you need to provide a pair of brackets and provide the arguments.
-
-Finally, you need to add a colon.
-
-You may be wondering what this self parameter is.
-
-Here is a very important rule.
+Finally, you need to add a colon. You may be wondering what this self parameter is.
 
 All Python constructors must have at least one parameter.
-
 It is absolutely obligatory for a constructor to have it.
-
 You can give it any name that you want, but the convention that you should always follow is self.
-
 This self parameter is always pointing to the object that you are currently creating within the constructor.
 
-All of this may sound complicated, but I'm sure you'll get used to this strange syntax after a few
-
-examples.
-
-We want each object of the user class to have two attributes user name and asset.
-
+We want each object of the user class to have two attributes username and asset.
 Remember that attributes are just variables in classes.
-
-The way to signify that in Python is as follows.
-
 So inside the definition of in it we're going to write self dot nickname equals sample nickname and
-
 then below self city equals sample city.
 
-This syntax might seem a bit strange and I agree with you.
+class User:  
+  def __init__(self):
+    self.nickname = 'sampleNickname'
+    self.city = 'sampleCity'
 
-I also think the creators of Python could have chosen something easier to read, but well, it is what
-
-it is.
-
-In order to inform Python that each object created from class user should have two properties nickname
-
-and city.
-
-We need to use the self argument inside the constructor and provide the name for the attributes after
-
-single dots.
-
+In order to inform Python that each object created from class User we should have two properties nickname
+and city, we need to use the self argument inside the constructor and provide the name for the attributes 
+after single dots.
 In general, we use dots in Python objects to refer to the attributes and methods of that object.
-
-This way we are telling Python.
-
-Whenever you create a user, give them two properties.
-
-Nickname and City.
+This way we are telling Python. Whenever you create a user, give them two properties - Nickname and City.
 
 For now, you can see that each user created from this class will have the same nickname, sample nickname
 
