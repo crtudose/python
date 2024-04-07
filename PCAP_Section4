@@ -244,6 +244,7 @@ Down here, after the class definition with no indentation will write sample user
 This will be our variable and we'll write user with a pair of brackets.
 We create a variable named sample_user just like we always do with any other kind of variable.
 
+class User:
   def __init__(self):
     self.nickname = 'sampleNickname'
     self.city = 'sampleCity'
@@ -274,21 +275,20 @@ So in order to call a method and an object, we need to provide the variable in w
 Then we need to use a dot and after the dot we need to provide the name of the method followed by a
 pair of brackets.
 
-All right, I can see a small typo here, so I'll do a nickname like this.
-
-And now everything works like a charm.
+class User:
+  def __init__(self):
+    self.nickname = 'sampleNickname'
+    self.city = 'sampleCity'
+  def introduce(self):
+    print('Hello, I am', self.nickname, 'and I live in', self.city)
+sample_user = User()
+sample_user.introduce()
 
 So, again, even though there is a self parameter here defined in this introduced method, this very
-
 first parameter is always provided by Python for us.
-
 So we don't have to provide it when we call the method here.
-
 And you can see that Python prints an introduction statement for us and it uses the nickname and the
-
 city of the given object.
-
-If you want to.
 
 You can also inspect what is hidden in the properties or the fields of the given object.
 
