@@ -302,37 +302,29 @@ print(sample_user.city)
 Output: sampleNicknname  sampleCity
 
 And remember that when you create an object from a class, you use the class name followed by a pair
-
-of brackets and here python will know to call this specific method named double underscore init.
-
-Double underscore which is the constructor.
-
-All right, everything looks fine, but our user class is not really sophisticated.
+of brackets and here python will know to call this specific method named double underscore init - which
+is the constructor.
 
 In particular, all the users have the same nickname, sample nickname and the same city.
-
-Sample City.
-
 We would like to provide our own values in the constructor when we create user objects.
 
-And it's actually very simple.
-
 So we'll create a new version of this class here and will do the following.
+So we'll add two parameters here usernickname and UserCity.
 
-So we'll add two parameters here user nickname and User City.
+class User:
+  def __init__(self, user_nickname, user_city):
+    self.nickname = user_nickname
+    self.city = user_city
+  def introduce(self):
+    print('Hello, I am', self.nickname, 'and I live in', self.city)
+sample_user = User()
+sample_user.introduce()
 
 And now, instead of the default values, will do the following.
-
 As you can see, we simply add two new parameters to the constructor and we can then use these parameters
-
 inside the constructor to create the properties of the object.
-
 The parameter names can have well any name that you want, just like with any other function in Python.
-
 One interesting thing is that the parameter names can be even identical with the fields in the object.
-
-So you can do the following.
-
 You can use nickname and you can use set a and then set it like this.
 
 This may look a bit weird because it looks like the same variables really, but they're actually different.
