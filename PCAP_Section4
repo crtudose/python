@@ -328,20 +328,19 @@ One interesting thing is that the parameter names can be even identical with the
 You can use nickname and you can use set a and then set it like this.
 
 This may look a bit weird because it looks like the same variables really, but they're actually different.
-
-The self dots nickname variable refers to the property of the object and the nickname variable without
-
+The self.nickname variable refers to the property of the object and the nickname variable without
 the self prefix is the argument passed to the constructor.
 
-Now if you try to run the code, you will see a type error.
-
-The constructor of the user class expects to get the nickname and the city, but we didn't provide any
-
-here when we instantiated the class.
-
-Let's quickly fix that.
-
-So the username will be Dark Knight and the city will be hell.
+class User:
+  def __init__(self, nickname, city):
+    self.nickname = nickname
+    self.city = city
+  def introduce(self):
+    print('Hello, I am', self.nickname, 'and I live in', self.city)
+sample_user = User('DarkKnight', 'Heaven')
+sample_user.introduce()
+print(sample_user.nickname)
+print(sample_user.city)
 
 Now you can see that our user has the exact nickname and city that we provide it in the bracket when
 
