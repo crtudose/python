@@ -372,7 +372,7 @@ It will have three properties modal color and current speed.
 So we'll start by creating a constructor for this class.
 As we said before, the constructor must always have a special name. Double underscore in it.
 
-class Car()Ș
+class Car()
   def __init__(self, model, colour, initial_speed)
     self.model = model
     self.colour = colour
@@ -426,48 +426,55 @@ If the current speed is zero, it shouldn't be possible to slow down.
 So instead of speed up we'll do slowed down after creating the object and will do that actually twice.
 And you can see that the current speed is minus ten.
 
+my_lovely_car = Car('T-roc', 'red')
+my_lovely_car.slow_down() 
+my_lovely_car.slow_down()
+my_lovely_car.show_speed() 
+
+output: 
+Current speed: -10
+
 We should modify our code so that it doesn't decrease the speed below zero.
-
 Fortunately, that's pretty simple.
-
 So in the slow down method, we're going to do the following if cell speed is slower than five.
-
 Self speed equals zero.
 
-Otherwise decrease this speed.
+class Car()
+  def __init__(self, model, colour, initial_speed)
+    self.model = model
+    self.colour = colour
+    self.speed = initial_speed
 
-By five.
+  def speed_up(self):  
+    self.speed += 5
 
-All right.
+  def slow_down(self):
+    if self.speed < 5
+      self.speed = 0
+    else:
+      self.speed -= 5
+
+  def show_speed(self):  
+    print('current speed', self.speed)
+
+my_lovely_car = Car('T-roc', 'red')
+my_lovely_car.speed_up() 
+my_lovely_car.speed_up()
+my_lovely_car.show_speed() 
+
+output: 
+Current speed: 0
 
 If we now run the program, we can see that the speed never goes below zero.
-
-Perfect.
-
 But there's one more problem.
-
 What happens if the user provides a value below zero when they create a call?
-
-Take a look now.
-
-So instead of the two argument version and the default value of zero for this speech, we're going to
-
-do the following -50.
-
+So instead of the two argument version and the default value of zero for this speech, we're going to do the following -50.
 And now if we try to show the speed without slowing down or speeding up, you can see the value of -50.
-
 Well, that doesn't make much sense either.
 
 We need to also modify our constructor so that it doesn't allow speech values below zero.
-
 One way of dealing with that could be as follows.
-
-So here.
-
-After setting model or color, we can check if initial speed below zero then self speed should be equal
-
-to zero.
-
+After setting model or color, we can check if initial speed below zero then self speed should be equal to zero.
 Else it should be equal to the argument passed around this cell and now run this one.
 
 And you can see that even though we provided a value of -50, the current speed is actually zero.
