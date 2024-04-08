@@ -608,16 +608,18 @@ Let's see what it contains in a few places in this code.
 
 my_pet = Dog('Teddy', 2)
 my_pet.__dict__
-
-So here and now I'll copy.
-
-Paste it also here and here.
+output: {'name': 'Teddy', 'age':2}
 
 As you can see, the dictionary under the name dict shows all the currently available properties.
-
 You can see how the dictionary changes when we add or delete a property.
 
-Perfect.
+my_et.colour = 'brown'
+my_pet.__dict__
+output: {'name': 'Teddy', 'age':2, 'colour': 'brown'}
+
+del my_pet,name
+my_pet.__dict__
+output: {'age': 2, 'colour': 'brown'}
 
 Keep in mind that you can use the dict instance variable with any object that you create.
 
