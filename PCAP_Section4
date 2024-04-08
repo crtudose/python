@@ -364,6 +364,9 @@ third_user.introduce()
 
 And you can see that all three objects have a methods named introduce because all of them were created
 based on the class.
+
+---------------------------
+Encapsulation and abstraction
 ---------------------------------------------
 All right, let's create a new simple class now.
 The class will be called car.
