@@ -543,50 +543,15 @@ And you can see the current speed of zero.
 Now, with the double underscore in front of the property, the code works fine.
 We couldn't change the value of the speech property, as you could see, and the speed was still zero
 after this line.
-In reality, there's a bit more happening behind the scenes, but we'll get back to that later.
 
 Incidentally, there are four main principles behind object oriented programming in most modern programming
 languages encapsulation, abstraction, inheritance and polymorphism.
-These names may sound scary to you, but don't worry, we'll explain them over time in this video.
-The usage of private properties mainly addresses the concept of encapsulation, and encapsulation says
+These names may sound scary to you, but don't worry, we'll explain them over time 
+in this video the usage of private properties mainly addresses the concept of encapsulation, and encapsulation says
 that objects should keep their state private and only expose a set of public functions to the outside world.
-
-This is exactly what we did here.
-
 We made the speech property private, so we heard the state of the object from the outside world and
-
 we exposed two methods speed up and slow down to manipulate the property in a way we previously defined.
 
 This also shows the second principle behind object oriented programming.
-
-Abstraction.
-
 Abstraction says that objects should keep the details of how they work to themselves and only expose
-
 some high level operations to the outside world.
-
-A good analogy could be a smartphone.
-
-Your smartphone comprises a lot of electronic parts, on top of which there are millions of lines of
-
-code so that it can work properly.
-
-But you do need to know that the details of how your phone works are hidden from you.
-
-You only get access to some high level operations, like making a phone call or sending a text message.
-
-You are not aware of how your phone does all of this.
-
-In other words, the details are abstracted from you.
-
-The same thing goes for our car closely.
-
-Theoretically speaking, if someone uses your car clause, they don't even need to know that there is
-
-a speech property in sight.
-
-They can create a car object without providing any speed, and then they can only use the speech up
-
-and slow down methods.
-
-The details of what happens inside the object when you call these methods are abstracted away from you.
