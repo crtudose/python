@@ -680,3 +680,7 @@ print(my_pet.__dict__)
 output: {'_Dog__name': 'Teddy', 'age': 2, '__breed': 'Bulldog'}
 My pet dict, you can see that this time name mangling didn't work because we used the double underscore
 syntax outside the class code.
+
+-----------------
+Class variables
+================
