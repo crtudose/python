@@ -945,131 +945,40 @@ print(doc_alex.__dict__)
 print(Doctor,__dict__)
 
 Now, take a good look at the class and try to understand all of its code before we continue.
-
-Let's do a quick recap.
-
 A method is a function inside a class.
-
 Each method must have at least one parameter.
-
 This parameter can have any name, but should be named self by convention.
-
 The self parameter identifies the object for which the method is invoked.
-
 When you invoke a method outside the class, you should never provide any argument for the self parameter.
-
 Python will do that automatically for you.
 
 If you need some other parameters in your method, you need to place them after the self parameter in
-
 the function definition.
-
 When you invoke such methods, remember that you still need to skip the first self parameter.
-
 You should not provide any argument for it.
 
-Never ever.
-
 The self parameter in the method definition has a very specific purpose.
-
 It allows you to access the properties and other methods of the same object.
-
 One special method in Python's object oriented programming is a constructor.
-
 A constructor is a method with a special name.
-
-Double underscore in it.
-
-Double underscore.
-
 The constructor is activated automatically for you whenever you create a new instance.
 
 In other words, a new object of the given class, it can have more than one parameter.
-
 Usually, constructors accept more parameters that should describe the initial properties of a newly
-
 created object.
-
 You cannot use a return statement and a constructor.
-
 A constructor by design is used to return your objects and nothing else and Python will do that automatically
-
 for you.
-
 A constructor is invoked automatically by Python when you create a new object.
-
 When providing the parameters for a constructor, you can specify default values for all of them.
 
 Of course, methods can be private in the same way that properties can.
-
 You need to add a double underscore in front of the methods name.
-
 The methods name will be mangled and you can still access the method outside the class using the mangled
-
 name.
 
 You already know that dict property that can be used with both objects and class names.
-
 When you use it with an object, you will not see the names of any methods.
-
 However, you will see them when you use the dict property with the class name, you can find it here
-
 and you can see what is printed to the output.
 
-Here you can see functions such as introduce, compare, name, get first, last name together, and
-
-so on.
-
-Now let's take a look at what Python does when we use the print function with an object as an argument
-
-Print doc.
-
-Alex.
-
-When you run the code on your computer, you will probably see a different identifier here at the end.
-
-Don't worry, that's not a problem.
-
-It's an internal object identifier used by Python, and it may be different for each object on each
-
-machine.
-
-In either case, the result of the print statement may not be very helpful if you want to debug your
-
-code, ideally you would like to see some or all of the properties of the object when you use the print
-
-function.
-
-Fortunately, you can do that when Python needs a string representation of an object or a class.
-
-It calls a method named double underscore str.
-
-Double underscore from the object.
-
-There is a default implementation of this method and you could see its output when you invoked this
-
-line print Doc Alex, you can easily change the implementation.
-
-Take a look in the doctor class here.
-
-We will add a new function, a new method.
-
-Def double underscore str double underscore self.
-
-And here we can return something like for instance doctor equals plus self first name plus.
-
-A space plus self last name.
-
-And now if I run this cell and I run this cell again, you can see that print shows something else.
-
-This method must have exactly this name, double underscore or double underscore and have exactly one
-
-parameter self.
-
-It should return a single value.
-
-Apart from that, you can put anything that you want in there.
-
-You could just return the first name, just the last name, the combination of both or whatever else
-
-you need.
