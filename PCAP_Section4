@@ -1,5 +1,5 @@
 OOP Intro
----------
+==================
 You may not need to use object oriented programming yourself, but you may need to use some Python modules
 that are written to utilize objects.
 So far, nearly everything we wrote in Python was classified as procedural programming.
@@ -144,8 +144,9 @@ You clearly define what types of data is used in your application.
 It is also clearly defined what you can do about the various kinds of data.
 The extra effort that you need to put into designing and creating objects really pays off in bigger applications.
 
+---------------------------
 Classes and objects
------------------
+==================
 Even though we talk about object oriented programming, objects in Python can't exist without classes.
 Classes are templates used to create objects.
 For example, you can create a class named user.
@@ -367,7 +368,7 @@ based on the class.
 
 ---------------------------
 Encapsulation and abstraction
----------------------------------------------
+=============================
 All right, let's create a new simple class now.
 The class will be called car.
 It will be a very simple class that describes a very generic column.
@@ -559,8 +560,9 @@ This also shows the second principle behind object oriented programming.
 Abstraction says that objects should keep the details of how they work to themselves and only expose
 some high level operations to the outside world.
 
+----------------------
 Instance variables
----------------
+===============
 Here we've got a simple class named Doc.
 In its constructor, we create to properties, name and age.
 This kind of property exists when it is created explicitly and to add us to an object.
@@ -622,113 +624,59 @@ my_pet.__dict__
 output: {'age': 2, 'colour': 'brown'}
 
 Keep in mind that you can use the dict instance variable with any object that you create.
-
 Python automatically adds this for you.
-
 But now let's say that we want to make one of the properties private.
-
 In programming, private properties are properties that are not accessible from outside the class.
 
-In one of the earlier videos I explained that you need to add to underscores in front of a property
+class Dog():
+  def __init__(self, name, age):
+    self.__name = name
+    self.age = age
 
-name to make it private.
+my_pet = Dog('Teddy', 2)
+print(my_pet.__dict__)
 
-Let's see that now.
-
-We'll copy, paste this class definition and put it here in a new cell.
-
-And we're going to do the following.
-
-Self name.
-
-Run the code.
-
-Create a new cell.
-
-And here we are going to do My Pet Equals Dog again, Teddy with the age of two.
-
-And let's print my pet dot dict now.
-
-Note what happened here.
+output: {'_Dog__name': 'Teddy', 'age': 2}
 
 We don't have the double underscore name property at all.
-
-Instead, we have another one with a very strange name.
-
-Underscore dog, double underscore name.
+Instead, we have another one with a very strange name. Underscore dog, double underscore name.
 
 Where does it come from when Python sees that you want to add a private property with two underscore
-
 signs in front of it?
-
 It uses the so called name mangling to mangle in English means to destroy something or twisted terribly.
-
 And that's kind of what happened here.
-
 Your nice little double underscore name variable becomes underscore dog, double underscore name.
-
 In other words, you get an additional underscore sign and the class name before the actual name of
-
 the private property.
 
 So even though you can use the name, double underscore name inside the class definition, when you
-
 try to do that outside the class, you get an error.
 
-Take a look.
-
-He.
+print(my_pet.__name__)
 
 You can see an attribute error.
-
 The property is not accessible because there is no such property.
-
 Its name has been changed to underscore Dog Double and the school name outside the class.
 
 But hey, does that mean that you can use that strange name outside the class definition to access the
-
-private property?
-
-Yes, you can.
-
+private property? Yes, you can.
 So we can change this to the following here.
 
-Will do.
-
-Copy pasting ant here will write the following.
-
-Congratulations.
+print(my_pet._Dog__name)
 
 You have just access to property outside the class, even though that property was supposed to be private.
-
 As you can see, making a property private in Python is limited.
-
 Someone can still access the property outside the class if they really want to.
-
 They can use that strange, mangled name that Python creates.
-
 In the end, we need to treat the double underscore prefix more as a warning.
-
 It means that the creator of the class believes you should not modify the given property directly,
-
 but formally speaking, there's no way to stop someone from doing it.
 
-Remember one more thing.
-
 This name mangling only works if you use the double underscore prefix inside the class.
+If you try to add a property later in the code outside the class, mangling will not work.
 
-If you try to add a property later in the code outside the class, goat mangling will not work.
-
-Take a look.
-
-We'll create a new cell.
-
-And to the following My pets don't breed.
-
-Bolduc.
-
-Now let's try to print it.
-
+my_pet.__breed = 'Bulldog'
+print(my_pet.__dict__)
+output: {'_Dog__name': 'Teddy', 'age': 2, '__breed': 'Bulldog'}
 My pet dict, you can see that this time name mangling didn't work because we used the double underscore
-
 syntax outside the class code.
