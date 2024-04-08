@@ -558,3 +558,175 @@ we exposed two methods speed up and slow down to manipulate the property in a wa
 This also shows the second principle behind object oriented programming.
 Abstraction says that objects should keep the details of how they work to themselves and only expose
 some high level operations to the outside world.
+
+Instance variables
+---------------
+Here we've got a simple class named Doc.
+In its constructor, we create to properties, name and age.
+This kind of property exists when it is created explicitly and to add us to an object.
+
+class Dog():
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+One way to do that is during the object's initialization in the constructor as shown in the example.
+However, once you create an object, Python allows you to add new properties or even remove existing ones.
+We are going to run this cell and create a new object.
+
+my_pet = Dog('Teddy', 2)
+my_pet.colour = 'brown'
+
+Let's say Teddy with the age of two and now we are going to do my pet dot color equals brown.
+We have just added a third property to the object.
+Even though the dog class has only defined two properties for created objects, name and age, we are
+able to add a third one using the dot notation.
+
+The My Pet Object now has two properties from the constructor. Name and age.
+And a third property added to manually later in the code.
+We're going to create a new cell and run:
+
+del my_pet.name
+
+We are also able to delete any existing property and now the My_Pet Object only has one of the two properties
+defined in the constructor.
+The second one name is gone.
+
+Instead we have a brand new property that was not defined in the constructor color.
+First of all, you must be aware that different objects of the same class can have different properties.
+And second of all, each object has its own set of properties with its own values.
+The properties of one object don't interfere with the properties of another object in any way.
+In general, such properties are called instance variables.
+An instance is another name for an object. This indicates that instance Variables are variables closely related to a specific object.
+Then you may ask if I can dynamically add or delete instance variables of an object.
+How do I know which instance variables are available in a given object in a given place in the code?
+Luckily, there's an easy way to check that.
+
+Objects created in Python are automatically given a few useful properties and methods.
+One of them is a dictionary named __dict__
+Let's see what it contains in a few places in this code.
+
+my_pet = Dog('Teddy', 2)
+my_pet.__dict__
+
+So here and now I'll copy.
+
+Paste it also here and here.
+
+As you can see, the dictionary under the name dict shows all the currently available properties.
+
+You can see how the dictionary changes when we add or delete a property.
+
+Perfect.
+
+Keep in mind that you can use the dict instance variable with any object that you create.
+
+Python automatically adds this for you.
+
+But now let's say that we want to make one of the properties private.
+
+In programming, private properties are properties that are not accessible from outside the class.
+
+In one of the earlier videos I explained that you need to add to underscores in front of a property
+
+name to make it private.
+
+Let's see that now.
+
+We'll copy, paste this class definition and put it here in a new cell.
+
+And we're going to do the following.
+
+Self name.
+
+Run the code.
+
+Create a new cell.
+
+And here we are going to do My Pet Equals Dog again, Teddy with the age of two.
+
+And let's print my pet dot dict now.
+
+Note what happened here.
+
+We don't have the double underscore name property at all.
+
+Instead, we have another one with a very strange name.
+
+Underscore dog, double underscore name.
+
+Where does it come from when Python sees that you want to add a private property with two underscore
+
+signs in front of it?
+
+It uses the so called name mangling to mangle in English means to destroy something or twisted terribly.
+
+And that's kind of what happened here.
+
+Your nice little double underscore name variable becomes underscore dog, double underscore name.
+
+In other words, you get an additional underscore sign and the class name before the actual name of
+
+the private property.
+
+So even though you can use the name, double underscore name inside the class definition, when you
+
+try to do that outside the class, you get an error.
+
+Take a look.
+
+He.
+
+You can see an attribute error.
+
+The property is not accessible because there is no such property.
+
+Its name has been changed to underscore Dog Double and the school name outside the class.
+
+But hey, does that mean that you can use that strange name outside the class definition to access the
+
+private property?
+
+Yes, you can.
+
+So we can change this to the following here.
+
+Will do.
+
+Copy pasting ant here will write the following.
+
+Congratulations.
+
+You have just access to property outside the class, even though that property was supposed to be private.
+
+As you can see, making a property private in Python is limited.
+
+Someone can still access the property outside the class if they really want to.
+
+They can use that strange, mangled name that Python creates.
+
+In the end, we need to treat the double underscore prefix more as a warning.
+
+It means that the creator of the class believes you should not modify the given property directly,
+
+but formally speaking, there's no way to stop someone from doing it.
+
+Remember one more thing.
+
+This name mangling only works if you use the double underscore prefix inside the class.
+
+If you try to add a property later in the code outside the class, goat mangling will not work.
+
+Take a look.
+
+We'll create a new cell.
+
+And to the following My pets don't breed.
+
+Bolduc.
+
+Now let's try to print it.
+
+My pet dict, you can see that this time name mangling didn't work because we used the double underscore
+
+syntax outside the class code.
