@@ -725,95 +725,73 @@ output:
 
 You can see that the value of counter is the same in all three objects.
 That's because there's always exactly one copy of a class variable that is shared across all objects.
-What's more, if you try to use the dict now my pet tot dict, you will not see the counter class variable.
+What's more, if you try to use 
 
-That's because dict only shows instance variables and ignores class variables to see which class variables
+my_pet.__dict__
+output: {'_Dog__name': 'Teddy', age = 2}
 
-are available.
+you will not see the counter class variable.
 
-You need to take a look at the definition of the class itself here.
-
+That's because dict only shows instance variables and ignores class variables 
+to see which class variables are available, you need to take a look at the definition of the class itself here.
 So that's one way of accessing a class variable.
 
-You can use an existing object like here or here or here.
-
 But what if you haven't created any objects or you don't have one at hand?
-
-You can still access class variables using the class name itself so you can the print dog counter.
-
+You can still access class variables using the class name itself
 Both versions retain the same class variable value.
 
+print(Dog.counter)
+output: 3
+
 I personally prefer the second approach where you provide the name of the class, not the name of one
-
 of the objects.
-
-To me it's much clearer and shows that the variable belongs to the class itself, not to any of the
-
-objects.
-
+To me it's much clearer and shows that the variable belongs to the class itself, not to any of the objects.
 You can also make class variables private, just like with instance variables.
-
 The effects will be identical.
-
 The name of the class variable will be mangled but still accessible outside the class definition.
 
-So here we can copy paste this class definition.
+class Dog():
+  __counter = 0
+  def __init__(self, name, age):
+    self.__name = name
+    self.age = age
+    Dog.counter += 1
 
-And change the counter to the following.
-
-But now we can do print dog and disco dog and Tesco underscore counter and it still works fine.
-
+print(Dog._Dog__counter)
 I've mentioned that you can use the dict variable to see the instance variables for any object created.
-
 It turns out that there's also a class variable with the same name.
-
 Take a look how to access it.
 
-So here we'll do print dog.
+print(Dog._Dog_counter)
+output: 0
 
-Like this.
+print(Dog.__dict__)
+output:{...}
 
-All right.
-
-As you can see, the class of variable named dict contains much more data than the instance variable
-
-named dict.
-
+As you can see, the class of variable named dict contains much more data than the instance variable named dict.
 There are some strange elements here that you've not seen before.
-
 Most importantly, however, you can see the mangled counter here.
-
-All right.
-
 You've seen a lot of examples for class variables and instance variables.
-
 You also know that we can add or remove properties on the go.
-
 As a result, you can never be sure if a given object contains a specific property.
 
 One way to check that, of course, is to use the dict variable.
-
-But you can also use a special function named has after.
-
-Take a look.
-
+But you can also use a special function named hasattr().
 We are going to copy paste the previous definition, put it here and now will create a new object.
 
-Tom and down here will do the following.
+class Dog():
+  __counter = 0
+  def __init__(self, name, age):
+    self.__name = name
+    self.age = age
+    Dog.counter += 1
 
-If has natural.
-
-My pet name, then print.
-
-My pet is cold.
-
-And then my pet name.
-
-Else print.
-
-My pet has no name.
-
-Let's see how that works in practice.
+my_pet = Dog('Tom', 5)
+if hasattr(my_pet, 'name')
+  print('my pet is called', my_pet.name)
+else:
+  print('my pet has no name')
+output: my pet has no name
 
 So you can see my pet has no name shown to the output because name is actually private.
 
