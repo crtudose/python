@@ -792,64 +792,61 @@ if hasattr(my_pet, 'name')
 else:
   print('my pet has no name')
 output: my pet has no name
+===============================
+class Dog():
+  __counter = 0
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+    Dog.counter += 1
+
+my_pet = Dog('Tom', 5)
+if hasattr(my_pet, 'name')
+  print('my pet is called', my_pet.name)
+else:
+  print('my pet has no name')
+output: my pet is called Tom
 
 So you can see my pet has no name shown to the output because name is actually private.
-
 Now if we switch it again to a public property, you can see my pet is called Tom.
-
 The function has other excepts to arguments.
-
 The first one is the object or a class.
-
 The second one is the name of the property.
 
 In this example, we first invoke the function when the object has the property defined as private,
-
 and then we make the property public and invoke the function again.
-
 The output is different in both cases.
-
 You can also use the same function to check if a class has a class variable.
 
-Take a look.
-
-I'll copy paste the code here.
+if hasattr(Dog, 'name')
+  print('the dog class has a counter', my_pet.name)
+else:
+  print('the dog class does not have a counter')
+output: The dog class has a counter
 
 So you can see that now, instead of providing an object, I actually provide the name of the class
-
 and you can see that this code works as well.
 
 We've talked about the built in property dict, but it's not the only one available in all objects.
-
 Another built in property is name.
-
 It is much less exciting than dict because it only returns the name of the class.
-
 What's more, it can only be used with a class name, not with an object name.
 
-As a result, it may look rather useless.
-
-So you take a look here.
-
-Print dog name.
+print(Dog.__name__)
+output: Dog
 
 There is, however, one useful use case.
-
 If you combine the name property with the type function, the type of function returns the type of the
-
 given variable.
-
 It could return something like integer string or the class that was used to create an object.
-
-So take a look.
-
 Now we're going to create a new pet and now we are going to do type of my pet and then name.
 
 So using the combination of type and name, you can actually output a string which will contain the
-
 name of the class used to create the object.
 
-All right.
+my_pet = Dog('Tom', 5)
+type(my_pet).__name__
+output: 'Dog'
 
 The last built in property worth mentioning is module.
 
