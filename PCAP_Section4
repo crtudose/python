@@ -858,3 +858,54 @@ the very same notebook.
 
 print(Dog.__module__)
 output: __main__
+
+======
+Local vs class variables
+------
+class House():
+  counter = 0 
+  def __init__(self, address, area, price):
+    self.address = address
+    self.area = area
+    self.price = price
+    House.counter += 1
+
+    House.quality = 'low'
+    self.quality = 'medium'
+
+  def present(self):
+    print('the house at', self.address, 'has an area of', self.area, 'and costs', self.price)
+
+soho_house = House('12 Lexington St, Soho', 130, 540000)
+soho_house.present()
+print(House.counter)
+
+What's the difference between these three?
+The first one is a class variable.
+It will belong to the class rather than to the object.
+Even though we create this variable inside the constructor.
+
+The second one is an instance variable because it is preceded by the self parameter which points to
+the current object.
+
+And the last one is a local variable that exists only in the methods.
+
+But we can print the value of all three variables inside the constructor, and it will work just fine.
+So we'll start by printing house.
+
+So first of all, if we try Soho House, which is the name of the object that we created and we use
+quality, you can see the instance variable printed to the output.
+
+print(soho_house.quality)
+output: medium
+
+There's also a class variable with the same name, but we can't access it using the object Soho House.
+That's because the instance variable overrides the class variable with the same name.
+
+And finally, how can we see the local variable outside the class?
+How can we see this value outside the class?
+The answer is we can't.
+
+Local variables are only visible within the block where they were created.
+So once again, it's really important that you understand the difference between these three lines.
+Class, variable, instance, variable and local variable.
