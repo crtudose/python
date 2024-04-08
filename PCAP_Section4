@@ -718,10 +718,13 @@ In other words, whenever we create a new object, the counter is increased by one
 We can reference the class variable just like any instance variable using the dot notation.
 But note how this class variable has the same value in all three objects now that we run the code.
 
+output:
+3
+3
+3
+
 You can see that the value of counter is the same in all three objects.
-
 That's because there's always exactly one copy of a class variable that is shared across all objects.
-
 What's more, if you try to use the dict now my pet tot dict, you will not see the counter class variable.
 
 That's because dict only shows instance variables and ignores class variables to see which class variables
