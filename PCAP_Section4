@@ -684,3 +684,202 @@ syntax outside the class code.
 -----------------
 Class variables
 ================
+A class variable is a property that exists in just one copy.
+It is stored in the class itself.
+But outside any object, a class variable exists, even if you don't create any object of that class.
+Take a look at the sample code.
+
+class Dog():
+  counter = 0
+  def __init__(self, name, age):
+    self.__name = name
+    self.age = age
+    Dog.counter += 1
+my_pet = Dog('Teddy', 2)
+kates_pet = Dog('Foxy', 5)
+adams_pet = Dog('Luna', 5)
+
+print(my_pet.counter)
+print(kates_pet.counter)
+print(adams_pet.counter)
+
+We've created a new variable inside the class counter.
+The aim is to have a variable that will count how many objects of the class were created.
+Note that this variable is defined in a different way than the name and age.
+Variables, name and age were defined inside a constructor here with the reference to self, but the
+counter was defined with no reference to self outside the constructor.
+
+This makes it a class variable, not an instance variable.
+Apart from that, when you want to make a reference to this variable inside the class code, you need
+to use the class name followed by a dot like here.
+This code adds one to the counter whenever the constructor is used.
+
+In other words, whenever we create a new object, the counter is increased by one outside the class.
+We can reference the class variable just like any instance variable using the dot notation.
+But note how this class variable has the same value in all three objects now that we run the code.
+
+You can see that the value of counter is the same in all three objects.
+
+That's because there's always exactly one copy of a class variable that is shared across all objects.
+
+What's more, if you try to use the dict now my pet tot dict, you will not see the counter class variable.
+
+That's because dict only shows instance variables and ignores class variables to see which class variables
+
+are available.
+
+You need to take a look at the definition of the class itself here.
+
+So that's one way of accessing a class variable.
+
+You can use an existing object like here or here or here.
+
+But what if you haven't created any objects or you don't have one at hand?
+
+You can still access class variables using the class name itself so you can the print dog counter.
+
+Both versions retain the same class variable value.
+
+I personally prefer the second approach where you provide the name of the class, not the name of one
+
+of the objects.
+
+To me it's much clearer and shows that the variable belongs to the class itself, not to any of the
+
+objects.
+
+You can also make class variables private, just like with instance variables.
+
+The effects will be identical.
+
+The name of the class variable will be mangled but still accessible outside the class definition.
+
+So here we can copy paste this class definition.
+
+And change the counter to the following.
+
+But now we can do print dog and disco dog and Tesco underscore counter and it still works fine.
+
+I've mentioned that you can use the dict variable to see the instance variables for any object created.
+
+It turns out that there's also a class variable with the same name.
+
+Take a look how to access it.
+
+So here we'll do print dog.
+
+Like this.
+
+All right.
+
+As you can see, the class of variable named dict contains much more data than the instance variable
+
+named dict.
+
+There are some strange elements here that you've not seen before.
+
+Most importantly, however, you can see the mangled counter here.
+
+All right.
+
+You've seen a lot of examples for class variables and instance variables.
+
+You also know that we can add or remove properties on the go.
+
+As a result, you can never be sure if a given object contains a specific property.
+
+One way to check that, of course, is to use the dict variable.
+
+But you can also use a special function named has after.
+
+Take a look.
+
+We are going to copy paste the previous definition, put it here and now will create a new object.
+
+Tom and down here will do the following.
+
+If has natural.
+
+My pet name, then print.
+
+My pet is cold.
+
+And then my pet name.
+
+Else print.
+
+My pet has no name.
+
+Let's see how that works in practice.
+
+So you can see my pet has no name shown to the output because name is actually private.
+
+Now if we switch it again to a public property, you can see my pet is called Tom.
+
+The function has other excepts to arguments.
+
+The first one is the object or a class.
+
+The second one is the name of the property.
+
+In this example, we first invoke the function when the object has the property defined as private,
+
+and then we make the property public and invoke the function again.
+
+The output is different in both cases.
+
+You can also use the same function to check if a class has a class variable.
+
+Take a look.
+
+I'll copy paste the code here.
+
+So you can see that now, instead of providing an object, I actually provide the name of the class
+
+and you can see that this code works as well.
+
+We've talked about the built in property dict, but it's not the only one available in all objects.
+
+Another built in property is name.
+
+It is much less exciting than dict because it only returns the name of the class.
+
+What's more, it can only be used with a class name, not with an object name.
+
+As a result, it may look rather useless.
+
+So you take a look here.
+
+Print dog name.
+
+There is, however, one useful use case.
+
+If you combine the name property with the type function, the type of function returns the type of the
+
+given variable.
+
+It could return something like integer string or the class that was used to create an object.
+
+So take a look.
+
+Now we're going to create a new pet and now we are going to do type of my pet and then name.
+
+So using the combination of type and name, you can actually output a string which will contain the
+
+name of the class used to create the object.
+
+All right.
+
+The last built in property worth mentioning is module.
+
+It returns the name of the module that contains the definition of the class.
+
+You can use it with both objects and classes.
+
+The result will be the same if the class is defined in the same file.
+
+You will instead see main.
+
+So here we can do a print dog module and you can see Main because the dog class has been defined in
+
+the very same notebook.
