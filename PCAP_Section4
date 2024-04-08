@@ -440,10 +440,13 @@ So in the slow down method, we're going to do the following if cell speed is slo
 Self speed equals zero.
 
 class Car()
-  def __init__(self, model, colour, initial_speed)
+  def __init__(self, model, colour, initial_speed = 0)
     self.model = model
     self.colour = colour
-    self.speed = initial_speed
+    if initial_speed < 0
+      self.speed = 0
+    else:
+      self.speed = initial_speed
 
   def speed_up(self):  
     self.speed += 5
@@ -478,19 +481,11 @@ After setting model or color, we can check if initial speed below zero then self
 Else it should be equal to the argument passed around this cell and now run this one.
 
 And you can see that even though we provided a value of -50, the current speed is actually zero.
-
 So the constructor modification worked fine.
 
-If the user creates the car with a speech value below zero, we will simply put zero as the initial
-
-value.
-
+If the user creates the car with a speech value below zero, we will simply put zero as the initial value.
 Our class is now almost bulletproof in terms of speed, but unfortunately, there's one more way that
-
 the user may try to hack our class.
-
-Take a look.
-
 So here, after creating, the object, will do my lovely car speed.
 
 Equals minus ten.
