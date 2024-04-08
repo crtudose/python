@@ -849,15 +849,12 @@ type(my_pet).__name__
 output: 'Dog'
 
 The last built in property worth mentioning is module.
-
 It returns the name of the module that contains the definition of the class.
-
 You can use it with both objects and classes.
-
 The result will be the same if the class is defined in the same file.
-
 You will instead see main.
-
 So here we can do a print dog module and you can see Main because the dog class has been defined in
-
 the very same notebook.
+
+print(Dog.__module__)
+output: __main__
