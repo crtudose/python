@@ -70,25 +70,43 @@ Here we just set the new value to an empty string and that's it.
 Let's see how this function will work with our doctor class that we created in one of the previous videos.
 I have this class here.
 
-You can also copy paste it from one of the previous notebooks that we used.
+class Doctor():
+  def __init__(self, first_name = 'John', last_name = 'Smith')
+    self.first_name = first_name
+    self.last_name = last_name
+    self.__format_names()
+
+  def__ format_names(self):
+    self.first_name = self.first_name.title()
+    self.last_name = self.last_name.title()
+
+  def introduce(self):
+    print('hi, i am', self.fist_name)
+
+  def compare_name(self, name_to_compare):
+    if self.first_name == name_to_compare:
+      print('we have the same name')
+    else: 
+      print('sorry the name is different')
+
+  def get_first_last_name_together(self):
+    return self.first_name + ' ' + self.last_name
 
 And now in the new cell we are going to create an object of the doctor class.
-
 Let's say Alexander Smith will be the object.
-
 Now, first of all, we want this doctor to introduce himself.
 
 You can see that there is an introduced method defined within the class and it simply prints the first
-
 name.
+
+doc_alex = Doctor('alexander', 'smith')
+doc_alex.introduce()
 
 And now we want to run the function empty strings with this object as the argument, and we want the
 
 doctor to introduce himself again.
 
 Let's see what this does.
-
-Excellent.
 
 You can see that the function works correctly.
 
