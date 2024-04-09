@@ -67,8 +67,7 @@ We used the third new function setattr() - this function sets a new value for a 
 In a given object, it takes three arguments the object, the name of the property and the new value.
 Here we just set the new value to an empty string and that's it.
 
-Let's see how this function will work with our doctor class that we created in one of the previous videos.
-I have this class here.
+Let's see how this function will work with our doctor class
 
 class Doctor():
   def __init__(self, first_name = 'John', last_name = 'Smith')
@@ -103,22 +102,14 @@ doc_alex = Doctor('alexander', 'smith')
 doc_alex.introduce()
 empty_strings(doc_alex)
 doc_alex.introduce()
+
 output:
 Hi, i am alexander
 hi, i am
 
-And now we want to run the function empty strings with this object as the argument, and we want the
-
+And now we want to run the function empty_strings() with this object as the argument, and we want the
 doctor to introduce himself again.
-
-Let's see what this does.
-
-You can see that the function works correctly.
-
 Alex now has an empty first name, so the function correctly identified that there is a first name and
-
 last name property.
-
 And because both of them are strings, they were both set to empty ones.
-
 And this is why the introduced method now returns an empty name.
