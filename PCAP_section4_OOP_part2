@@ -178,6 +178,7 @@ class landvehicle(vehicle):
  pass
 class car(landvehicle):
  pass
+
 my_car = Car()
 print(my_car.__dict__)
 output: {}
@@ -187,79 +188,65 @@ And so you can see that we create a car with no arguments passed in the brackets
 When you check the dict property for the object created, it is empty.
 
 Now let's add a constructor to the top hierarchy vehicle class.
-
 So we are going to create a new cell.
 
-And change path into the following def init self speed and now a new property based on the argument
-
-around the cell.
+class vehicle:
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ pass
+class car(landvehicle):
+ pass
 
 And now let's try to create the object again.
-
 And now when you want to run the code, it fails.
 
-The constructor is missing one required positional argument named speech.
+my_car = Car()
+print(my_car.__dict__)
+output: err line 1 missing required positional argument 'speed'
 
+The constructor is missing one required positional argument named speed.
 How is that possible?
-
-We don't have any constructor or any property defined in the core class.
-
-The answer is quite simple.
-
+We don't have any constructor or any property defined in the car class.
 If we don't define a constructor for car explicitly, Python will try to look for a constructor in all
-
 of these super classes.
-
 There's no constructor in land vehicle, but there is one in vehicle, so Python will use that constructor
-
 for creating costs.
 
 All of this happens because car inherits from land vehicle which in turns inherits from vehicle.
-
 All the properties and methods defined in vehicle will therefore be visible in car.
-
 This means that we now need to provide an argument for the speed parameter in the car subclass such
-
 as here.
 
 As you can see, car inherited the speed property from the vehicle superclass.
+All of this happens indirectly through the landvehicle class.
+Now what happens when we create a constructor in the landvehicle in turn?
 
-All of this happens indirectly through the land vehicle class.
+class vehicle:
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ def __init__(self, wheel_count):
+    self.wheel_count = wheel_count
+class car(landvehicle):
+ pass
 
-Now what happens when we create a constructor in the land vehicle in turn?
+And now if we try to create an object in the very same manner 
+something strange happened here, we could successfully create an object of class car, 
+but the speech property from the vehicle constructor is gone.
 
-Take a look.
-
-So again, copy.
-
-Paste the code into a new cell.
-
-And we're going to do the following def in it self and that's something different.
-
-We'll count for example, self, we'll count equals we'll count around the cell.
-
-And now if we try to create an object in the very same manner something strange happened here, we could
-
-successfully create an object of class car, but the speech property from the vehicle constructor is
-
-gone.
-
-How is it possible?
+my_car = Car(5)
+print(my_car.__dict__)
+output: {'wheel_count': 5}
 
 The rule is that Python only inherits the constructor from the superclass if there is no constructor
-
 defined in the given class.
-
 In the previous example here, car didn't have a constructor, so it inherited a constructor from Land
-
-Vehicle and because Land Vehicle did not have a constructor either, it inherited the constructor defined
-
+Vehicle and because LandVehicle did not have a constructor either, it inherited the constructor defined
 in the vehicle class.
 
 As a result, the constructor from vehicle was used to create a car object.
-
 And here when we defined a constructor in land vehicle, it did not inherit the one for a vehicle.
-
 That means that land vehicle has its own constructor now, which is not related to the vehicle constructor
 
 here in any way.
