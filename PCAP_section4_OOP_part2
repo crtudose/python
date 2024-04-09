@@ -172,17 +172,19 @@ now that we know the hierarchy of classes, let's add content to the three classe
 inheritance really works.
 We can create a car object like this.
 
-Car print.
-
-My car picked.
+class vehicle:
+ pass
+class landvehicle(vehicle):
+ pass
+class car(landvehicle):
+ pass
+my_car = Car()
+print(my_car.__dict__)
+output: {}
 
 The classes don't have any constructors defined, they don't contain any properties.
-
-And so you can see that we create a car with no arguments past in the brackets.
-
+And so you can see that we create a car with no arguments passed in the brackets.
 When you check the dict property for the object created, it is empty.
-
-No properties, no methods, nothing.
 
 Now let's add a constructor to the top hierarchy vehicle class.
 
