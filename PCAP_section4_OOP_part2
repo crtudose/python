@@ -152,32 +152,16 @@ In the brackets we provide the name of the superclass, which is vehicle.
 The same goes for call in the brackets.
 We provide the name of the landvehicle.
 
-This way Car has become a subclass of Land Vehicle and Land Vehicle has become a subclass of vehicle.
+This way Car has become a subclass of LandVehicle and LandVehicle has become a subclass of vehicle.
+We can check that using python's is subclass() function.
 
-We can check that using python's is subclass function.
-
-Take a look.
-
-So is car a subclass of land vehicle?
-
-True.
-
-And a similar invocation.
-
-Is Land Vehicle a surplus of vehicle?
-
-Also true, the class that we test does not need to be an immediate subclass of the other class.
+issubclass(car, landvehicle)
+True
+issubclass(landvehicle, vehicle)
+True
 
 In our case, a car is also a subclass of vehicle, even though not directly.
-
-So if you do is subclass car of simply vehicle, you will also see true.
-
 Interestingly, a car is also always a subclass of itself.
+issubclass(car, car)
+True
 
-So if you try its car subclass of car you will also see.
-
-True.
-
-Okay, that was a very quick introduction into inheritance.
-
-In the next video we'll actually write some code inside the classes and see how it works.
