@@ -101,6 +101,11 @@ name.
 
 doc_alex = Doctor('alexander', 'smith')
 doc_alex.introduce()
+empty_strings(doc_alex)
+doc_alex.introduce()
+output:
+Hi, i am alexander
+hi, i am
 
 And now we want to run the function empty strings with this object as the argument, and we want the
 
