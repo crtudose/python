@@ -15,7 +15,7 @@ Suppose that you write a Python module that you believe will be useful for other
 You want to create a function that accepts an object of any type of class, goes through all the properties
 of the object, and for each string property it changes the property to an empty string.
 
-We'll call this function empty strings because we want it to change all the strings into empty ones.
+We'll call this function empty_string because we want it to change all the strings into empty ones.
 Normally such a function is impossible.
 You don't know what kind of clusters your users will have.
 You don't know what kind of properties these classes will have as well.
@@ -26,15 +26,15 @@ Introspection will help you to get to know all the properties that are available
 of any type of class.
 Reflection, in turn will allow you to change all these properties that you need.
 Let's see how this can be achieved in practice.
-So we'll create a method named empty strings and it will have a single parameter user object.
+So we'll create a method named empty_string and it will have a single parameter user_object.
 So this will be the object that we will want to introspect, reflect and change the strings into empty ones.
 
 Now what we need to do, we are going to write a for loop in user object and here we will use the dict
 property that you already know.
 And because this is a dictionary, we are going to use the key method on it.
 Now inside the loop we're going to do the following.
-Prop value will be a new variable that will equal get after.
-We'll get to that in a second with user object and prop name and then if is instance, this is also
+Prop_value will be a new variable that will equal get after.
+We'll get to that in a second with user object and prop_name and then if is instance, this is also
 a new element here.
 
 def empty_strings(user_object):
@@ -44,47 +44,30 @@ def empty_strings(user_object):
          setattr(user_object, prop_name, '')
 
 We get an object as a parameter, but we know next to nothing about it.
-
 We don't know which class was used to create it.
-
 However, we know that the built in dict property is a dictionary that contains all the properties of
-
 the object, no matter what kind of object it is.
 
 Because it is a dictionary, we can actually use the case method.
-
 This is a standard dictionary method to create a for loop.
-
 This for loop will inspect all the properties of the given object one by one.
-
 So for each property name we use another function worth knowing.
+It takes two arguments, an object and a name of its property and it returns the value of the given property.
+Next thus isinstance().
+Its instance takes two arguments.
 
-Get atter.
-
-It takes two arguments an object and a name of its property and it returns the value of the given property.
-
-Next thus is instance.
-
-Its instance takes to arguments.
-
-The first one is a variable, the second one is a type is instance checks.
-
-If the variable is of the given type, we put STR here because we want to check for strings, but you
-
-could also put something like int for integers or maybe you could put a custom class name as well.
-
-Here we just focus on strings.
+The first one is a variable, the second one is a type 
+isinstance() checks if the variable is of the given type, we put STR here because 
+we want to check for strings, but you could also put something like int for integers 
+or maybe you could put a custom class name as well.
 
 You can see that if the value of the given property is indeed a string.
-
-We used the third new function set after this function sets a new value for a given property.
+We used the third new function setattr() - this function sets a new value for a given property.
 
 In a given object, it takes three arguments the object, the name of the property and the new value.
-
 Here we just set the new value to an empty string and that's it.
 
 Let's see how this function will work with our doctor class that we created in one of the previous videos.
-
 I have this class here.
 
 You can also copy paste it from one of the previous notebooks that we used.
