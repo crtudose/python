@@ -165,3 +165,189 @@ Interestingly, a car is also always a subclass of itself.
 issubclass(car, car)
 True
 
+==========================
+inheritance properties
+---------------
+now that we know the hierarchy of classes, let's add content to the three classes to see how
+inheritance really works.
+We can create a car object like this.
+
+Car print.
+
+My car picked.
+
+The classes don't have any constructors defined, they don't contain any properties.
+
+And so you can see that we create a car with no arguments past in the brackets.
+
+When you check the dict property for the object created, it is empty.
+
+No properties, no methods, nothing.
+
+Now let's add a constructor to the top hierarchy vehicle class.
+
+So we are going to create a new cell.
+
+And change path into the following def init self speed and now a new property based on the argument
+
+around the cell.
+
+And now let's try to create the object again.
+
+And now when you want to run the code, it fails.
+
+The constructor is missing one required positional argument named speech.
+
+How is that possible?
+
+We don't have any constructor or any property defined in the core class.
+
+The answer is quite simple.
+
+If we don't define a constructor for car explicitly, Python will try to look for a constructor in all
+
+of these super classes.
+
+There's no constructor in land vehicle, but there is one in vehicle, so Python will use that constructor
+
+for creating costs.
+
+All of this happens because car inherits from land vehicle which in turns inherits from vehicle.
+
+All the properties and methods defined in vehicle will therefore be visible in car.
+
+This means that we now need to provide an argument for the speed parameter in the car subclass such
+
+as here.
+
+As you can see, car inherited the speed property from the vehicle superclass.
+
+All of this happens indirectly through the land vehicle class.
+
+Now what happens when we create a constructor in the land vehicle in turn?
+
+Take a look.
+
+So again, copy.
+
+Paste the code into a new cell.
+
+And we're going to do the following def in it self and that's something different.
+
+We'll count for example, self, we'll count equals we'll count around the cell.
+
+And now if we try to create an object in the very same manner something strange happened here, we could
+
+successfully create an object of class car, but the speech property from the vehicle constructor is
+
+gone.
+
+How is it possible?
+
+The rule is that Python only inherits the constructor from the superclass if there is no constructor
+
+defined in the given class.
+
+In the previous example here, car didn't have a constructor, so it inherited a constructor from Land
+
+Vehicle and because Land Vehicle did not have a constructor either, it inherited the constructor defined
+
+in the vehicle class.
+
+As a result, the constructor from vehicle was used to create a car object.
+
+And here when we defined a constructor in land vehicle, it did not inherit the one for a vehicle.
+
+That means that land vehicle has its own constructor now, which is not related to the vehicle constructor
+
+here in any way.
+
+And this time Car inherited this new constructor for a land vehicle which doesn't have a speech property.
+
+Now you may feel a little disappointed.
+
+I said that inheritance allows subclasses to take properties from the super classes.
+
+But here it looks like car only has the properties from their land vehicle, but it doesn't have the
+
+property from their vehicle.
+
+How to change that?
+
+Fortunately, it's not that difficult.
+
+All we need to do is invoke the vehicle constructor from the land vehicle constructor directly.
+
+Take a look again.
+
+Copy, paste this into a new cell.
+
+And I'm going to add the following vehicle in it.
+
+And this constructor expects two parameters.
+
+So I'm going to do a self and speed.
+
+And now, because I need to value for a speed, I'm going to add it here as one of the parameters around
+
+the cell.
+
+And now let's try to create a new car object with two arguments.
+
+As you can see that it succeeded as the first instruction in the land vehicle constructor.
+
+We wrote vehicle.
+
+The name of the superclass followed by adult and the init method name.
+
+Actually the constructor name.
+
+We can see in the vehicle constructor definition that it requires to arguments, self and speed.
+
+So these are the arguments that we provide insight the land vehicle constructor.
+
+The first one is self and the second one is speed.
+
+For speed to work, we had to add another parameter to the Land Vehicle constructor here.
+
+The constructor now has three parameters.
+
+The first one is self, the second one is speed, and the third one is wheel count and this version
+
+will be inherited by the car.
+
+This also means that to create a car object, we need to provide two parameters one for speed and the
+
+other one for wheel count.
+
+And as usual, the self reference is provided for you automatically.
+
+So in short, to invoke the constructor from the superclass, we can use the dot notation with the name
+
+of the superclass, but we can also do something else.
+
+We can use a special super keyword, take a look.
+
+Instead of vehicle, we're going to do super and get rid of self here.
+
+Run this cell and run this cell again and it works in the very same way.
+
+Note a subtle difference when we use the super keyword instead of the super class name, we don't need
+
+to provide the self parameter.
+
+It will be automatically passed for us by Python to a superclass constructor.
+
+Both notations, the one with the class name and the one with the super keyword allow you to use constructors
+
+from super classes.
+
+This in turn means that we can inherit instance variables from super classes outside the class definition.
+
+We can simply use the dot notation to access the instance variables defined in the super classes.
+
+So here when we have a mycar object, we can do the following speed and you can see that it works.
+
+So this value is actually taken from the super class named vehicle, even though we never defined a
+
+speed instance variable in the car class, it was inherited for us from the super classes via constructors.
