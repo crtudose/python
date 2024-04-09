@@ -110,3 +110,89 @@ Alex now has an empty first name, so the function correctly identified that ther
 last name property.
 And because both of them are strings, they were both set to empty ones.
 And this is why the introduced method now returns an empty name.
+
+==========================
+OOP inheritance
+---------------
+Intro Inheritance is a big aspect of object oriented programming.
+In certain situations, it can also get quite complicated.
+Inheritance is a mechanism where one object or class is based on another object or class.
+This way we can create super classes which are broader and more general, as well as subclasses which
+are detailed and concrete.
+A common example would be vehicles.
+You could have a general class named vehicle, and you could then create more specific classes a land
+vehicle or a water vehicle.
+And then again, a land vehicle could be a car or a motorcycle.
+A water vehicle, for instance, could be a boat.
+
+In this hierarchy, we start with the broadest class definition vehicle.
+Each land vehicle is a vehicle. Each water vehicle is also a vehicle.
+And finally, a car. A motorcycle and a boat.
+
+In this setup, we can say that, for instance, land vehicle is a super class of car.
+Vehicle is also a super class of car. And car is a subclass of land vehicle.
+Let's focus on these three for now.
+Vehicle, land, vehicle and car will start by creating these three classes and 
+they will be empty for now.
+
+So we'll do the following class vehicle pass now.
+
+Class land vehicle.
+
+But you go inside the brackets pass.
+
+And the third one, class car.
+
+Land.
+
+Vehicle pass.
+
+Right.
+
+These three classes are messy.
+
+And because Python doesn't allow empty blocks of code anywhere in such situations, we need to provide
+
+at least a single instruction for each class.
+
+So now this instruction will be pass, which means do nothing that effectively gives us empty classes.
+
+So what's the new element here?
+
+Note that land vehicle has a pair of brackets after its name.
+
+In the brackets we provide the name of the superclass, which is vehicle.
+
+The same goes for call in the brackets.
+
+We provide the name of the land vehicle.
+
+This way Car has become a subclass of Land Vehicle and Land Vehicle has become a subclass of vehicle.
+
+We can check that using python's is subclass function.
+
+Take a look.
+
+So is car a subclass of land vehicle?
+
+True.
+
+And a similar invocation.
+
+Is Land Vehicle a surplus of vehicle?
+
+Also true, the class that we test does not need to be an immediate subclass of the other class.
+
+In our case, a car is also a subclass of vehicle, even though not directly.
+
+So if you do is subclass car of simply vehicle, you will also see true.
+
+Interestingly, a car is also always a subclass of itself.
+
+So if you try its car subclass of car you will also see.
+
+True.
+
+Okay, that was a very quick introduction into inheritance.
+
+In the next video we'll actually write some code inside the classes and see how it works.
