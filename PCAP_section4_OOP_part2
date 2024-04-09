@@ -134,37 +134,23 @@ Vehicle is also a super-class of car. And car is a subclass of land vehicle.
 Let's focus on these three for now. Vehicle, land vehicle and car 
 will start by creating these three classes and they will be empty for now.
 
-So we'll do the following class vehicle pass now.
-
-Class land vehicle.
-
-But you go inside the brackets pass.
-
-And the third one, class car.
-
-Land.
-
-Vehicle pass.
-
-Right.
+class vehicle:
+ pass
+class landvehicle(vehicle):
+ pass
+class car(landvehicle):
+ pass
 
 These three classes are messy.
-
 And because Python doesn't allow empty blocks of code anywhere in such situations, we need to provide
-
 at least a single instruction for each class.
-
 So now this instruction will be pass, which means do nothing that effectively gives us empty classes.
 
 So what's the new element here?
-
-Note that land vehicle has a pair of brackets after its name.
-
+Note that landvehicle has a pair of brackets after its name.
 In the brackets we provide the name of the superclass, which is vehicle.
-
 The same goes for call in the brackets.
-
-We provide the name of the land vehicle.
+We provide the name of the landvehicle.
 
 This way Car has become a subclass of Land Vehicle and Land Vehicle has become a subclass of vehicle.
 
