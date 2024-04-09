@@ -92,7 +92,7 @@ class Doctor():
 And now in the new cell we are going to create an object of the doctor class.
 Let's say Alexander Smith will be the object.
 Now, first of all, we want this doctor to introduce himself.
-You can see that there is an introduced method defined within the class and it simply prints the first
+You can see that there is an introduce() method defined within the class and it simply prints the first
 name.
 
 doc_alex = Doctor('alexander', 'smith')
