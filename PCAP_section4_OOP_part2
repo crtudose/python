@@ -129,11 +129,10 @@ In this hierarchy, we start with the broadest class definition vehicle.
 Each land vehicle is a vehicle. Each water vehicle is also a vehicle.
 And finally, a car. A motorcycle and a boat.
 
-In this setup, we can say that, for instance, land vehicle is a super class of car.
-Vehicle is also a super class of car. And car is a subclass of land vehicle.
-Let's focus on these three for now.
-Vehicle, land, vehicle and car will start by creating these three classes and 
-they will be empty for now.
+In this setup, we can say that, for instance, land vehicle is a super-class of car.
+Vehicle is also a super-class of car. And car is a subclass of land vehicle.
+Let's focus on these three for now. Vehicle, land vehicle and car 
+will start by creating these three classes and they will be empty for now.
 
 So we'll do the following class vehicle pass now.
 
