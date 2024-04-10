@@ -536,3 +536,268 @@ the current object.
 As a result, Python always tries to find the matching method within the object itself, and the end
 result is that even though both objects use the present method, they actually behave differentially
 because behind the scenes they were created using different classes.
+
+==========================
+isinstance + is
+---------------
+All of these subclasses and invoking constructors from super classes that we already discussed may be
+a bit confusing.
+
+class vehicle:
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ def __init__(self, wheel_count):
+   super().__init__(speed) 
+   self.wheel_count = wheel_count
+class car(landvehicle):
+ pass
+
+my_vehicle() = vehicle(50)
+my_land_vehicle - landvehicle(50, 4)
+my_car = Car(60, 4)
+
+print(isinstance(my_vehicle, vehicle))
+print(isinstance(my_land_vehicle, vehicle))
+print(isinstance(My_car, vehicle))
+
+True
+True
+True
+
+Now I'm going to create three objects.
+My vehicle will be just a vehicle.
+
+Now my land vehicle, which will be at land vehicle 15, let's say four.
+
+And then my car, which will be a car.
+
+60 and four as well.
+
+All right, we've got a typo here.
+
+Now everything's fine and now I'm going to use the is instance method quite a few times so take a look
+
+is instance.
+
+So I want to check if my vehicle is an instance of the vehicle class and the answer is true.
+
+Now let's see what happens if we try that with land, vehicle and with car, what will we get?
+
+True, true and true.
+
+All right.
+
+Now, let's use similar invocations, but this time, instead of vehicle, we are going to use land
+
+vehicle.
+
+So we are going to check whether my vehicle, my land vehicle and my car are instances of land vehicle.
+
+And here we've got to force for my vehicle and then true twice.
+
+All right.
+
+And the last check, same variables.
+
+But instead of land vehicle, we just want to use a car like this.
+
+And we've got false twice and through only for the my car object.
+
+So looking at it note, a very interesting thing is instance a returns true if an object was created
+
+with a given clause, but it also returns true if the object was created from a subclass of the class
+
+that we provide.
+
+In other words, my vehicle that was created from the vehicle class is an instance of the vehicle class,
+
+but it's not an instance of land vehicle or the car class.
+
+In turn, my car is an instance of car.
+
+As you can see here, but it's also an instance of land vehicle and an instance of car.
+
+All of this at the same time.
+
+All right.
+
+There's also an operator that you can use with to object variables.
+
+Is the operator checks whether two variables point to the same object?
+
+How does that work?
+
+Remember that variables don't store objects directly.
+
+Variables actually store references to objects in the memory.
+
+In other words, object variables contain the address of an object in the memory, not the object itself.
+
+And this has some consequences.
+
+So take a look here.
+
+We are going to use my vehicle and a new vehicle with 60 and my new vehicle that will be equal to my
+
+vehicle.
+
+All right.
+
+We're on the cell and the first line creates a new object.
+
+We can be sure of that because we can see the name of the class followed by a pair of brackets.
+
+This syntax is used to create a new object in the memory, the address of this object.
+
+In other words, the reference to that object will be saved in the my vehicle variable.
+
+Now on line two, we assign the value of my vehicle to a new variable, my new vehicle because my vehicle
+
+only stores the reference to the actual object.
+
+My new vehicle gets that reference and both variables point to the same object.
+
+You can easily check that using the IS operator.
+
+So here we are going to do the following around the cell and now print my vehicle is my new vehicle.
+
+You can see true to the output, this approach has some consequences if you make any changes to the
+
+object using one of the variables, that change will be visible in the second variable as well.
+
+So for instance.
+
+First we are going to print the date property for both my vehicle and my new vehicle.
+
+Works fine.
+
+And now we want to change my vehicle speed to 30 and we want to print the dictionaries after this operation.
+
+And as you can see, the change applied with the my vehicle object reference is also visible and the
+
+my new vehicle object reference because they both reference the very same object in their memory.
+
+If you want to have two different objects, you need to use the notation with class nine plus brackets
+
+twice, so you would have to do the following.
+
+Like this.
+
+And now these variables will keep completely different references to completely different objects in
+
+their memory.
+
+So if you run this cell and you try this test again.
+
+You will now see that the change to the speed in my vehicle here to 30 is completely independent of
+
+the speech in the my new vehicle object reference.
+
+All right let's analyze how is works outside object oriented programming with primitive data types will
+
+start with integers.
+
+So first of all, we'll create.
+
+Three variables first num 5 seconds num five.
+
+And how print.
+
+First.
+
+Numb is.
+
+Second.
+
+Numb.
+
+As you can see, if two variables with primitives such as integers contain the very same integer number,
+
+the result of using the IS operator is true.
+
+And now what will happen in the following situation?
+
+First numb is five.
+
+Second numb is two.
+
+But now we do.
+
+The second numb plus equals three.
+
+And again we want to check whether they both are the same.
+
+So initially, second numb has a different number than first numb.
+
+But on line three we actually use addition so that both numbers are the same.
+
+The is operator still returns true as you can see.
+
+The same however is not true about strings.
+
+So take a look first ACR will be hello second str will be hello two.
+
+And now if we check whether fast SDR is second SDR, you can see true.
+
+And the reason for that is because Python has some internal optimization mechanisms for strings when
+
+it sees that we define two string variables with the same content.
+
+The second variable actually points to the very same string as the first one.
+
+The result is true.
+
+However, you need to remember that strings are immutable.
+
+If you try to change an existing string, python will instead create a new one.
+
+And that's a very tricky part.
+
+Take a look at this example.
+
+So we are going to copy paste it into a new cell.
+
+But now the second str will be hell without the final.
+
+Oh, but we are going to do the following.
+
+Plus equals oh.
+
+What will happen now?
+
+False.
+
+So at first sight, this example looks similar to the one with integers right here.
+
+We just added three to the number of two.
+
+Both of the variables contain the number five.
+
+So the result of asking first time is second time was true here.
+
+However, something different happens.
+
+The second string is initially different from the first one, but on line three we add the missing O
+
+at the end of the string.
+
+The strings now seem identical, but the IS operator returns false.
+
+That's because whenever we try to modify an existing string, python instead creates a new one, even
+
+though both STR and second still contain identical strings.
+
+Now they are actually two separate objects in the memory.
+
+Keep that in mind.
+
+That's where the equality operator gives a different result.
+
+So if you try the following invocation now instead of s, we are going to use double equality sign.
+
+You can say true to the output, the equality operator returns true because both variables contain the
+
+very same string value, but because the actual string objects behind them are two different objects
+
+in the memory that is operator returns false.
