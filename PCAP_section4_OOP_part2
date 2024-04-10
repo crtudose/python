@@ -353,40 +353,40 @@ my_car.class_message
 
 The class variable was inherited from the super-class and we can access class message from a car object
 as you can see.
-
-Now, how about methods from super classes?
-
+Now, how about methods from super-classes?
 Exactly the same story.
 
-Take a look here.
+class vehicle:
+ class_message = 'this is a message from the vehicle class!'
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ def __init__(self, wheel_count):
+   super().__init__(speed)
+   self.wheel_count = wheel_count
+   print(vehicle.class_message) # this can be replaced with print(super().class_message)
+ def speed_up(self) # added method
+   self_speed += 5
+class car(landvehicle):
+ pass
 
-We are going to copy paste this into a new cell and I'm going to add a new method here in the land of
-
-equal death, speed up self, self speech plus equals five.
-
-And now in the call class, we're going to do death super speed self and it's going to print super speed,
-
-activate it first, and then it's going to do super speed up.
-
+And now in the call class, we're going to do define super_speed and it's going to print super speed,
+activate it first, and then it's going to do super speed_up.
 And we're actually going to repeat that three times around the cell.
+
+class car(landvehicle):
+ def super_speed(self):
+  print('super speed activated')
+   super().speed_up()
+   super().speed_up()
+   super().speed_up()
 
 And now let's create a new object.
 
-My first call equals call.
-
-Let's say ten and ten.
-
-Sorry, just four wheels.
-
-Let's print the dict variable.
-
-My fast car dict.
-
-Then we are going to call it again.
-
-And between these invocations, we are going to do my fast car super speed.
-
-Let's see what this will do.
+my_fast_car = Car(10, 4)
+print(my_fast_car.__dict__)
+my_fast_car = super_speed()
+print(my_fast_car.__dict__)
 
 And you can see the speed has changed.
 
