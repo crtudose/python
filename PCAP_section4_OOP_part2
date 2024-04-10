@@ -667,25 +667,20 @@ print(first_num is second_num)
 o: True
 
 And again we want to check whether they both are the same.
-
 So initially, second numb has a different number than first numb.
-
 But on line three we actually use addition so that both numbers are the same.
-
 The is operator still returns true as you can see.
-
 The same however is not true about strings.
 
-So take a look first ACR will be hello second str will be hello two.
+first_str = 'hello'
+second_str = 'hello'
+print(first_str is second_str)
 
-And now if we check whether fast SDR is second SDR, you can see true.
-
+So take a look first_str will be hello second_str will be hello too.
+And now if we check whether first_Str is second_Str, you can see true.
 And the reason for that is because Python has some internal optimization mechanisms for strings when
-
 it sees that we define two string variables with the same content.
-
 The second variable actually points to the very same string as the first one.
-
 The result is true.
 
 However, you need to remember that strings are immutable.
