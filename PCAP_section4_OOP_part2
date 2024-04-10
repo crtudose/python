@@ -618,57 +618,53 @@ object using one of the variables, that change will be visible in the second var
 So for instance. First we are going to print the date property for both my vehicle and my new vehicle.
 And now we want to change my vehicle speed to 30 and we want to print the dictionaries after this operation.
 
-And as you can see, the change applied with the my vehicle object reference is also visible and the
+print(my_vehicle.__dict__, my_new_vehicle.__dict__)
+my_vehicle.speed = 30
+print(my_vehicle.__dict__, my_new_vehicle.__dict__)
 
-my new vehicle object reference because they both reference the very same object in their memory.
+{'speed': 60} {'speed': 60}
+{'speed': 30} {'speed': 30}
 
-If you want to have two different objects, you need to use the notation with class nine plus brackets
-
+And as you can see, the change applied with the my_vehicle object reference is also visible and the
+my_new_vehicle object reference because they both reference the very same object in their memory.
+If you want to have two different objects, you need to use the notation with class name plus brackets
 twice, so you would have to do the following.
 
-Like this.
+my_vehicle = vehicle(60)
+my_new_vehicle = vehicle(60)
 
 And now these variables will keep completely different references to completely different objects in
-
 their memory.
-
 So if you run this cell and you try this test again.
-
 You will now see that the change to the speed in my vehicle here to 30 is completely independent of
-
 the speech in the my new vehicle object reference.
 
-All right let's analyze how is works outside object oriented programming with primitive data types will
+print(my_vehicle.__dict__, my_new_vehicle.__dict__)
+my_vehicle.speed = 30
+print(my_vehicle.__dict__, my_new_vehicle.__dict__)
 
+{'speed': 60} {'speed': 60}
+{'speed': 30} {'speed': 60}
+
+All right let's analyze how is() works outside object oriented programming with primitive data types will
 start with integers.
+So first of all, we'll create Three variables first num 5 seconds num five.
 
-So first of all, we'll create.
-
-Three variables first num 5 seconds num five.
-
-And how print.
-
-First.
-
-Numb is.
-
-Second.
-
-Numb.
+first_num = 5
+second_num = 5
+print(first_num is second_num)
+o: True
 
 As you can see, if two variables with primitives such as integers contain the very same integer number,
-
 the result of using the IS operator is true.
-
 And now what will happen in the following situation?
 
-First numb is five.
+first_num = 5
+second_num = 2
+second_num += 3
+print(first_num is second_num)
 
-Second numb is two.
-
-But now we do.
-
-The second numb plus equals three.
+o: True
 
 And again we want to check whether they both are the same.
 
