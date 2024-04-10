@@ -317,13 +317,14 @@ inheriting class variables and methods
 ---------------
 
 class vehicle:
- class message = 'this is a message from the vehicle class!'
+ class_message = 'this is a message from the vehicle class!'
  def __init__(self, speed):
   self.speed = speed
 class landvehicle(vehicle):
  def __init__(self, wheel_count):
    super().__init__(speed)
    self.wheel_count = wheel_count
+  print(vehicle.class_message) # this can be replaced with print(super().class_message)
 class car(landvehicle):
  pass
 
@@ -335,32 +336,22 @@ like this is a message from the vehicle class.
 And now we want to print that class message at the end of the constructor in the subclass names LandVehicle.
 So we are going to do the following print vehicle Class Message.
 
-In order to verify whether that works, we're going to create a new car.
-
+In order to verify whether that works, we're going to create a new my_car.
 And let's see what this cell does when we run it.
 
+my_car = Car(50, 4)
+output: this is a message from the vehicle class!
+
 It actually creates the object based on the constructor from the land vehicle class.
-
 And it also prints the message from the superclass named vehicle.
-
 So here we defined a class variable in the vehicle class and we could then easily access this variable
-
 in the subclass using the dot notation with the superclass name.
 
-And again we can use the notation with the class name or we can use the super keywords so we can actually
-
-do something like this.
-
-And if we run the cell again, you can see that it still works all right.
-
 Outside the class definition, we can easily access the class variable from vehicle using the dot notation
+too so we can do something like this:
+my_car.class_message
 
-to so we can do something like this, like dot class message.
-
-And it's also going to work, right?
-
-The class variable was inherited from the super class and we can access class message from a car object
-
+The class variable was inherited from the super-class and we can access class message from a car object
 as you can see.
 
 Now, how about methods from super classes?
