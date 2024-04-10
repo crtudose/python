@@ -246,97 +246,68 @@ Vehicle and because LandVehicle did not have a constructor either, it inherited 
 in the vehicle class.
 
 As a result, the constructor from vehicle was used to create a car object.
-And here when we defined a constructor in land vehicle, it did not inherit the one for a vehicle.
-That means that land vehicle has its own constructor now, which is not related to the vehicle constructor
-
+And here when we defined a constructor in landvehicle, it did not inherit the one for vehicle.
+That means that landvehicle has its own constructor now, which is not related to the vehicle constructor
 here in any way.
 
 And this time Car inherited this new constructor for a land vehicle which doesn't have a speech property.
-
-Now you may feel a little disappointed.
-
-I said that inheritance allows subclasses to take properties from the super classes.
-
+inheritance allows subclasses to take properties from the super classes.
 But here it looks like car only has the properties from their land vehicle, but it doesn't have the
-
 property from their vehicle.
 
 How to change that?
-
-Fortunately, it's not that difficult.
-
-All we need to do is invoke the vehicle constructor from the land vehicle constructor directly.
-
-Take a look again.
-
-Copy, paste this into a new cell.
-
-And I'm going to add the following vehicle in it.
-
+All we need to do is invoke the vehicle constructor from the landvehicle constructor directly.
+I'm going to add the following vehicle in it.
 And this constructor expects two parameters.
-
 So I'm going to do a self and speed.
 
+class vehicle:
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ def __init__(self, wheel_count):
+  Vehicle.__init__(self, speed)  
+  self.wheel_count = wheel_count
+class car(landvehicle):
+ pass
+
 And now, because I need to value for a speed, I'm going to add it here as one of the parameters around
-
 the cell.
-
 And now let's try to create a new car object with two arguments.
-
 As you can see that it succeeded as the first instruction in the land vehicle constructor.
 
-We wrote vehicle.
+my_car = Car(5, 10)
+print(my_car.__dict__)
+output: {'speed': 5, 'wheel_count': 10}
 
 The name of the superclass followed by adult and the init method name.
-
-Actually the constructor name.
-
-We can see in the vehicle constructor definition that it requires to arguments, self and speed.
-
+We can see in the vehicle constructor definition that it requires two arguments, self and speed.
 So these are the arguments that we provide insight the land vehicle constructor.
-
 The first one is self and the second one is speed.
-
 For speed to work, we had to add another parameter to the Land Vehicle constructor here.
 
 The constructor now has three parameters.
-
-The first one is self, the second one is speed, and the third one is wheel count and this version
-
+The first one is self, the second one is speed, and the third one is wheel_count and this version
 will be inherited by the car.
-
 This also means that to create a car object, we need to provide two parameters one for speed and the
-
-other one for wheel count.
-
+other one for wheel_count.
 And as usual, the self reference is provided for you automatically.
 
 So in short, to invoke the constructor from the superclass, we can use the dot notation with the name
-
 of the superclass, but we can also do something else.
+We can use a special super keyword
 
-We can use a special super keyword, take a look.
-
-Instead of vehicle, we're going to do super and get rid of self here.
-
-Run this cell and run this cell again and it works in the very same way.
+super().__init__(speed) # we replaced   Vehicle.__init__(self, speed)  
+it works in the very same way.
 
 Note a subtle difference when we use the super keyword instead of the super class name, we don't need
-
 to provide the self parameter.
-
 It will be automatically passed for us by Python to a superclass constructor.
-
 Both notations, the one with the class name and the one with the super keyword allow you to use constructors
-
 from super classes.
 
-This in turn means that we can inherit instance variables from super classes outside the class definition.
-
-We can simply use the dot notation to access the instance variables defined in the super classes.
-
-So here when we have a mycar object, we can do the following speed and you can see that it works.
-
+This in turn means that we can inherit instance variables from super-classes outside the class definition.
+We can simply use the dot notation to access the instance variables defined in the super-classes.
+So here when we have a my_car object, we can do the following speed and you can see that it works.
 So this value is actually taken from the super class named vehicle, even though we never defined a
-
 speed instance variable in the car class, it was inherited for us from the super classes via constructors.
