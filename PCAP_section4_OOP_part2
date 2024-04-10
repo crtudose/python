@@ -428,29 +428,39 @@ class Animal():
   def __init__(self):
     self.species = 'general'
   def produce_sound(self):
-    print('general animal sound')
+    print('General animal sound')
 class Dog(Animal)
   pass
 
-And now what we are going to do is my pet a new dog object print.
-
-My pet species and my pets produce sound.
+my_pet = Dog()
+print(my_pet.species)
+my_pet.produce_sound()
+output: general
+General animal sound
 
 So at first we've got a general animal class and a more specific dog class.
-
 The dog class is empty, but it inherits from the animal class.
-
 So when we access the species property here on line two, we get the value from the superclass.
-
-Nothing surprising here.
-
 The same goes for the produce sound method.
-
-Doc uses the method from its superclass again.
-
+Dog uses the method from its superclass again.
 We've seen that before, but now take a look at the following situation.
 
-We've got to copy paste the code into a new cell.
+class Animal():
+  def __init__(self):
+    self.species = 'general'
+  def produce_sound(self):
+    print('General animal sound')
+class Dog(Animal)
+  def __init__(self):
+    self.species = 'canis familiaris'
+  def produce_sound(self):
+    print('woof, woof')
+
+my_pet = Dog()
+print(my_pet.species)
+my_pet.produce_sound()
+output: canis familiaris
+woof, woof
 
 And here, instead of passing the class, we're going to do the following death in it self.
 
