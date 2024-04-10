@@ -387,39 +387,31 @@ my_fast_car = Car(10, 4)
 print(my_fast_car.__dict__)
 my_fast_car = super_speed()
 print(my_fast_car.__dict__)
+output: this is a message from the vehicle class!
+{'speed': 10, 'wheel_count': 4}
+super speed activated
+{'speed': 25, 'wheel_count': 4}
 
 And you can see the speed has changed.
-
 Look how we added a speed up method in the land vehicle superclass.
-
-Then in the cost subclass we created a super speed method where we invoke this method three times in
-
+Then in the car subclass we created a super-speed method where we invoke this method three times in
 a row.
-
 Again, we can use the super keyword or we can use the class name.
-
-So you can choose land vehicle in here.
-
 If we don't want to speed up so aggressively with our mycar object, we can of course also use the speed
-
 up method directly.
-
 This method is automatically inherited from the parent class, so you can do something like my fast
-
-car, speed up just like this, and then let's print the content of dict after that and you can see
-
+car, speed_up just like this, and then let's print the content of dict after that and you can see
 again it worked.
 
-And that's it for this video.
+my_fast_car = Car(10, 4)
+print(my_fast_car.__dict__)
+my_fast_car = super_speed()
+print(my_fast_car.__dict__)
+
+my_fast_car = super_speed()
+print(my_fast_car.__dict__)
+{'speed': 30, 'wheel_count': 4}
 
 As you can see with multiple levels of inheritance, it can sometimes get quite complicated to see what
-
 is inherited, where and how to invoke it.
 
-Don't worry if you didn't understand everything after watching this video, all the previous ones,
-
-try watching them again and post them whenever you don't understand something.
-
-You can also always ask a question in the Q&A section if you need additional help, and I will be eager
-
-to help you.
