@@ -426,6 +426,11 @@ a class named dog that will inherit from animal and it will be empty.
 
 class Animal():
   def __init__(self):
+    self.species = 'general'
+  def produce_sound(self):
+    print('general animal sound')
+class Dog(Animal)
+  pass
 
 And now what we are going to do is my pet a new dog object print.
 
