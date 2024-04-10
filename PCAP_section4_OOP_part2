@@ -684,55 +684,38 @@ The second variable actually points to the very same string as the first one.
 The result is true.
 
 However, you need to remember that strings are immutable.
-
 If you try to change an existing string, python will instead create a new one.
-
 And that's a very tricky part.
-
 Take a look at this example.
 
-So we are going to copy paste it into a new cell.
-
-But now the second str will be hell without the final.
-
-Oh, but we are going to do the following.
-
-Plus equals oh.
-
-What will happen now?
-
-False.
+first_str = 'hello'
+second_str = 'hell'
+second_str += 'o'
+print(first_str is second_str)
+o: False
 
 So at first sight, this example looks similar to the one with integers right here.
-
 We just added three to the number of two.
-
 Both of the variables contain the number five.
-
 So the result of asking first time is second time was true here.
-
 However, something different happens.
-
-The second string is initially different from the first one, but on line three we add the missing O
-
+The second string is initially different from the first one, but on line three we add the missing 'O'
 at the end of the string.
 
 The strings now seem identical, but the IS operator returns false.
-
 That's because whenever we try to modify an existing string, python instead creates a new one, even
-
 though both STR and second still contain identical strings.
-
 Now they are actually two separate objects in the memory.
-
 Keep that in mind.
 
 That's where the equality operator gives a different result.
-
 So if you try the following invocation now instead of s, we are going to use double equality sign.
-
 You can say true to the output, the equality operator returns true because both variables contain the
-
 very same string value, but because the actual string objects behind them are two different objects
-
 in the memory that is operator returns false.
+
+first_str = 'hello'
+second_str = 'hell'
+second_str += 'o'
+print(first_str == second_str)
+o: True
