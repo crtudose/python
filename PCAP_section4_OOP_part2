@@ -462,136 +462,77 @@ my_pet.produce_sound()
 output: canis familiaris
 woof, woof
 
-And here, instead of passing the class, we're going to do the following death in it self.
-
-Self species, the same name, Canis MERS.
-
-That's actually the Latin name for dog and death produce sound.
-
-The very same method.
-
-Name, friend.
-
-Woof, woof.
-
-We're on the cell.
-
-And now let's try to copy, paste this code.
-
-Let's create a new object here.
-
-And you can see a different output.
-
 So we've added some code to the class.
-
-Its constructor defines a property named species exactly the same property as in the superclass.
-
+Its constructor defines a property named species, exactly the same property as in the superclass.
 We also define a method named produce sound, which has the exact same name as the method in the superclass.
-
 When we now run the code, you can see that we get a different result.
-
-Python shows the property from the doc class and uses the method from the doc class, not from its superclass.
-
-This phenomenon is called method overwriting.
+Python shows the property from the dog class and uses the method from the dog class, not from its superclass.
+This phenomenon is called method overriding.
 
 When we define a method with the exact same name in the superclass and the subclass, the method from
-
 the superclass overrides in other words, hides the method from the superclass in general.
-
 Remember that when you try to access a property or a method in an object, Python will first try to
-
 find that entity inside the object itself.
-
 If it fails, it then tries to find it in all the classes involved in the object inheritance line from
-
-bottom to top with the most general class at the very end method, overriding helps achieve one of the
-
-four core concepts of object oriented programming.
-
-Just a small recap.
+bottom to top with the most general class at the very end 
+method, overriding helps achieve one of the four core concepts of object oriented programming.
 
 The four concepts are encapsulation, abstraction, polymorphism and inheritance.
-
 You already know what encapsulation, abstraction and inheritance are.
-
 Let's talk about polymorphism then.
 
 In the most general sense, polymorphism means the ability of classes to take different forms.
-
 Usually when we talk about polymorphism, we talk about method overriding.
 
 So here we're going to use the very same classes and in a new cell we're going to create.
 
-My first bet, which will be an animal object and my second pet, that will be a dog object.
+my_first_pet = Animal()
+my_second_pet = Dog()
+my_first_pet.produce_sound()
+my_second_pet.produce_sound()
+Output: General animal sound
+woof, woof
 
-And here we are going to do my first pet produce sound.
-
-And a similar invocation, but with the second object.
-
-So my second pet like this.
-
-An object of the general class.
-
-Animal produces a general animal sound while an object of class dog produces Woof Woof.
-
+An object of the general class Animal produces a general animal sound while an object of class dog produces Woof Woof.
 Even though both objects are animals, one of them is more specific and changes the behavior of the
-
 superclass, and that's an example of polymorphism.
-
 One method name produced sound behaves differentially based on the specific object that calls it.
+Another interesting aspect of method Overwriting and polymorphism is when methods use other methods.
 
-Another interesting aspect of method.
+class Animal():
+  def __init__(self):
+    self.species = 'general'
+  def produce_sound(self):
+    print('General animal sound')
+  def present(self):
+    print('i can do the following sound:')
+    self.produce_sound()
+class Dog(Animal)
+  def __init__(self):
+    self.species = 'canis familiaris'
+  def produce_sound(self):
+    print('woof, woof')
 
-Overwriting and polymorphism is when methods use other methods.
-
-So take a look.
-
-We're going to again copy paste this code into a new cell.
-
-And here in the animal class I'm going to add a new method def present self print.
-
-I can do that following sound.
-
-And now produce sound from self like this.
-
-Run the cell.
-
-And now we need to object.
-
-My first bet and my second bet.
-
-And for both of them, we are going to do my first pet present and we are going to do the very same
-
-thing with the second object.
-
-And maybe for its ability.
-
-We are going to add an empty printing location to have a line break between them.
-
-Let's run the code and you can see different results.
+my_first_pet = Animal()
+my_second_pet = Dog()
+my_first_pet.present()
+print()
+my_second_pet.present()
+output: 
+i can do the following sound:
+General animal sound
+i can do the following sound:
+woof, woof
 
 So here we have a new method created in the animal class.
-
-This method prints a statement and then calls another method produce sound, which prints another statement.
-
+This method prints a statement and then calls another method produce_sound, which prints another statement.
 In the case of the first pet, which is an instance of the general animal class, the behavior is quite
-
 obvious.
 
-You will see I can do the following sound followed by the general animal sound from the same class.
-
-But note what happens when we invoke the same method from the dog class.
-
 The dog class inherits the present method from the animal superclass, but when it's time to call the
-
 produce sound method, the dog object actually uses its own version of the method.
-
 That's because we use the produce sound invocation with the self reference, which always points to
-
 the current object.
-
 As a result, Python always tries to find the matching method within the object itself, and the end
-
 result is that even though both objects use the present method, they actually behave differentially
-
 because behind the scenes they were created using different classes.
