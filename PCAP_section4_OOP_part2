@@ -311,3 +311,124 @@ We can simply use the dot notation to access the instance variables defined in t
 So here when we have a my_car object, we can do the following speed and you can see that it works.
 So this value is actually taken from the super class named vehicle, even though we never defined a
 speed instance variable in the car class, it was inherited for us from the super classes via constructors.
+
+==========================
+inheriting class variables and methods
+---------------
+
+class vehicle:
+ class message = 'this is a message from the vehicle class!'
+ def __init__(self, speed):
+  self.speed = speed
+class landvehicle(vehicle):
+ def __init__(self, wheel_count):
+   super().__init__(speed)
+   self.wheel_count = wheel_count
+class car(landvehicle):
+ pass
+
+We already know how instance variables can be inherited using constructors, but how about class variables?
+It turns out that they work exactly the same way, and it turns out that you can use the same syntax
+to get them.
+In this upper class vehicle, we are going to write a class message and let's say it's going to be something
+like this is a message from the vehicle class.
+And now we want to print that class message at the end of the constructor in the subclass names LandVehicle.
+So we are going to do the following print vehicle Class Message.
+
+In order to verify whether that works, we're going to create a new car.
+
+And let's see what this cell does when we run it.
+
+It actually creates the object based on the constructor from the land vehicle class.
+
+And it also prints the message from the superclass named vehicle.
+
+So here we defined a class variable in the vehicle class and we could then easily access this variable
+
+in the subclass using the dot notation with the superclass name.
+
+And again we can use the notation with the class name or we can use the super keywords so we can actually
+
+do something like this.
+
+And if we run the cell again, you can see that it still works all right.
+
+Outside the class definition, we can easily access the class variable from vehicle using the dot notation
+
+to so we can do something like this, like dot class message.
+
+And it's also going to work, right?
+
+The class variable was inherited from the super class and we can access class message from a car object
+
+as you can see.
+
+Now, how about methods from super classes?
+
+Exactly the same story.
+
+Take a look here.
+
+We are going to copy paste this into a new cell and I'm going to add a new method here in the land of
+
+equal death, speed up self, self speech plus equals five.
+
+And now in the call class, we're going to do death super speed self and it's going to print super speed,
+
+activate it first, and then it's going to do super speed up.
+
+And we're actually going to repeat that three times around the cell.
+
+And now let's create a new object.
+
+My first call equals call.
+
+Let's say ten and ten.
+
+Sorry, just four wheels.
+
+Let's print the dict variable.
+
+My fast car dict.
+
+Then we are going to call it again.
+
+And between these invocations, we are going to do my fast car super speed.
+
+Let's see what this will do.
+
+And you can see the speed has changed.
+
+Look how we added a speed up method in the land vehicle superclass.
+
+Then in the cost subclass we created a super speed method where we invoke this method three times in
+
+a row.
+
+Again, we can use the super keyword or we can use the class name.
+
+So you can choose land vehicle in here.
+
+If we don't want to speed up so aggressively with our mycar object, we can of course also use the speed
+
+up method directly.
+
+This method is automatically inherited from the parent class, so you can do something like my fast
+
+car, speed up just like this, and then let's print the content of dict after that and you can see
+
+again it worked.
+
+And that's it for this video.
+
+As you can see with multiple levels of inheritance, it can sometimes get quite complicated to see what
+
+is inherited, where and how to invoke it.
+
+Don't worry if you didn't understand everything after watching this video, all the previous ones,
+
+try watching them again and post them whenever you don't understand something.
+
+You can also always ask a question in the Q&A section if you need additional help, and I will be eager
+
+to help you.
