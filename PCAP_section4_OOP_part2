@@ -835,26 +835,20 @@ output: i am a vehicle
 
 And if we now create a new airplane object, you can see I am flyable instead of I am vehicle.
 That's because flyable is now the first superclass defined in front of the vehicle.
-
-In the example above, we had the introduce method declared in both super classes and we had to determine
-
+In the example above, we had the introduce method declared in both super-classes and we had to determine
 which version to use.
 
 But what will happen if we now also add a third variant of introduce this time in the airplane class
-
 itself?
 
-Let's find it out.
+class Airplane(Flyable, Vehicle): # we have changed the first superclass
+ def introduce(self):
+  print('i am an airplane')
 
-I'm going to copy paste the code again into a new cell.
+my_plane = Airplane()
+my_plane.introduce()
 
-And here, instead of pass, we are going to do death introduce reference to self print.
-
-I am an airplane.
-
-All right, we're on the cell.
-
-And again, copy paste this object creation.
+output: i am an airplane
 
 And now you can see I am an airplane, not I am flyable.
 
