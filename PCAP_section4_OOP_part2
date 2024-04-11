@@ -851,41 +851,23 @@ my_plane.introduce()
 output: i am an airplane
 
 And now you can see I am an airplane, not I am flyable.
-
 So this time you can see that the airplane object did not use the introduced method from vehicle or
-
 flyable.
-
 Instead it used its own version.
-
 Again, methods resolution older explains what happened here.
 
 First and foremost, Python tries to find the method inside the object itself because Python could successfully
-
 find the method in the airplane class.
-
 It didn't need to go to the super classes at all.
-
 As you can see, multiple inheritance is easy in terms of the code.
-
 You just need to put more class names in the brackets after the name of your class.
-
 But the difficult part is what happens to those subclasses that have multiple subclasses and what is
-
-inherited from war.
+inherited from where.
 
 Now imagine that you have a class that has five or ten super classes with similar method names.
-
 It could get crazy.
-
 I'm telling you, the general rule is to avoid using multiple inheritance at all.
-
 In fact, many programming languages do not allow multiple inheritance at all.
-
 Single inheritance is always simpler and easier to maintain with multiple inheritance.
-
-You have many options to mess up and to make a mistake.
-
 Treat multiple inheritance as the last resort when you don't have any other option left.
-
 As a rule of thumb, you should prefer a single inheritance or perhaps even no inheritance at all.
