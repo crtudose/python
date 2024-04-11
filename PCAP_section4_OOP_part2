@@ -813,10 +813,28 @@ of introduced was preferred.
 
 Now let's do a small experiment and change the order of super-classes for airplane.
 
+class Vehicle():
+ def go(self):
+  print('going!')
+ def introduce(self):
+  print('i am a vehicle')
 
-And if we now create a new airplane object, you can see IMF flyable instead of IMF vehicle.
+class Flyable():
+ def fly(self):
+  print('flying')
+ def introduce(self):
+  print('i am a flyable')
 
-That's because flyable is now the first superclass defines in front of the vehicle.
+class Airplane(Flyable, Vehicle): # we have changed the first superclass
+ pass
+
+my_plane = Airplane()
+my_plane.introduce()
+
+output: i am a vehicle
+
+And if we now create a new airplane object, you can see I am flyable instead of I am vehicle.
+That's because flyable is now the first superclass defined in front of the vehicle.
 
 In the example above, we had the introduce method declared in both super classes and we had to determine
 
