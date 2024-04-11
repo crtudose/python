@@ -728,136 +728,90 @@ In other words, it's a situation in which a class inherits from more than one cl
 Syntax wise, using multiple inheritance is quite simple.
 All you have to do is provide all the subclasses separated by commas.
 The difficulty about multiple inheritance is elsewhere.
-
 It is very easy to lose track of what properties or methods are inherited.
 
 So let's start with a very easy example.
-
 Class vehicle, one that you already know.
 
-It will be empty for now.
+class Vehicle():
+ def go(self):
+  print('going!')
 
-Now, another class named Flyable, which will also be empty and flyable, could be something like flying
+class Flyable():
+ def fly(self):
+  print('flying')
 
-vehicles, such as, I don't know, an airplane, a helicopter, but also something like a bird or a
+class Airplane(Vehicle, Flyable):
+ pass
 
-bee.
+my_plane = Airplane()
+my_plane.go()
+my_plane.fly()
 
-An animal that flies is also a flyable right.
+output: going
+flying
 
-And that after these two classes, we are going to have a third class named airplane that will inherit
-
-from both vehicle and flyable,
-
-and it will also be empty.
-
-Now, when you run the cell and create a new one with an object of class airplane, you can see that
-
-everything works fine.
-
-So here we've got two super classes, vehicle and flyable.
-
-Then we define a third class airplane which inherits from both vehicle and flyable.
-
-This makes sense.
-
+we define a third class airplane which inherits from both vehicle and flyable.
 A plane is a vehicle that is able to fly.
-
-The classes are empty.
-
-So for now, nothing exciting is happening.
-
-So let's add some code here.
-
 In the vehicle class, we are going to create a method named go and it will print going to the output.
 
-And here in the flyable class we are going to define a method named fly that will print surprise, surprise.
-
-Flying right around the cell.
-
 And now here in the second cell, try to invoke the following.
-
-Go and fly and everything works fine.
-
-So we've added a simple method to the vehicle class.
-
-Go.
-
-We've also added a simple method to the flyable class fly.
-
+So we've added a simple method to the vehicle class - Go.
+We've also added a simple method to the flyable class - fly.
 Then we try to invoke both methods from an object of the class airplane.
-
 As you can see, everything worked fine.
 
 Airplane inherited the methods from both classes, and that's the basis of multiple inheritance.
-
 Looks nice and easy, but how about this situation?
 
-We are going to copy paste this into a third cell and I'm going to add the following.
+class Vehicle():
+ def go(self):
+  print('going!')
+ def introduce(self):
+  print('i am a vehicle')
 
-Def introduce with self as a reference and here print i am vehicle.
+class Flyable():
+ def fly(self):
+  print('flying')
+ def introduce(self):
+  print('i am a flyable')
 
-And at the second class death introduce reference to self and here print I am flyable.
+class Airplane(Vehicle, Flyable):
+ pass
 
-All right, so around the cell, everything works fine.
+my_plane = Airplane()
+my_plane.introduce()
+
+output: i am a vehicle
 
 We've added a new method to the vehicle class introduce.
-
 Interestingly, we've added a method with the very same name to the flyable class as well.
-
-It's also called introduce.
-
 Theoretically speaking, airplane should now inherit all the methods from all the super classes.
-
 But these two new methods have exactly the same name.
-
 So what will happen if we now invoke the following code?
 
-So here we want to do introduce and let's see what happens.
-
-I am a vehicle.
-
-You can see that airplane printers.
-
-I am a vehicle and not I am a flyable.
-
+You can see that airplane printed - I am a vehicle and NOT I am a flyable.
 Why is that?
-
 Why was the vehicle method version chosen over the flyable method version?
-
 The answer is something called MRO or method resolution order.
-
 MRO explains how a given programming language tries to find the method that is currently needed.
+Each programming language has a slightly different Mro.
 
-Each programming language has a slightly different Maro in Python.
-
-The following rule applies.
-
+in Python The following rule applies.
 Python looks for a method with a specified name in the following order.
-
 First, it tries to find the method inside the object itself.
-
-If there is no such method, Python goes to 0.2, which is to find the methods in its super classes
-
+If there is no such method, Python goes to 0.2, which is to find the methods in its super-classes
 and if there is no method with the given name in the superclass, Python raises an error.
 
 However, if does exactly one method with the given name somewhere in the subclasses, Python will use
-
 exactly that method.
-
 But if there's more than one method with the given name in the super classes, as is the case here,
-
 then Python scans the subclasses from left to right.
-
 You can see that vehicle was defined as the first superclass of airplane, which is why vehicles version
-
 of introduced was preferred.
 
-Now let's do a small experiment and change the order of super classes for airplane.
+Now let's do a small experiment and change the order of super-classes for airplane.
 
-So we are going to copy, paste this code into a new cell and simply change the order here flyable out
-
-vehicle run the cell.
 
 And if we now create a new airplane object, you can see IMF flyable instead of IMF vehicle.
 
