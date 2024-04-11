@@ -800,7 +800,8 @@ Each programming language has a slightly different Mro.
 in Python The following rule applies.
 Python looks for a method with a specified name in the following order.
 First, it tries to find the method inside the object itself.
-If there is no such method, Python goes to 0.2, which is to find the methods in its super-classes
+If there is no such method, Python goes to 
+2, which is to find the methods in its super-classes
 and if there is no method with the given name in the superclass, Python raises an error.
 
 However, if does exactly one method with the given name somewhere in the subclasses, Python will use
