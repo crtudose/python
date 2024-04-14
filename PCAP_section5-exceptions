@@ -35,3 +35,64 @@ else:
 
 if we provide 0 - first branch will be printed
 if we provide any other value - second branch will be executed
+
+==========
+finally
+----------
+Finally, Python offers an additional keyword that can be used with try accept blocks.
+Finally, it must be the very last branch of the code intended for handling exceptions.
+It must appear even after the ls block ls and finally are not dependent on each other.
+You can have both of them.
+
+You try block only one of the two or none at all.
+The general rule is that the final block is executed always, no matter if an exception is raised or
+not, no matter if a raised exception is handled or not.
+Then finally, BLOCK will always execute in real life programming.
+Finally, blocks are typically used when we work with some external resources, such as databases or
+text files.
+
+For instance, when we want to retrieve some data from a database, we first need to open a connection
+
+to the database, then retrieve the data and then close the connection.
+
+It's then a good idea to close the connection in a final block, no matter if our code succeeds or not.
+
+No matter if we manage to retrieve the data or we get a connection error, we should always close the
+
+connection to the database to limit the amount of memory that the machine uses.
+
+Working with databases is outside the scope of this course.
+
+So I'm going to give you a simple example of finally using a division error.
+
+Take a look.
+
+We are going to define a function named get inverse.
+
+And we are trying to return the inverse of X.
+
+Now we know that this may produce some errors, so we are going to accept zero to vision error.
+
+In which case we return none.
+
+And we are going to add a final block here and we will print.
+
+I am always printed.
+
+So that's the function.
+
+Run the cell and now in the new cell we are going to do print, get in verse five, which is all good.
+
+And you can see I am always print to the output and now with an exception, if we provide the number
+
+zero, you can also see I am always printed.
+
+So note that in both situations the final block is executed before the function finishes and returns
+
+the actual number.
+
+In the second case we get a zero division error and we return non.
+
+But before that happens, in both cases we see I am always printed to the output because of the final
+
+block.
