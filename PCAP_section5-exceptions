@@ -64,6 +64,12 @@ And we are trying to return the inverse of X.
 def get_inverse(x):
   try:
     return 1 / x
+  except ZeroDivisionError:
+    return None
+  finally:
+    print('i am always printed')
+
+print(get_inverse(5))
 
 Now we know that this may produce some errors, so we are going to accept zero to vision error.
 
