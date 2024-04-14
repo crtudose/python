@@ -66,3 +66,40 @@ if __name__ == '__main__':
             Game(int(round_count)).play()
             break
 
+'''
+Game Class:
+This class represents a simple Rock-Paper-Scissors game.
+Key Components:
+OUTCOMES: A dictionary that maps tuples of player choices to outcomes (win, lose, or tie).
+__init__(self, num_rounds): Initializes the game with a specified number of rounds.
+play(self): Plays the game for the specified number of rounds.
+play_round(self): Plays a single round.
+settle_round(self, human_choice, comp_choice): Determines the outcome of a round.
+summarise_score(self): Prints the final game summary.
+Note:
+The game assumes that the human player’s input is either ‘r’ (rock), ‘p’ (paper), or ‘s’ (scissors).
+The outcome of each round is determined based on the predefined rules in the OUTCOMES dictionary.
+    
+Player Class:
+Base class for both human and computer players.
+Contains an attribute score to keep track of points.
+    
+HumanPlayer Class:
+Inherits from Player.
+Represents the human player.
+Method choose(self): Asks the user for their choice (rock, paper, or scissors).
+The loop ensures that the user’s input is valid.
+    
+ComputerPlayer Class:
+Inherits from Player.
+Represents the computer opponent.
+Method choose(self): Generates a random choice (rock, paper, or scissors).
+    
+Game Flow:
+The game starts by creating an instance of the Game class with a specified number of rounds.
+For each round, the human player and computer player make their choices.
+The outcome of the round is determined using the OUTCOMES dictionary.
+The game continues until all rounds are played.
+Finally, the game summary (including points and winner) is displayed.
+Overall, this code snippet provides a basic implementation of the Rock-Paper-Scissors game, allowing a human player to compete against the computer. The outcome of each round is based on the predefined rules, and the winner is determined after all rounds are completed.
+'''
