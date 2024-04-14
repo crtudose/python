@@ -90,3 +90,7 @@ the actual number.
 In the second case we get a zero division error and we return none.
 But before that happens, in both cases we see I am always printed to the output because of the final
 block.
+
+==========
+raise exception
+----------
