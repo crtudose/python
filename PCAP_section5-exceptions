@@ -281,19 +281,18 @@ except Exception as e:
 
 output: ('i do not like it', 'in fact, i do not like it at all')
 
-And you can see both of them here.
-
 All of the arguments passed to the constructor are added to the property.
-
 This feature is typically used to pass some details about why a given exception is raised.
-
 In fact, you can easily see that Python adds some arguments when it raises exceptions automatically
-
 for you.
 
-So take a look at this new cell we are going to do try one divided by zero except exception as E and
+try:
+  1/0
+except Exception as e:
+  print(e.args)
 
-now print e asks.
+output:
+('devision by zero',)
 
 Here, Python raises an exception when you try to divide by zero.
 
