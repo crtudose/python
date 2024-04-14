@@ -309,3 +309,173 @@ output:
 ==============================
 naming your own exceptions 
 --------------------------------
+Python makes available a few dozen exception types organized into an exception hierarchy, but exceptions
+are classes like any other.
+You can use inheritance to create new ones as you consider necessary to do that.
+All you have to do is put the name of the chosen exception class as the superclass for your own exception.
+Since Python has so many built in exceptions, it can be difficult to choose which exception should
+be the superclass for your own exception class.
+
+The rule of thumb is if you want to create an exception, that will be a special case of an exception
+already available in Python, Use that one particular Python exception as the superclass.
+For instance, if you create a function that expects a specific kind of value in one of its parameters
+and that value is somehow wrong, you can extend the value error class.
+
+class AnimalValueError(ValueError):
+  pass
+def produce_animal_sound(animal_type):
+  if animal_type == 'DOG':
+    print('woof, woof!')
+  elif animal_type = 'Cat':
+    print('Meow!')
+  else:
+    raise AnimalValueError
+
+produce_animal_sound('DOG')
+out: Woof, Woof!
+
+But if you try something else like pig, you can see animal value error.
+
+So here we create an exception class named animal value error.
+
+Since we want it to be a specific subtype of the value error, we denote value error as the superclass
+
+for animal value error.
+
+Note that we do not need to provide any specific content for the new exception type.
+
+Everything we need to successfully use this kind of exception will be inherited from the value error
+
+class.
+
+Now we have a function that expects a string argument named to produce animal sound.
+
+Depending on the type of animal passed, a different sound will be imitated.
+
+However, if the use of the function provides something different than one of the expected animal types,
+
+we raise an animal value error with a descriptive error message.
+
+When we invoke the function twice now you can see how the new type of exception is raised in the second
+
+invocation.
+
+Note that you can pass some arguments to the constructor and the code will work fine and the more value
+
+error inherits the constructor from the value error class.
+
+That was an example where we created a very specific kind of exception class.
+
+But in bigger applications, it may be necessary to create a whole structure of new exception types,
+
+in which case it is probably better to inherit from one of the more general exception classes.
+
+Imagine an application for multiple users where all of the actions are done by specific people.
+
+We want to have our own exception classes and we have a very specific requirement.
+
+The exceptions should always contain the login of the user that caused the error.
+
+We will choose exception a very general exception class provided by Python as our base class.
+
+Take a look.
+
+I'm going to copy paste.
+
+A large a piece of code here.
+
+And to run the code now and let's analyze this piece of code carefully.
+
+So here we define user action exception, which inherits directly from exception.
+
+We defined a constructor.
+
+Remember, we need to use the name double underscore in its double underscore.
+
+And this enables the user to provide two very specific arguments one for the error message, the other
+
+one for the ID of the user that was related to this error.
+
+As the first instruction in the constructor, we invoke the constructor of the superclass.
+
+Then we create two new properties, one called user ID, the other one called Message.
+
+Thanks to that, our own exception type, whenever we raise it, will be equipped with these two properties.
+
+You can also see that we override the default double underscore str, double underscore method so that
+
+it returns a meaningful error message alongside the name of the exception class and the user ID.
+
+Now we create a function named say hello.
+
+This function expects to argument the name of the user that will be used to create the user and the
+
+user ID which will be used in the event of raising an exception.
+
+You can now see that when the name is empty, we raise our own custom user action exception.
+
+We provide a very custom message which will go into the message property and a very custom user ID which
+
+will go into the user ID property.
+
+Now in the main part of the code, we use a try except block when an exception or any of its subclasses
+
+such as user action exception is raised, we print the exception object.
+
+And as you can see in this particular case, our custom STR method is used and we get a nice error message.
+
+Now, of course, we can also create our own exceptional class structure.
+
+We can inherit from user action exception to create more specific exception types.
+
+So for example, in a new cell we are going to do the following class empty name user action exception.
+
+Inherits from user action exception like this def in it self.
+
+User id default value of an empty string super in it and empty name was provided with the user id like
+
+this.
+
+And now in the new cell death.
+
+Say hello name and user ID if name is empty.
+
+Raise this particular exception with the specified user ID.
+
+Otherwise print.
+
+Hello.
+
+Goodnight.
+
+And now if we try the code again.
+
+Like this.
+
+We are going to see an empty name was provided from here.
+
+So we create a new exception.
+
+Class empty name, user action exception.
+
+It is a specific case of user action exception, which is the superclass for it.
+
+The only thing we define in this exception class is the constructor.
+
+We invoke the constructor of the superclass here, but we provide a very specific error message.
+
+This means that we can now raise empty name user action exception like here, and we do need to provide
+
+the error message like before because the class itself produces a nice error message.
+
+Such an exception type can be useful if you need to raise an exception related to empty names in many
+
+places.
+
+Instead of providing the error message, empty name and all of them, you can simply use this very special
+
+kind of exception type.
+
+And of course, depending on your needs, you can create new kinds of exceptions that inherit from user
+
+action exception, or even ones that inherit from empty name user action exception.
