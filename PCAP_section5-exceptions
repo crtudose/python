@@ -334,18 +334,18 @@ def produce_animal_sound(animal_type):
 produce_animal_sound('DOG')
 out: Woof, Woof!
 
-But if you try something else like pig, you can see animal value error.
+But if you try something else like pig, you can see AnimalValueError.
 
 produce_animal_sound('PIG')
-out: animalvaluerror
+out: AnimalValuError
 
-So here we create an exception class named animal value error.
+So here we create an exception class named AnimalValueError.
 Since we want it to be a specific subtype of the value error, we denote value error as the superclass
-for animal value error.
+for AnimalValueError.
 Note that we do not need to provide any specific content for the new exception type.
-Everything we need to successfully use this kind of exception will be inherited from the value error
+Everything we need to successfully use this kind of exception will be inherited from the ValueError
 class.
-Now we have a function that expects a string argument named to produce animal sound.
+Now we have a function that expects a string argument named to produce_animal_sound.
 
 Depending on the type of animal passed, a different sound will be imitated.
 
