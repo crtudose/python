@@ -175,61 +175,51 @@ exceptions as objects
 talk about the objective nature of exceptions.
 Yes, exceptions in Python are objects.
 Whenever an exception is raised in Python, an object of the given exception class is created and it
-
 goes through all the branches of the try except block to find a matching branch.
-
 The exception object has some information that you can use to precisely identify what went wrong.
-
 In order to get that information, you need to extend your accept block using a special keyword as take
-
 a look.
 
 We are going to write a function named Return Bigger that you already know from one of the previous
-
 videos.
-
-So we try to do the following.
-
 If B is larger than a return B, else return A except exception.
-
 As E and now print E and return none.
-
-Run the cell.
-
 And now if we try print, return figure of five and let's say be, you can see a new kind of message.
+So first of all, note how we use except exception as the moment we do that, the moment we add as 'E',
+we can refer to the exception object within the accept block using the identifier 'e' inside the brackets
+we try to print 'e', so let's see what that does.
 
-So first of all, note how we use except exception as the moment we do that, the moment we add as E,
+def return_bigger(a, b)
+  try:
+    if b > a:
+      return b
+    else:
+      return a
+  except Exception as e:
+    print(e)
+    return None
 
-we can refer to the exception object within the accept block using the identifier e inside the brackets
-
-we try to print e, so let's see what that does.
-
-In practice, it prints not supported between instances of string and integer.
+return_bigger(5, 'b')
+out: '>' not supported between insances of 'str' and 'int'
+None
 
 You can see that when we try to print the exception object, we get some detailed info about what the
-
 problem was.
-
 That's because by default the exception class implements a version of the double underscore str double
-
 underscore method common to all objects.
-
 Instead of showing the identifier of the object in the memory, we can find a meaningful error message.
-
 In this case, we can see that it's not possible to compare a string with an integer exceptions in python
-
 form a class hierarchy.
 
 For instance, we can try to print the following statement.
-
-So in a new cell you're going to do for subclass in Bayes exception subclasses
-
+So in a new cell you're going to do for subclass in Baseexception subclasses
 print subclass name like this you can see all the subclasses that directly inherit from the base exception
-
 class and if you try one of the subclasses like exception for example.
 
-So we are going to do the following copy, paste that into a new cell and change those exception to
+for subclass in BaseException.__subclasses__():
+  print(subclass.__name__)
 
+So we are going to do the following copy, paste that into a new cell and change those exception to
 exception.
 
 If you try that, you can see that again.
