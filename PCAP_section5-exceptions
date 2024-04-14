@@ -168,3 +168,134 @@ out: zerodivisionerror
 This programming technique is sometimes used when you only want to handle an exception partially, and
 then you want to raise the exception again.
 So that's another part of the code finishes the exception handling.
+
+===============
+exceptions as objects
+----------------
+talk about the objective nature of exceptions.
+Yes, exceptions in Python are objects.
+Whenever an exception is raised in Python, an object of the given exception class is created and it
+
+goes through all the branches of the try except block to find a matching branch.
+
+The exception object has some information that you can use to precisely identify what went wrong.
+
+In order to get that information, you need to extend your accept block using a special keyword as take
+
+a look.
+
+We are going to write a function named Return Bigger that you already know from one of the previous
+
+videos.
+
+So we try to do the following.
+
+If B is larger than a return B, else return A except exception.
+
+As E and now print E and return none.
+
+Run the cell.
+
+And now if we try print, return figure of five and let's say be, you can see a new kind of message.
+
+So first of all, note how we use except exception as the moment we do that, the moment we add as E,
+
+we can refer to the exception object within the accept block using the identifier e inside the brackets
+
+we try to print e, so let's see what that does.
+
+In practice, it prints not supported between instances of string and integer.
+
+You can see that when we try to print the exception object, we get some detailed info about what the
+
+problem was.
+
+That's because by default the exception class implements a version of the double underscore str double
+
+underscore method common to all objects.
+
+Instead of showing the identifier of the object in the memory, we can find a meaningful error message.
+
+In this case, we can see that it's not possible to compare a string with an integer exceptions in python
+
+form a class hierarchy.
+
+For instance, we can try to print the following statement.
+
+So in a new cell you're going to do for subclass in Bayes exception subclasses
+
+print subclass name like this you can see all the subclasses that directly inherit from the base exception
+
+class and if you try one of the subclasses like exception for example.
+
+So we are going to do the following copy, paste that into a new cell and change those exception to
+
+exception.
+
+If you try that, you can see that again.
+
+There are a lot of classes that directly inherit from exception.
+
+Each exception class that inherits from Bayes Exception has a property named Oryx.
+
+It's a tuple which contains all the arguments passed to the constructor.
+
+For example, try raise exception except exception as e print e arcs.
+
+In this simple case, the code only raises a general exception when we try to print the property of
+
+the exception object.
+
+You can see that it's actually empty.
+
+This means that no argument was passed to the class constructor.
+
+Let's try a different version now.
+
+So this time we're going to do something like this and add the following element here.
+
+I do not like it.
+
+Note the new syntax that we use now here.
+
+After the keyword race and the exception class, we provided a pair of brackets and we put a string
+
+inside.
+
+If this syntax looks familiar to you, you are right.
+
+We're actually invoking the constructor of the exception class.
+
+With one argument exception classes in Python are constructed in such a way that you can pass even more
+
+arguments to the exception constructor so we can do the following in the new cell.
+
+I do not like it after a comma.
+
+In fact, I do not like it at all.
+
+And you can see both of them here.
+
+All of the arguments passed to the constructor are added to the property.
+
+This feature is typically used to pass some details about why a given exception is raised.
+
+In fact, you can easily see that Python adds some arguments when it raises exceptions automatically
+
+for you.
+
+So take a look at this new cell we are going to do try one divided by zero except exception as E and
+
+now print e asks.
+
+Here, Python raises an exception when you try to divide by zero.
+
+And as you can see, Python added a short explanation to the tuple.
+
+Another example could be the following.
+
+Try five.
+
+Less than a except exception as E and print e asks again and again.
+
+Python puts a sort of explanation into the double.
