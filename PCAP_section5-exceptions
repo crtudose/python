@@ -94,3 +94,89 @@ block.
 ==========
 raise exception
 ----------
+So far we've only seen examples where Python raises exceptions for us when we try to divide by zero.
+Python automatically erased an exception when we tried to access a non-existing array index.
+Python raised an exception. All of that happened automatically for us.
+
+Python allows you to raise exceptions on your own.
+Raising exceptions on your own is typically used in two types of situations.
+When you write tests to check your programs, you can raise exceptions to verify how your piece of code
+will behave.
+If, during the execution of your program, Python suddenly raises a real exception.
+
+The second use case is when you want to make another part of the program responsible for handling the
+exception.
+This can be very useful in larger applications.
+To raise an exception, we use the keyword to raise, followed by the name of the exception.
+
+For example, let's say that we want to define a function that returns the bigger number of two.
+And here, first of all, we want to check, if not, is instance a int or not is instance.
+Be int we going to raise value error?
+Then if be larger than a return, be else return a run the cell.
+
+def returb_bigger(a, b)
+  if not isinstance(a, int) or not isinstance(b, int)
+
+And now in the new cell we are going to print return Baker five three and we get five in the output.
+
+And a second example five and something strange be and you can see a value error.
+
+So here in the return bigger function, we assume that both arguments will be of type integer.
+
+We checked out at the very beginning of the function.
+
+If at least one of the numbers is not an integer, we manually raise a value error here by using the
+
+race keyword.
+
+You can see how that works when we try to invoke the function with an invalid argument.
+
+Right.
+
+There's also another usage of the word res.
+
+You can use it without any exception name inside the except branch.
+
+This instruction will then re res the very same exception as currently handled.
+
+Take a look in a new cell.
+
+I'm going to do the following.
+
+Def return reverse of x.
+
+Try.
+
+Return one divided by x.
+
+Except print.
+
+Something went wrong.
+
+We're on the cell.
+
+So this is a version without the keyword race.
+
+And if we do return reverse of zero.
+
+When we run the coach, you can see that for argument zero.
+
+We simply see something went wrong printed.
+
+What happens when we add the race keywords?
+
+So let's copy paste that into a new cell like this.
+
+And here we are just going to add to raise run the cell again.
+
+And now if you try the very same invocation.
+
+This time you can see something went wrong in the output, but we can also see that the zero division
+
+error was raised again.
+
+This programming technique is sometimes used when you only want to handle an exception partially, and
+
+then you want to raise the exception again.
+
+So that's another part of the code finishes the exception handling.
