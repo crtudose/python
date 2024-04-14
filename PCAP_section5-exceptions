@@ -110,50 +110,33 @@ This can be very useful in larger applications.
 To raise an exception, we use the keyword to raise, followed by the name of the exception.
 
 For example, let's say that we want to define a function that returns the bigger number of two.
-And here, first of all, we want to check, if not, is instance a int or not is instance.
-Be int we going to raise value error?
-Then if be larger than a return, be else return a run the cell.
+we want to check if a or b is not an instance.
 
 def returb_bigger(a, b)
   if not isinstance(a, int) or not isinstance(b, int)
+    raise ValueError
+  if b > a:
+    return b
+  else:
+    return a
 
-And now in the new cell we are going to print return Baker five three and we get five in the output.
-
-And a second example five and something strange be and you can see a value error.
+print(return_bigger(5, 3))
+out: 5
+print(return_bigger(5, 'b'))
+out: valueerror
 
 So here in the return bigger function, we assume that both arguments will be of type integer.
-
 We checked out at the very beginning of the function.
-
 If at least one of the numbers is not an integer, we manually raise a value error here by using the
-
-race keyword.
-
+raise keyword.
 You can see how that works when we try to invoke the function with an invalid argument.
-
-Right.
-
-There's also another usage of the word res.
-
+There's also another usage of the word riase.
 You can use it without any exception name inside the except branch.
+This instruction will then raise the very same exception as currently handled.
 
-This instruction will then re res the very same exception as currently handled.
-
-Take a look in a new cell.
-
-I'm going to do the following.
-
-Def return reverse of x.
-
-Try.
-
-Return one divided by x.
-
-Except print.
-
-Something went wrong.
-
-We're on the cell.
+def return_reverse(x)
+  try:
+    return 1/x
 
 So this is a version without the keyword race.
 
