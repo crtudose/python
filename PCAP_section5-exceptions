@@ -292,16 +292,16 @@ except Exception as e:
   print(e.args)
 
 output:
-('devision by zero',)
+('division by zero',)
 
 Here, Python raises an exception when you try to divide by zero.
-
 And as you can see, Python added a short explanation to the tuple.
-
 Another example could be the following.
 
-Try five.
+try:
+  5 < 'a' 
+except Exception as e:
+  print(e.args)
 
-Less than a except exception as E and print e asks again and again.
-
-Python puts a sort of explanation into the double.
+output:
+("'<' not supported between instances of 'int' and 'str'",)
