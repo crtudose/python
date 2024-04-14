@@ -21,3 +21,17 @@ try:
   5:4 # this line generates a SyntaxError
 except:
   print('Got it!') # SyntaxError is NOT caught here
+
+================
+try/except with else
+------------------
+try: 
+    value = int(input('enter an int: '))
+    print(1/value)
+except:
+    print('something went wrong')
+else:
+    print('everything is perfect')
+
+if we provide 0 - first branch will be printed
+if we provide any other value - second branch will be executed
