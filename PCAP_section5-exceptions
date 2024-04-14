@@ -336,18 +336,15 @@ out: Woof, Woof!
 
 But if you try something else like pig, you can see animal value error.
 
+produce_animal_sound('PIG')
+out: animalvaluerror
+
 So here we create an exception class named animal value error.
-
 Since we want it to be a specific subtype of the value error, we denote value error as the superclass
-
 for animal value error.
-
 Note that we do not need to provide any specific content for the new exception type.
-
 Everything we need to successfully use this kind of exception will be inherited from the value error
-
 class.
-
 Now we have a function that expects a string argument named to produce animal sound.
 
 Depending on the type of animal passed, a different sound will be imitated.
