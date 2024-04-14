@@ -345,26 +345,18 @@ for AnimalValueError.
 Note that we do not need to provide any specific content for the new exception type.
 Everything we need to successfully use this kind of exception will be inherited from the ValueError
 class.
-Now we have a function that expects a string argument named to produce_animal_sound.
+Now we have a function that expects a string argument named produce_animal_sound.
 
 Depending on the type of animal passed, a different sound will be imitated.
-
 However, if the use of the function provides something different than one of the expected animal types,
-
-we raise an animal value error with a descriptive error message.
-
+we raise an AnimalValueError with a descriptive error message.
 When we invoke the function twice now you can see how the new type of exception is raised in the second
-
 invocation.
 
 Note that you can pass some arguments to the constructor and the code will work fine and the more value
-
-error inherits the constructor from the value error class.
-
+error inherits the constructor from the ValueError class.
 That was an example where we created a very specific kind of exception class.
-
 But in bigger applications, it may be necessary to create a whole structure of new exception types,
-
 in which case it is probably better to inherit from one of the more general exception classes.
 
 Imagine an application for multiple users where all of the actions are done by specific people.
