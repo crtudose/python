@@ -218,51 +218,68 @@ class and if you try one of the subclasses like exception for example.
 
 for subclass in BaseException.__subclasses__():
   print(subclass.__name__)
+output:
+Exception
+GeneratorExit
+SystemExit
+KeyboardInterrupt
+CancelledError
+DebuggerInitializationError
 
-So we are going to do the following copy, paste that into a new cell and change those exception to
-exception.
-
-If you try that, you can see that again.
+for subclass in Exception.__subclasses__():
+  print(subclass.__name__)
+output:
+StopAsyncIteration
+StopIteration
+ImportError
+OSError
+EOFError
+RuntimeError
+NameError
+AttributeError
+SyntaxError
+LookupError
 
 There are a lot of classes that directly inherit from exception.
-
-Each exception class that inherits from Bayes Exception has a property named Oryx.
-
+Each exception class that inherits from BaseException has a property named Oryx.
 It's a tuple which contains all the arguments passed to the constructor.
-
 For example, try raise exception except exception as e print e arcs.
 
+try:
+  raise Exception
+except Exception as e:
+  print(e.args)    
+
+output: ()
+
 In this simple case, the code only raises a general exception when we try to print the property of
-
 the exception object.
-
 You can see that it's actually empty.
-
 This means that no argument was passed to the class constructor.
-
 Let's try a different version now.
-
 So this time we're going to do something like this and add the following element here.
 
-I do not like it.
+try:
+  raise Exception('i do not like it')
+except Exception as e:
+  print(e.args)    
+
+output: ('i do not like it',)
 
 Note the new syntax that we use now here.
-
-After the keyword race and the exception class, we provided a pair of brackets and we put a string
-
+After the keyword rise and the exception class, we provided a pair of brackets and we put a string
 inside.
-
 If this syntax looks familiar to you, you are right.
-
 We're actually invoking the constructor of the exception class.
-
 With one argument exception classes in Python are constructed in such a way that you can pass even more
-
 arguments to the exception constructor so we can do the following in the new cell.
 
-I do not like it after a comma.
+try:
+  raise Exception('i do not like it', 'in fact, i do not like it at all')
+except Exception as e:
+  print(e.args)    
 
-In fact, I do not like it at all.
+output: ('i do not like it', 'in fact, i do not like it at all')
 
 And you can see both of them here.
 
