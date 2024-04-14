@@ -305,3 +305,7 @@ except Exception as e:
 
 output:
 ("'<' not supported between instances of 'int' and 'str'",)
+
+==============================
+naming your own exceptions 
+--------------------------------
