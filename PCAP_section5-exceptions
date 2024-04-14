@@ -71,28 +71,22 @@ def get_inverse(x):
 
 print(get_inverse(5))
 
+output1: i am always printed
+0.2
+
+print(get_inverse(0))
+output1: i am always printed
+None
+
 Now we know that this may produce some errors, so we are going to accept zero to vision error.
-
 In which case we return none.
-
 And we are going to add a final block here and we will print.
-
-I am always printed.
-
-So that's the function.
-
 Run the cell and now in the new cell we are going to do print, get in verse five, which is all good.
-
-And you can see I am always print to the output and now with an exception, if we provide the number
-
-zero, you can also see I am always printed.
+And you can see 'I am always printed' to the output and now with an exception, if we provide the number
+zero, you can also see 'I am always printed'.
 
 So note that in both situations the final block is executed before the function finishes and returns
-
 the actual number.
-
-In the second case we get a zero division error and we return non.
-
+In the second case we get a zero division error and we return none.
 But before that happens, in both cases we see I am always printed to the output because of the final
-
 block.
