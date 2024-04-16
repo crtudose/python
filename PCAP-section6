@@ -457,74 +457,71 @@ try:
 except Exception as e:
   print('an error occured: ', e)
 
+o: PIG is a domestic animal ...
+
 the read method is the most basic way of reading the content of a file.
 By default, it returns the whole content of the file, which you can conveniently print to the output
-if you want to.
+if you want to You can also specify the number of bytes that should be read, and each byte typically 
+means one character so another version could be as follows.
 
-You can also specify the number of bytes that should be read, and each byte typically means one character.
-
-So another version could be as follows.
-
-Instead of just read, we are going to do read ten and you can see the first ten characters printed
-
+Instead of just read, we are going to do read(10) and you can see the first ten characters printed
 to the output.
 
+try:
+  stream = open('animals.txt')
+  print(stream.read(10))
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
+
+o: PIG is a d
+
 Once you read the first ten bytes, the stream moves inside the file.
-
 If you invoke read ten again, you will see the next ten bytes.
-
-So something like this.
-
 And what happens when the stream reaches the end of a file?
-
 It returns an empty string.
 
 We can easily check that by first trying to reach a lot of characters more than there are in the file
-
 and then trying to read another portion.
-
-So let's do the following In a new cell we are going to do read, I don't know, 10,000 and then try
-
+So let's do the following In a new cell we are going to do read 10,000 and then try
 to read another one and you can see that first all the text is shown and then we just have an empty
-
 line printed.
 
-So note two things If you ask Python to read more bytes than there are in the file, nothing bad will
+try:
+  stream = open('animals.txt')
+  print(stream.read(10000))
+  print(stream.read(1))
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
 
+o: PIG is a domestic animal ...
+
+
+So, note two things. If you ask Python to read more bytes than there are in the file, nothing bad will
 happen.
-
 Python will simply return the string with all the characters in the file and the pointer in this stream
-
 will be set at the very end of the file, so any subsequent read call will just return an empty string.
 
 So here with this method, no error is raised.
-
-No exception is shown.
-
-When you reach the end of the file and you try to use the read method.
+No exception is shown When you reach the end of the file and you try to use the read method.
 
 Again, we can use these characteristics of the read method to read a text file character by character
-
 until the end of the file.
 
-So take a look.
+try:
+  stream = open('animals.txt')
+  character = stream.read(1)
+  while character is != '':
+    print(character, end='-')
+    character = stream.read(1)
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
 
-We are going to copy paste this into a new cell and now we are going to do the following Character equals
-
-stream.
-
-Read one byte, which typically means one character.
-
-And while character is not empty, we're going to do print character and finish with a hyphen, and
-
-then character will be stream read one.
-
-So the very next character, and let's see what that does.
-
-So note what happens here.
+o: P-I-G- -i-s- -a- -d-o-m-e-s-t-i-c- ... 
 
 First, we read the very first bite from the file here, then in a while loop we check if the character
-
 is an empty string.
 
 We already know that an empty string returned from the right function means the end of the file.
