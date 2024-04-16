@@ -390,3 +390,403 @@ If you have a class that only has one custom method, you can typically replace i
 the code will be shorter to read.
 Some Python libraries and design patterns also use closures, so it's good to be able to identify them
 when you read someone else's code.
+
+========================
+text file reading basics
+------------------------------
+Instead of starting with all the details related to opening streams, we'll begin by showing a very
+simple example of text file processing.
+The basic template for opening a text file and reading its content in Python may look something like
+this.
+I'm going to copy paste the code and let's analyze what happens in this piece of code.
+
+try:
+  stream = open('animals.txt')
+  # code
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
+
+First of all, the whole code is enclosed in a try except block.
+That's because with file processing, a lot of things may go wrong.
+A given file may not exist.
+You may not have access to it.
+It may be corrupted and so on.
+
+That's why it's always a good idea to use a try, except block and somehow handle the exception.
+The least you can do is as follows.
+Here we just print the kind of error that appeared so that the user is able to know what went wrong.
+
+Inside the try BLOCK You can see two very important instructions.
+The first line opens the file by calling the open function with a single argument.
+This is the most basic version of the open file you can find.
+The result of the function should be assigned to a variable.
+Otherwise, you will not be able to do anything with the file handler or file stream, in other words.
+
+Then your file processing code begins.
+It can reach the file one by line.
+It can add new stuff to the file. up to you.
+
+The last line in the try block should be a method named Close invoked on the stream object.
+It's very important that you close every stream that you open.
+Otherwise, you may run into memory problems very quickly.
+
+Let's try to invoke the code twice, once with a valid existing file name and to once with an invalid
+name.
+As you can see, the text file is called animals dot txt and the same folder where the notebook is located.
+I have created this file and it has the following content.
+So now let's see what happens if we try this code.
+
+As you can see with a valid name, we don't see anything in the output.
+That's because our program doesn't do anything with the file yet.
+It just opens and closes it.
+But if we don't see any output, it's actually a good sign.
+It means that Python successfully accessed the file and successfully created a handle the file.
+
+Now let's change the file name to something that doesn't exist and let's see what happens.
+And you can see that Python shows an error.
+No such file or directory.
+
+It's time to perform an actual operation on the stream.
+instead of the comment, I'm going to do the following: 
+
+try:
+  stream = open('animals.txt')
+  print(stream.read())
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
+
+the read method is the most basic way of reading the content of a file.
+By default, it returns the whole content of the file, which you can conveniently print to the output
+if you want to.
+
+You can also specify the number of bytes that should be read, and each byte typically means one character.
+
+So another version could be as follows.
+
+Instead of just read, we are going to do read ten and you can see the first ten characters printed
+
+to the output.
+
+Once you read the first ten bytes, the stream moves inside the file.
+
+If you invoke read ten again, you will see the next ten bytes.
+
+So something like this.
+
+And what happens when the stream reaches the end of a file?
+
+It returns an empty string.
+
+We can easily check that by first trying to reach a lot of characters more than there are in the file
+
+and then trying to read another portion.
+
+So let's do the following In a new cell we are going to do read, I don't know, 10,000 and then try
+
+to read another one and you can see that first all the text is shown and then we just have an empty
+
+line printed.
+
+So note two things If you ask Python to read more bytes than there are in the file, nothing bad will
+
+happen.
+
+Python will simply return the string with all the characters in the file and the pointer in this stream
+
+will be set at the very end of the file, so any subsequent read call will just return an empty string.
+
+So here with this method, no error is raised.
+
+No exception is shown.
+
+When you reach the end of the file and you try to use the read method.
+
+Again, we can use these characteristics of the read method to read a text file character by character
+
+until the end of the file.
+
+So take a look.
+
+We are going to copy paste this into a new cell and now we are going to do the following Character equals
+
+stream.
+
+Read one byte, which typically means one character.
+
+And while character is not empty, we're going to do print character and finish with a hyphen, and
+
+then character will be stream read one.
+
+So the very next character, and let's see what that does.
+
+So note what happens here.
+
+First, we read the very first bite from the file here, then in a while loop we check if the character
+
+is an empty string.
+
+We already know that an empty string returned from the right function means the end of the file.
+
+So while the string is not empty, in other words, while there still are some characters in the file
+
+we print, the current character put a dash afterwards and we read another character from the file.
+
+Once we reach the end of the file, we close the stream.
+
+This technique of reading a file character by character can be very useful for a variety of situations.
+
+For example, you can use it to count the number of characters in a file.
+
+Take a look.
+
+I'm going to again copy paste it and do the following.
+
+So here I'm going to define counter equal to zero.
+
+Now I'm going to read one byte.
+
+And now here I'm going to add one to the counter.
+
+Print the character again.
+
+And here, once the stream is closed, I'm going to do print and on a new line number of characters.
+
+And here, the value of counter.
+
+Okay, let's fix the typos.
+
+So I'm better like this.
+
+All right.
+
+You can see 103.
+
+So here we introduce a counter before reading the file.
+
+Character by character, we increased the counter by one every time we read a character and we printed
+
+the total number of characters at the end.
+
+Quite smart, isn't it?
+
+You can also use this technique to count how many times a specific character appears in a file, how
+
+many digits there are in the file.
+
+If a given illegal character can be found in a file and so on, reading a text file, character by character
+
+also has another advantage You protect yourself against corrupting your operating system in terms of
+
+very big files.
+
+If the text file you're trying to read is a terabyte long file, then trying to read it all at once.
+
+Using the read method without any argument will probably make your program crash.
+
+The file is simply too big to be read all at once.
+
+In such cases, using read one and reading the file character by character protects you against such
+
+cases.
+
+Another frequently used technique is reading files line by line, not character by character.
+
+If you want to do that, you can use method reach line instead of read.
+
+It behaves similarly to read When it reaches the end of the file, it returns an empty string.
+
+So now take a look.
+
+I'm going to use this and do the following here instead of character.
+
+We are going to do line, stream, reach, line.
+
+Like this.
+
+And now while line is not empty, counter plus one.
+
+Print the line and line now should equal stream reach line like this.
+
+And now instead of number of characters, we will have number of lines.
+
+Let's see how that works.
+
+All right.
+
+So here, instead of counting characters, we count the lines.
+
+The code looks similar, but instead of using read one, we use each line.
+
+Note that even though we instruct the print function not to put a new line character at the end of the
+
+print invocation, the lines are still shown in the output separated by new line characters.
+
+That's because each line read from the file contains a new line character at the end by itself.
+
+One more method worth mentioning is reach lines with an S at the end.
+
+If you invoke this method without any argument, it reads all the file contents line by line and returns
+
+a list of strings.
+
+One string per file line.
+
+Again, if the file you're trying to read is very big, you may run into performance problems.
+
+So take a look at the following code.
+
+I'm going to copy paste this one.
+
+And here, let's get rid of the counter.
+
+Here instead of line will have lines.
+
+Read lines.
+
+Let's get rid of the loop.
+
+And here we'll do print content of the lines far.
+
+And let's show lines here.
+
+Then we can do the following print.
+
+Number of lines in the file.
+
+And this will be the line of lines.
+
+And now we can do the following.
+
+Full line in lines.
+
+Print line.
+
+And finish it up with an empty string.
+
+And at the end, we want to close this tree and get rid of this.
+
+Let's see how that works in practice.
+
+And here the lines variable keeps a list with strings representing individual lines, as you can see
+
+here.
+
+We first print the whole variable to analyze what it contains.
+
+You can see a list with three strings.
+
+Then we can use a full loop to conveniently print each line.
+
+Reach lines can also accept an argument with the suggested number of bytes to be read at once.
+
+If you have very short lines in your file, each of them one character long using ridge lines two will
+
+make python reads two lines into the list at once.
+
+If your lines are two characters long using lines two will make Python read to one line in one go.
+
+And if your lines are longer than two characters, Python will increase the limit so that at least a
+
+single line is read into the list each time.
+
+If you get an empty list, it means that you've reached the end of the file.
+
+Take a look at this version of the code.
+
+Again, I'm going to use copy pasting and here I'm going to do stream read lines too.
+
+Again, let's have a while loop while line of lines is not zero for line in lines.
+
+Print line separator.
+
+Empty string.
+
+And then.
+
+Lines again stream rage lines to.
+
+And we do need that.
+
+We don't need that.
+
+And let's just close this dream like this.
+
+Let's see how that works.
+
+Here we use Ridge Lines two to suggest a reading buffer of two bytes.
+
+Then inside a while loop, we check if the number of elements in lines is zero, which would mean that
+
+we've reached the end of the file and it's time to say goodbye.
+
+But if we still have some elements in the list, we enter the why loop and then use a nested for loop
+
+to print all the lines one by one.
+
+Afterwards we call the read lines function again.
+
+You may be wondering if this version of the script makes sense.
+
+It's more complicated than the version with Ridge Line where we read single lines because we need to
+
+introduce a nested loop here.
+
+But there's a good reason to do that.
+
+The performance may increase.
+
+Typically, reading more than one line at a time means better performance.
+
+But remember that reading all the lines at once may crush your program.
+
+If the text file is very big.
+
+There is no golden number here, so I can't tell you that you should always read, I don't know, ten
+
+or 200 lines at a time.
+
+It all depends on your operating system, your machine power, and the text file.
+
+You need to perform your own experiments to find the best number of lines to read.
+
+Finally, there's one more way you can reach files line by line.
+
+It's actually quite surprising.
+
+You may use the stream itself.
+
+That's because by default, the stream that you get by calling the open function is an object that is
+
+iterable.
+
+Iterable objects can be iterated using the full loop, just like sequences.
+
+This way the stream will return another line of the file in each iteration of the loop, and it turns
+
+out that you don't even need to close the stream if you use this technique.
+
+When you reach the end of the stream with this technique, Python will automatically close the stream
+
+for you.
+
+All of that means that you can use the following short code.
+
+We are going to use the very first cell copy paste it.
+
+Into a new one.
+
+And we are going to do the following.
+
+Get rid of this and do full line in stream.
+
+Print line and end it with an empty string just like this.
+
+Note how short, clear and easy to read this code is.
+
+Again, that's the power behind Python.
+
+You can perform many typical tasks very easily because Python has ready made solutions for you.
+
+Reading a file line by line is one of them, as you can see.
