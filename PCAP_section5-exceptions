@@ -360,20 +360,28 @@ But in bigger applications, it may be necessary to create a whole structure of n
 in which case it is probably better to inherit from one of the more general exception classes.
 
 Imagine an application for multiple users where all of the actions are done by specific people.
-
 We want to have our own exception classes and we have a very specific requirement.
-
 The exceptions should always contain the login of the user that caused the error.
-
 We will choose exception a very general exception class provided by Python as our base class.
 
-Take a look.
+class UserActionException(Exception)Ș
+  def __init__(self, message='', user_id=''):
+    Exception.__init__(self)
+    self.user_id = user_id
+    self.message = message
+  def __str__(self):
+    return type(self).__name__ + ' occured. Error message: ' + self.message + ', userId: ' + self.user_id
 
-I'm going to copy paste.
+def say_hello(name, user_id):
+  if name == '':
+    raise UserActionException('empty name!', user_id)
+  print('hello', name)
 
-A large a piece of code here.
-
-And to run the code now and let's analyze this piece of code carefully.
+try: 
+  say_hello('adam', 'DT324')
+  say_hello('', 'DT324')
+except Exception as e:
+  print(e)
 
 So here we define user action exception, which inherits directly from exception.
 
