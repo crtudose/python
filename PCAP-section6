@@ -210,66 +210,42 @@ o: [2, 4, 6, 8, 10]
 Believe it or not, we can reduce all of this code into a single line like this.
 
 print(list(map(lambda i: i * 2, [1, 2, 3, 4, 5])))
+o: [2, 4, 6, 8, 10]
 
 So we have the printing location, the list function, the map function, the lambda defined inside
-
 and the list provided directly.
-
 And now if we run this code, it works the exact same way.
-
-See how we convert it?
-
-All of the four lines into a single line of code.
+See how we convert it? All of the four lines into a single line of code.
 
 That's one of the secrets powers behind Python.
-
 You can really reduce your code to the bare minimum.
-
 Now let's talk about filter.
 
 Filter works in a similar way to map.
-
 It also accepts a function and a sequence.
-
 It's also returns an iterator.
-
 The difference between map and filter is that filter uses the function to well, as the name suggests,
-
 to filter the elements of the sequence.
 
-Sounds complicated.
 
 Take a look at this example.
-
-We are going to copy paste this and instead of map we are going to have filter.
-
 The lambda will be a bit different so we want to check I divisible by two must be equal to zero and
-
 let's maybe have more elements here to see the result.
-
 And so let's break it to the output.
-
 So we have a list of numbers from 1 to 8.
-
 We would like to have a new list that only contains even numbers to do that we make use of the filter
-
 function here.
 
 The lambda in this case contains the condition that each matching elements should satisfy.
-
-When we divide the elements by T, we should receive zero.
-
+When we divide the elements by 2, we should receive zero.
 In other words, this means check if the element is an even number.
-
 If it is, the filter function keeps the element.
-
 If it isn't, the filter function removes the element from the result.
-
 And just as the function name suggests, we successfully filtered out all all two numbers and only got
-
 even numbers in the resulting list.
 
-Let's do one more example with filter.
+print(list(filter(lambda i: i % 2 == 0, [1, 2, 3, 4, 5, 6, 7, 8])))
+o: [2, 4, 6, 8]
 
 We will provide a list of email addresses and we will filter out those that are fake.
 
