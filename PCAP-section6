@@ -266,3 +266,144 @@ You can see that we got a list of email addresses and some of them were not real
 We use the filter function to get rid of these values in the list that did not contain the app sign.
 As you can see, thanks to Lambda, we only needed a single line to get a new list with correct email
 addresses.
+
+========================
+closures
+------------------------------
+If you take a look at the formal definition of a closure, you will find something like this.
+A closure is a technique for implementing lexical scoped name binding in the language with first class
+functions.
+A more digestible definition would be something like this a closure as a function defined inside another
+function that remembers the values of the outer function.
+
+def greet(text):
+  def print_greet():
+    print(text)
+  return print_greet
+say_hello = greet('hello')
+say_hellow()
+o: hello
+
+We define a function named grid.
+This function takes a single argument, a text value.
+Next, inside the greet function, we define another function print_greet
+Print_greet is called a nested function.
+As you can see, you can test functions in Python the same way that you can nest for loops or if statements.
+This nested function doesn't take any arguments inside.
+It prints the text variable to the output.
+
+As you can see, the nested function has access to the variables available in the outer function.
+So even though print_greet doesn't get text as an argument, it can access the variable because the variable
+is available in the outer function.
+That nested function print_greet becomes a closure the moment it references a variable from the outer
+function.
+If we didn't reference any variables from the greet function, print_greet would simply be called a nested
+function.
+But when we access that text variable inside print_greet, it immediately becomes a closure.
+
+And now the second interesting thing happens we return the closure from the outer function.
+Note that we don't add brackets to the closure name.
+That's because we don't want to invoke the function.
+We simply want to return it.
+In Python, whenever you add a pair of round brackets, be it with or without arguments inside, you
+instruction python to call the function.
+
+Without the brackets here we simply return the nested function without calling it.
+because we return a value from the outer function.
+That value can be saved into a variable.
+That's what we do on the next line.
+We call the greet function with a single argument.
+And we store the result in the say hello variable.
+
+Note that at this point nothing has been printed yet.
+The print invocation is contained inside the print_greet closure.
+But the closure was never called, so there's nothing printed to the output yet.
+Now look what happens on the last line.
+We add a pair of round brackets to the variable name.
+
+This means try to invoke whatever is contained inside the say_hello variable and because say_hello contains
+a closure, that closure is invoked.
+The closure contains a print statement so we can see something printed to the output.
+
+The closure remembers the value of text.
+The closure knows that it should print hello to the output, even though we don't pass anything when
+we call the closure on the last line.
+That's a very important feature of closures.
+
+They can store values from the outer functions, even though these functions have finished executing
+and the values should be, theoretically speaking, already destroyed.
+Such variables, variables that should be already destroyed but are still available in a closure are
+called free variables.
+
+Closures are not very intuitive at first sight.
+So let's analyze another example.
+
+We create a function named make_multiply_closure.
+
+It accepts a single argument named X.
+
+Then inside the function we create a closure named multiply that accepts an argument of its own.
+
+Why the closure is returned from the function.
+
+Now we create two variables multiply five and multiple 12.
+
+The first one invokes the outer function with an argument five.
+
+The second one invokes the outer function with an argument of 12.
+
+These variables now contain the same closure with two different values for X five and 12.
+
+Later in the code, we can call each closure version and provide an argument which will be used as the
+
+second number, the Y parameter in the inner function.
+
+Here, the closure remembers the first number and multiplies it by the second number provided.
+
+Now, as you can see, closures can be a bit difficult to understand.
+
+It's easy to lose track of what argument is stored, where to make it easier.
+
+Remember how the outer function and the inner function are invoked in the first example, the outer
+
+function greet required a single argument and when we created the closure, we had to provide it here.
+
+Hello.
+
+Then when we call to the closure, you could see that we did not provide any arguments.
+
+That's because when you look at the inner function definition here, there is no parameter defined.
+
+Now let's analyze the second example here.
+
+The outer function requires a single argument passed.
+
+So when creating the closure here and here, we provided a single argument twice.
+
+Then when invoking the closure, you could see that we provided a single argument each time here.
+
+That's because the inner function required a single value y to be passed each time.
+
+So as you can see, closures become a bit easier to understand when you check carefully the arguments
+
+that they require.
+
+Now you may be wondering what a closure is good for.
+
+Are they actually used in Python?
+
+What for?
+
+The answer depends on personal preferences.
+
+Some people make heavy use of them, some don't.
+
+Closures can sometimes replace small classes.
+
+If you have a class that only has one custom method, you can typically replace it with a closure and
+
+the code will be shorter to read.
+
+Some Python libraries and design patterns also use closures, so it's good to be able to identify them
+
+when you read someone else's code.
