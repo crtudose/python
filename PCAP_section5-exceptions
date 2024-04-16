@@ -437,11 +437,12 @@ EmptyNameUserActionException occured. Error message: An empty name was provided,
 It is a specific case of user action exception, which is the superclass for it.
 The only thing we define in this exception class is the constructor.
 We invoke the constructor of the superclass here, but we provide a very specific error message.
-This means that we can now raise empty name user action exception like here, and we do need to provide
+This means that we can now raise emptynameuseraction exception like here, and we do need to provide
 the error message like before because the class itself produces a nice error message.
+
 such an exception type can be useful if you need to raise an exception related to empty names in many
 places.
-Instead of providing the error message, empty name and all of them, you can simply use this very special
+Instead of providing the error message, emptyname and all of them, you can simply use this very special
 kind of exception type.
 And of course, depending on your needs, you can create new kinds of exceptions that inherit from user
 action exception, or even ones that inherit from empty name user action exception.
