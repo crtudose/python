@@ -434,12 +434,6 @@ except Exception as e:
 output: Hello Adam
 EmptyNameUserActionException occured. Error message: An empty name was provided, userId: DT324
 
-We are going to see an empty name was provided from here.
-
-So we create a new exception.
-
-Class empty name, user action exception.
-
 It is a specific case of user action exception, which is the superclass for it.
 
 The only thing we define in this exception class is the constructor.
