@@ -41,52 +41,34 @@ A lambda function in Python in turn looks something like this.
 lambda parameter1, parameter2: # instruction
 
 The two major differences that stick out almost immediately are that a function always has a name.
-
 A lambda in turn can be used without giving it any name.
-
 The second difference is that a lambda can only contain a single instruction.
-
 Let's write the very same function in two ways using the classic approach with the keyword def and using
-
 a lambda.
 
 This will be a very simple function that accepts just two numbers and adds them together.
+pens in the output.
 
-Def sum A and B, and then return A plus B.
+def sum(a, b):
+  return a + b
 
-And now lambda A comma.
-
-B, a plus B, And don't worry about what happens in the output.
-
-Again, note two things.
+lambda a, b: a + b
+output: <function__main__.<lambda>(a, b)>
 
 First of all, the Lambda version is much shorter.
-
 Second of all, the Lambda version does not need to return keyword and of course the variables can be
-
 named differentially.
 
-You can have a lambda like this
-
-and it will also be fine up to you.
-
 Now, the problem with the code we have right now is that the sum function can be easily called.
-
 We just need to write something like for instance, some five and three and that's it.
 
+sum(3, 5)
+o: 8
+
 But how do we call the lambda if it doesn't have a name?
+we can save the lambda function into a variable and to use the variable name to call the lambda.
 
-Now pay attention to what we are going to do because it's quite surprising we can save the lambda function
-
-into a variable and to use the variable name to call the lambda.
-
-Take a look.
-
-We are going to copy paste this one into a new cell and we're going to add the following.
-
-Another sum equals lambda, and now we can do another sum five and three, and we get the same result
-
-as with the classic approach.
+another_sum = lambda a, b: a + b
 
 And now you can see that both of these functions, the classic one and the Lambda one, are invoked
 
