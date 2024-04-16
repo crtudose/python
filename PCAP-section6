@@ -201,9 +201,15 @@ o: [2, 4, 6, 8, 10]
 
 So if we gather all the codes together, that's create the lambda and the list and we add this.
 
-Everything works and we have four lines of code here and now.
+lambda_func = lambda i: i  * 2
+initial_list = [1, 2, 3, 4, 5]
+map_result = map(lambda_func, initial_list)
+print(list(map_result))
+o: [2, 4, 6, 8, 10]
 
 Believe it or not, we can reduce all of this code into a single line like this.
+
+print(list(map(lambda i: i * 2, [1, 2, 3, 4, 5])))
 
 So we have the printing location, the list function, the map function, the lambda defined inside
 
