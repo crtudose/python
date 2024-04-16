@@ -155,50 +155,49 @@ When you print the iterator, you can simply see its identify in the memory, like
 of objects.
 
 Let's save the resulting iterator into a variable and use the next function to get a single value from
-
 the iterator.
 
-So we are going to copy paste this into a new cell and now I'm going to do next map result and the result
-
-will be a variable with the result.
+map_result = map(lambda_func, initial_list)
+print(map_result)
+o: 2
 
 And let's use the print invocation around it and let's see what we get.
-
 You can see the value to returned.
-
 This is the first element in the iterator.
-
 After applying the lambda function, you can use subsequent next goals to get subsequent results.
-
-Take a look.
-
 We are going to repeat that for the second, third, fourth, fifth and sixth time.
 
+map_result = map(lambda_func, initial_list)
+print(map_result)
+print(map_result)
+print(map_result)
+print(map_result)
+print(map_result)
+print(map_result)
+
+o: 2 4 6 8 10 
+stopiteration err
+
 And you can see all the values printed to the output and at the very end and exception raised stop iteration.
-
 This means that there are no more values to return.
-
 But as you can see, this way of working with iterator is not really convenient.
-
 Instead, we could use a for loop, so we are going to do the following in the new cell.
 
 I'm going to do four element in map result.
 
 Print the element and finish it with a comma like this.
 
-All right.
-
-Kind of better.
+map_result = map(lambda_func, initial_list)
+for element in map_result:
+  print(element, end=',')
+o: 2, 4, 6, 8, 10, 
 
 Another way is to use the list function to simply get all the output from the iterator into a nice little
-
 list.
 
-Take a look.
-
-Again, we are going to copy paste this and now we are going to do print list map results and it works
-
-like a charm.
+map_result = map(lambda_func, initial_list)
+print(list(map_result))
+o: [2, 4, 6, 8, 10]
 
 So if we gather all the codes together, that's create the lambda and the list and we add this.
 
