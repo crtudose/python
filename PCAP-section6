@@ -78,94 +78,47 @@ Why do they exist?
 There are a few situations where lambdas come in handy.
 One of the superpowers is that they can be passed around just like variables.
 
-This function can seem a bit abstract to you, so let's analyze it carefully.
-
-It takes a sequence of elements and then for each element it's print something.
-
-This something that is printed to the output is actually the result of a function call.
-
-And here's the tricky part.
-
-It's not a specific function that we call.
-
-It can be any function that is passed to the apply func function as a parameter named func.
-
-I know this may sound strange, so let's analyze some examples.
+def apply_func(elements, func):
+  for element in elements:
+    print(func(element))
 
 Suppose that we have a list of numbers from 1 to 5 and we want to print their values to the second power.
-
-We can do it in the following way so my func equals lambda x x times x and now apply func list with
-
-five numbers as I promise.
-
+We can do it in the following way:
 And now as the second parameter we are going to add my func Look what happens here.
-
 The first argument contains the elements to iterate inside.
-
 Apply func numbers from 1 to 5.
 
+my_func = lambda x: x * x
+apply_func([1, 2, 3, 4, 5], my_func)
+output: 1 4 9 16 25
+
 Now for each of the elements, we want to apply the function pass as the second parameter.
-
 The function is a lambda that we saved in the my func variable.
-
 It takes one argument and returns the argument squared.
-
 Now in the output we can actually see that for each element, the apply func function used the lambda
-
 to calculate the second power and then it's printed the result.
-
-The beautiful thing about the apply func function is that it can work with so many different lambda
-
-types.
+The beautiful thing about the apply_func function is that it can work with so many different lambda
+types. 
 
 For instance, if you want to do something else with each number, let's say you want to find the reverse
-
 number for each of them.
-
 You just need to change the lambda.
 
-So here we are going to copy paste this cell into a new one and instead of x times x we're going to
-
-do one divided by x or if you want to return a constant value, no matter what number is passed, the
-
-lambda could always return, for example, zero.
-
-So take a look at this cell.
-
-For x just simply returns zero.
-
-And it works.
-
-In this particular case, you don't even need to save the lambda into a variable, as we only need at
-
-once.
-
-You could simply do something like this.
-
-Let's take this one for example.
-
-In a new cell and we are going to just cut this one and paste it here and get rid of the variable.
-
-And it works like a charm.
+my_func = lambda x: 1 / x
+apply_func([1, 2, 3, 4, 5], my_func)
+output: 1 0.5 0.33 0.25 0.2
 
 The lambda is defined directly in the function invocation here.
-
 You do need to create a special variable for it.
-
 Note that the lambda is not saved anywhere in this setup.
 
+apply_func([1, 2, 3, 4, 5]), lambda x: x * x)
+out: 1 4 9 16 25
+
 Once this line is executed, the lambda is lost and you can't reuse it later in the code.
-
 But this is exactly what we needed.
-
 A simple way to define a function in line with the function invocation itself.
-
-That's the beauty of lambdas.
-
 They allow you to write shorter, clearer code without defining unnecessary variables.
-
 Lambda functions are sometimes called functions without names or anonymous functions.
-
 When you take a look at the last example, you can easily understand why, as the lambda here does not
-
 have any name and is quite anonymous.
