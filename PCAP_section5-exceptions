@@ -364,7 +364,7 @@ We want to have our own exception classes and we have a very specific requiremen
 The exceptions should always contain the login of the user that caused the error.
 We will choose exception a very general exception class provided by Python as our base class.
 
-class UserActionException(Exception)Ș
+class UserActionException(Exception): # here we define user action exception, which inherits directly from Exception.
   def __init__(self, message='', user_id=''):
     Exception.__init__(self)
     self.user_id = user_id
@@ -383,7 +383,7 @@ try:
 except Exception as e:
   print(e)
 
-So here we define user action exception, which inherits directly from exception.
+So 
 
 We defined a constructor.
 
