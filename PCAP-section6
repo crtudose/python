@@ -343,79 +343,50 @@ We create a function named make_multiply_closure.
 def make_multiply_closure(x):
   def multiply(y):
     return x * y
+
   return multiply
+
 multiply_5 = make_multiply_closure(5)
 multiply_12 = make_multiply_closure(12)
+
 print(multiply_5(10))
 print(multiply_5(20))
+
 print(multiply_12(10))
 print(multiply_12(20))
 
+o: 50 100 120 240
 
 It accepts a single argument named X.
-
-Then inside the function we create a closure named multiply that accepts an argument of its own.
-
-Why the closure is returned from the function.
-
-Now we create two variables multiply five and multiple 12.
-
+Then inside the function we create a closure named multiply that accepts an argument of its own - y 
+the closure is returned from the function.
+Now we create two variables multiply5 and multiply12.
 The first one invokes the outer function with an argument five.
-
 The second one invokes the outer function with an argument of 12.
 
 These variables now contain the same closure with two different values for X five and 12.
-
 Later in the code, we can call each closure version and provide an argument which will be used as the
-
 second number, the Y parameter in the inner function.
 
-Here, the closure remembers the first number and multiplies it by the second number provided.
-
-Now, as you can see, closures can be a bit difficult to understand.
-
-It's easy to lose track of what argument is stored, where to make it easier.
-
-Remember how the outer function and the inner function are invoked in the first example, the outer
-
-function greet required a single argument and when we created the closure, we had to provide it here.
-
-Hello.
-
-Then when we call to the closure, you could see that we did not provide any arguments.
-
-That's because when you look at the inner function definition here, there is no parameter defined.
-
-Now let's analyze the second example here.
+the closure remembers the first number and multiplies it by the second number provided.
+as you can see, closures can be a bit difficult to understand.
+It's easy to lose track of what argument is stored where 
 
 The outer function requires a single argument passed.
-
 So when creating the closure here and here, we provided a single argument twice.
-
 Then when invoking the closure, you could see that we provided a single argument each time here.
-
 That's because the inner function required a single value y to be passed each time.
 
 So as you can see, closures become a bit easier to understand when you check carefully the arguments
-
 that they require.
-
 Now you may be wondering what a closure is good for.
-
 Are they actually used in Python?
-
 What for?
-
 The answer depends on personal preferences.
-
 Some people make heavy use of them, some don't.
-
 Closures can sometimes replace small classes.
 
 If you have a class that only has one custom method, you can typically replace it with a closure and
-
 the code will be shorter to read.
-
 Some Python libraries and design patterns also use closures, so it's good to be able to identify them
-
 when you read someone else's code.
