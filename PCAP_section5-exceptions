@@ -416,11 +416,23 @@ Inherits from useractionexception like this
 User id default value of an empty string super in it and empty name was provided with the user_id like
 this.
 
-Say hello name and user ID if name is empty.
+Raise this particular exception with the specified user_ID.
 
-Raise this particular exception with the specified user ID.
+class EmptyNameUserActionException(UserActionException)
+  def __init__(self, user_id=''):
+    super().__init__('an exception name was provided', user_id)
+def say_hello(name, user_id):
+  if name == '':
+    raise EmptyNameUserActionException(user_id)
+  print('hello', name)
+try: 
+  say_hello('adam', 'DT324')
+  say_hello('', 'DT324')
+except Exception as e:
+  print(e)
 
-
+output: Hello Adam
+EmptyNameUserActionException occured. Error message: An empty name was provided, userId: DT324
 
 We are going to see an empty name was provided from here.
 
