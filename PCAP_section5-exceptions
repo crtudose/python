@@ -404,36 +404,23 @@ Now in the main part of the code, we use a try except block when an exception or
 such as user action exception is raised, we print the exception object.
 
 And as you can see in this particular case, our custom STR method is used and we get a nice error message.
-Now, of course, we can also create our own exceptional class structure.
 
 output: Hello Adam
 UserActionException occured. Error message: empty name!, userId: DT324
 
+Now, of course, we can also create our own exceptional class structure.
 We can inherit from user action exception to create more specific exception types.
 
-So for example, in a new cell we are going to do the following class empty name user action exception.
-
-Inherits from user action exception like this def in it self.
-
-User id default value of an empty string super in it and empty name was provided with the user id like
-
+So for example, in a new cell we are going to do the following class emptynameuseraction exception.
+Inherits from useractionexception like this 
+User id default value of an empty string super in it and empty name was provided with the user_id like
 this.
-
-And now in the new cell death.
 
 Say hello name and user ID if name is empty.
 
 Raise this particular exception with the specified user ID.
 
-Otherwise print.
 
-Hello.
-
-Goodnight.
-
-And now if we try the code again.
-
-Like this.
 
 We are going to see an empty name was provided from here.
 
