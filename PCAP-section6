@@ -25,3 +25,179 @@ output: [1,2,3,4,5]
 table = [[i for i in range(1, 6)] for j in range(5)]
 print(table)
 output: [1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5]
+
+============
+lambda functions
+---------------
+Lambda functions and Python are used to simplify code to make it easier to understand shorter and clearer.
+A typical function in python is defined like this.
+
+def function_name(parameter1, parameter2):
+# instruction1
+# instruction2
+
+A lambda function in Python in turn looks something like this.
+
+lambda parameter1, parameter2: # instruction
+
+The two major differences that stick out almost immediately are that a function always has a name.
+
+A lambda in turn can be used without giving it any name.
+
+The second difference is that a lambda can only contain a single instruction.
+
+Let's write the very same function in two ways using the classic approach with the keyword def and using
+
+a lambda.
+
+This will be a very simple function that accepts just two numbers and adds them together.
+
+Def sum A and B, and then return A plus B.
+
+And now lambda A comma.
+
+B, a plus B, And don't worry about what happens in the output.
+
+Again, note two things.
+
+First of all, the Lambda version is much shorter.
+
+Second of all, the Lambda version does not need to return keyword and of course the variables can be
+
+named differentially.
+
+You can have a lambda like this
+
+and it will also be fine up to you.
+
+Now, the problem with the code we have right now is that the sum function can be easily called.
+
+We just need to write something like for instance, some five and three and that's it.
+
+But how do we call the lambda if it doesn't have a name?
+
+Now pay attention to what we are going to do because it's quite surprising we can save the lambda function
+
+into a variable and to use the variable name to call the lambda.
+
+Take a look.
+
+We are going to copy paste this one into a new cell and we're going to add the following.
+
+Another sum equals lambda, and now we can do another sum five and three, and we get the same result
+
+as with the classic approach.
+
+And now you can see that both of these functions, the classic one and the Lambda one, are invoked
+
+in the exact same way.
+
+You may be wondering if Lambda functions can be used in the same way as normal functions.
+
+Why do they exist?
+
+What is the point?
+
+There are a few situations where lambdas come in handy.
+
+One of the superpowers is that they can be passed around just like variables.
+
+Take a look.
+
+We are going to create a new function now.
+
+Def apply func elements and func and then select for element in elements print func element and run
+
+the cell.
+
+This function can seem a bit abstract to you, so let's analyze it carefully.
+
+It takes a sequence of elements and then for each element it's print something.
+
+This something that is printed to the output is actually the result of a function call.
+
+And here's the tricky part.
+
+It's not a specific function that we call.
+
+It can be any function that is passed to the apply func function as a parameter named func.
+
+I know this may sound strange, so let's analyze some examples.
+
+Suppose that we have a list of numbers from 1 to 5 and we want to print their values to the second power.
+
+We can do it in the following way so my func equals lambda x x times x and now apply func list with
+
+five numbers as I promise.
+
+And now as the second parameter we are going to add my func Look what happens here.
+
+The first argument contains the elements to iterate inside.
+
+Apply func numbers from 1 to 5.
+
+Now for each of the elements, we want to apply the function pass as the second parameter.
+
+The function is a lambda that we saved in the my func variable.
+
+It takes one argument and returns the argument squared.
+
+Now in the output we can actually see that for each element, the apply func function used the lambda
+
+to calculate the second power and then it's printed the result.
+
+The beautiful thing about the apply func function is that it can work with so many different lambda
+
+types.
+
+For instance, if you want to do something else with each number, let's say you want to find the reverse
+
+number for each of them.
+
+You just need to change the lambda.
+
+So here we are going to copy paste this cell into a new one and instead of x times x we're going to
+
+do one divided by x or if you want to return a constant value, no matter what number is passed, the
+
+lambda could always return, for example, zero.
+
+So take a look at this cell.
+
+For x just simply returns zero.
+
+And it works.
+
+In this particular case, you don't even need to save the lambda into a variable, as we only need at
+
+once.
+
+You could simply do something like this.
+
+Let's take this one for example.
+
+In a new cell and we are going to just cut this one and paste it here and get rid of the variable.
+
+And it works like a charm.
+
+The lambda is defined directly in the function invocation here.
+
+You do need to create a special variable for it.
+
+Note that the lambda is not saved anywhere in this setup.
+
+Once this line is executed, the lambda is lost and you can't reuse it later in the code.
+
+But this is exactly what we needed.
+
+A simple way to define a function in line with the function invocation itself.
+
+That's the beauty of lambdas.
+
+They allow you to write shorter, clearer code without defining unnecessary variables.
+
+Lambda functions are sometimes called functions without names or anonymous functions.
+
+When you take a look at the last example, you can easily understand why, as the lambda here does not
+
+have any name and is quite anonymous.
