@@ -122,3 +122,7 @@ They allow you to write shorter, clearer code without defining unnecessary varia
 Lambda functions are sometimes called functions without names or anonymous functions.
 When you take a look at the last example, you can easily understand why, as the lambda here does not
 have any name and is quite anonymous.
+
+========================
+map and filter with lambda functions
+------------------------------
