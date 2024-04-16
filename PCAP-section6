@@ -340,6 +340,18 @@ So let's analyze another example.
 
 We create a function named make_multiply_closure.
 
+def make_multiply_closure(x):
+  def multiply(y):
+    return x * y
+  return multiply
+multiply_5 = make_multiply_closure(5)
+multiply_12 = make_multiply_closure(12)
+print(multiply_5(10))
+print(multiply_5(20))
+print(multiply_12(10))
+print(multiply_12(20))
+
+
 It accepts a single argument named X.
 
 Then inside the function we create a closure named multiply that accepts an argument of its own.
