@@ -365,7 +365,7 @@ The exceptions should always contain the login of the user that caused the error
 We will choose exception a very general exception class provided by Python as our base class.
 
 class UserActionException(Exception): # here we define user action exception, which inherits directly from Exception.
-  def __init__(self, message='', user_id=''):
+  def __init__(self, message='', user_id=''): # We defined a constructor.
     Exception.__init__(self)
     self.user_id = user_id
     self.message = message
@@ -383,45 +383,31 @@ try:
 except Exception as e:
   print(e)
 
-So 
-
-We defined a constructor.
-
-Remember, we need to use the name double underscore in its double underscore.
-
 And this enables the user to provide two very specific arguments one for the error message, the other
-
 one for the ID of the user that was related to this error.
 
 As the first instruction in the constructor, we invoke the constructor of the superclass.
-
-Then we create two new properties, one called user ID, the other one called Message.
-
+Then we create two new properties, one called user_ID, the other one called Message.
 Thanks to that, our own exception type, whenever we raise it, will be equipped with these two properties.
 
 You can also see that we override the default double underscore str, double underscore method so that
-
 it returns a meaningful error message alongside the name of the exception class and the user ID.
 
-Now we create a function named say hello.
-
+Now we create a function named say_hello.
 This function expects to argument the name of the user that will be used to create the user and the
+user_ID which will be used in the event of raising an exception.
+You can now see that when the name is empty, we raise our own custom useractionexception.
 
-user ID which will be used in the event of raising an exception.
-
-You can now see that when the name is empty, we raise our own custom user action exception.
-
-We provide a very custom message which will go into the message property and a very custom user ID which
-
-will go into the user ID property.
-
+We provide a very custom message which will go into the message property and a very custom user_ID which
+will go into the user_ID property.
 Now in the main part of the code, we use a try except block when an exception or any of its subclasses
-
 such as user action exception is raised, we print the exception object.
 
 And as you can see in this particular case, our custom STR method is used and we get a nice error message.
-
 Now, of course, we can also create our own exceptional class structure.
+
+output: Hello Adam
+UserActionException occured. Error message: empty name!, userId: DT324
 
 We can inherit from user action exception to create more specific exception types.
 
