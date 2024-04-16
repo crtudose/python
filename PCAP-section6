@@ -248,27 +248,21 @@ print(list(filter(lambda i: i % 2 == 0, [1, 2, 3, 4, 5, 6, 7, 8])))
 o: [2, 4, 6, 8]
 
 We will provide a list of email addresses and we will filter out those that are fake.
-
 That is, they don't contain the ad sign.
-
 I have a list of some email addresses like here.
-
-And now I'm going to do the following list inside the brackets filter and now Lambda X, such that the
-
-sign is in x.
-
-And we are going to apply it to the email list.
-
-Sorry.
-
 There is a column here that we don't need.
 
-And now if we run the cell, everything works fine.
+emails = [
+'frank@gmail.com',
+'i love python',
+'e74583',
+'journal@yahoo.com',
+'fsiaddr'
+]
+list(filter(lambda x: '@' in x, emails))
+o: ['journal@yahoo.com', 'frank@gmail.com']
 
 You can see that we got a list of email addresses and some of them were not real addresses.
-
 We use the filter function to get rid of these values in the list that did not contain the app sign.
-
 As you can see, thanks to Lambda, we only needed a single line to get a new list with correct email
-
 addresses.
