@@ -71,26 +71,12 @@ we can save the lambda function into a variable and to use the variable name to 
 another_sum = lambda a, b: a + b
 
 And now you can see that both of these functions, the classic one and the Lambda one, are invoked
-
 in the exact same way.
 
 You may be wondering if Lambda functions can be used in the same way as normal functions.
-
 Why do they exist?
-
-What is the point?
-
 There are a few situations where lambdas come in handy.
-
 One of the superpowers is that they can be passed around just like variables.
-
-Take a look.
-
-We are going to create a new function now.
-
-Def apply func elements and func and then select for element in elements print func element and run
-
-the cell.
 
 This function can seem a bit abstract to you, so let's analyze it carefully.
 
