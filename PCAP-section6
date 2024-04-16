@@ -126,3 +126,168 @@ have any name and is quite anonymous.
 ========================
 map and filter with lambda functions
 ------------------------------
+two functions that accept lambdas.
+First, let's talk about map.
+Map typically takes to arguments.
+The first one is a function.
+The second one is a sequence with some elements.
+Then map applies the function to all the elements in the sequence.
+
+We wrote a very similar function in the introductory video about lambdas, but map is a bit more universal.
+Instead of printing to the output the result of each invocation, it creates a structure called an iterator.
+an iterator is an object that allows you to retrieve the elements one by one in a loop or convert them into a list.
+
+Let's see that in practice, we'll create a lambda function that will multiply a given number by two
+and we'll also have an initial list.
+
+lambda_func = lambda i: i  * 2
+initial_list = [1, 2, 3, 4, 5]
+
+map(lambda_func, initial_list)
+<map at 0x324235345>
+
+The first argument is the lambda.
+The second argument is the sequence with elements like this.
+Now, if we run the code, you can see that we don't get to see anything meaningful.
+
+As I said, map returns an iterator, a special kind of object.
+When you print the iterator, you can simply see its identify in the memory, like with many other types
+of objects.
+
+Let's save the resulting iterator into a variable and use the next function to get a single value from
+
+the iterator.
+
+So we are going to copy paste this into a new cell and now I'm going to do next map result and the result
+
+will be a variable with the result.
+
+And let's use the print invocation around it and let's see what we get.
+
+You can see the value to returned.
+
+This is the first element in the iterator.
+
+After applying the lambda function, you can use subsequent next goals to get subsequent results.
+
+Take a look.
+
+We are going to repeat that for the second, third, fourth, fifth and sixth time.
+
+And you can see all the values printed to the output and at the very end and exception raised stop iteration.
+
+This means that there are no more values to return.
+
+But as you can see, this way of working with iterator is not really convenient.
+
+Instead, we could use a for loop, so we are going to do the following in the new cell.
+
+I'm going to do four element in map result.
+
+Print the element and finish it with a comma like this.
+
+All right.
+
+Kind of better.
+
+Another way is to use the list function to simply get all the output from the iterator into a nice little
+
+list.
+
+Take a look.
+
+Again, we are going to copy paste this and now we are going to do print list map results and it works
+
+like a charm.
+
+So if we gather all the codes together, that's create the lambda and the list and we add this.
+
+Everything works and we have four lines of code here and now.
+
+Believe it or not, we can reduce all of this code into a single line like this.
+
+So we have the printing location, the list function, the map function, the lambda defined inside
+
+and the list provided directly.
+
+And now if we run this code, it works the exact same way.
+
+See how we convert it?
+
+All of the four lines into a single line of code.
+
+That's one of the secrets powers behind Python.
+
+You can really reduce your code to the bare minimum.
+
+Now let's talk about filter.
+
+Filter works in a similar way to map.
+
+It also accepts a function and a sequence.
+
+It's also returns an iterator.
+
+The difference between map and filter is that filter uses the function to well, as the name suggests,
+
+to filter the elements of the sequence.
+
+Sounds complicated.
+
+Take a look at this example.
+
+We are going to copy paste this and instead of map we are going to have filter.
+
+The lambda will be a bit different so we want to check I divisible by two must be equal to zero and
+
+let's maybe have more elements here to see the result.
+
+And so let's break it to the output.
+
+So we have a list of numbers from 1 to 8.
+
+We would like to have a new list that only contains even numbers to do that we make use of the filter
+
+function here.
+
+The lambda in this case contains the condition that each matching elements should satisfy.
+
+When we divide the elements by T, we should receive zero.
+
+In other words, this means check if the element is an even number.
+
+If it is, the filter function keeps the element.
+
+If it isn't, the filter function removes the element from the result.
+
+And just as the function name suggests, we successfully filtered out all all two numbers and only got
+
+even numbers in the resulting list.
+
+Let's do one more example with filter.
+
+We will provide a list of email addresses and we will filter out those that are fake.
+
+That is, they don't contain the ad sign.
+
+I have a list of some email addresses like here.
+
+And now I'm going to do the following list inside the brackets filter and now Lambda X, such that the
+
+sign is in x.
+
+And we are going to apply it to the email list.
+
+Sorry.
+
+There is a column here that we don't need.
+
+And now if we run the cell, everything works fine.
+
+You can see that we got a list of email addresses and some of them were not real addresses.
+
+We use the filter function to get rid of these values in the list that did not contain the app sign.
+
+As you can see, thanks to Lambda, we only needed a single line to get a new list with correct email
+
+addresses.
