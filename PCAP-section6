@@ -616,62 +616,46 @@ FOX is a wild animal.
 Let's see how that works in practice.
 
 And here the lines variable keeps a list with strings representing individual lines, as you can see
-
 here.
-
 We first print the whole variable to analyze what it contains.
-
 You can see a list with three strings.
+Then we can use a for loop to conveniently print each line.
 
-Then we can use a full loop to conveniently print each line.
-
-Reach lines can also accept an argument with the suggested number of bytes to be read at once.
-
+Readlines can also accept an argument with the suggested number of bytes to be read at once.
 If you have very short lines in your file, each of them one character long using ridge lines two will
-
 make python reads two lines into the list at once.
-
 If your lines are two characters long using lines two will make Python read to one line in one go.
 
 And if your lines are longer than two characters, Python will increase the limit so that at least a
-
 single line is read into the list each time.
-
 If you get an empty list, it means that you've reached the end of the file.
 
 Take a look at this version of the code.
-
-Again, I'm going to use copy pasting and here I'm going to do stream read lines too.
-
-Again, let's have a while loop while line of lines is not zero for line in lines.
-
-Print line separator.
-
-Empty string.
-
-And then.
-
-Lines again stream rage lines to.
-
-And we do need that.
-
-We don't need that.
-
-And let's just close this dream like this.
-
-Let's see how that works.
-
-Here we use Ridge Lines two to suggest a reading buffer of two bytes.
-
-Then inside a while loop, we check if the number of elements in lines is zero, which would mean that
-
+inside a while loop, we check if the number of elements in lines is zero, which would mean that
 we've reached the end of the file and it's time to say goodbye.
-
 But if we still have some elements in the list, we enter the why loop and then use a nested for loop
-
 to print all the lines one by one.
-
 Afterwards we call the read lines function again.
+
+try:
+  stream = open('animals.txt')
+  character = stream.readlines(2)
+  while len(lines) != 0:
+    for line(lines) != 0:
+      print(line in lines):
+  print('content of the lines var:' lines)
+  print('number of lines in the file:', len(lines))
+  for line in lines:
+    print(line, end='')
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
+o: Content of the lines var: ['PIG is a domestic animal.\n', 'LION is a wild animal.\n', 'FOX is a wild animal.'],
+number of lines in the file: 3
+PIG is a domestic animal.
+LION is a wild animal.
+FOX is a wild animal.
+Let's see how that works in practice.
 
 You may be wondering if this version of the script makes sense.
 
