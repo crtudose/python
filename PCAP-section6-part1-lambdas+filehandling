@@ -700,3 +700,42 @@ Reading a file line by line is one of them, as you can see.
 ========================
 text file writing basics
 ------------------------
+Now that we know how to read text files, let's talk about how to write stuff into text files.
+The good news is that it's actually simpler than reading files.
+There's just one method that you should know, and it's called write.
+We also need to modify the open function a bit so that it allows us to write into the file.
+Take a look at this piece of code.
+
+try:
+  stream = open('newfile.txt', 'w')
+  stream.write('this is the first message!\n')
+  stream.write('this is the first message!\n')
+  stream.close()
+excep Exception as e:
+  print('an error occured:', e)
+
+You just have to remember to instruct the open function that you want to write into the file, which
+is why we provide a second argument here that W stands for right mode.
+Which doesn't exist will be created by Python automatically for us.
+
+But now what will happen if we try to open the very same file again?
+We know that the file already exists in the file system, and then we try to put some other info in
+there.
+
+try:
+  stream = open('newfile.txt', 'w') # w mode
+  stream.write('this is a brand new message!\n')
+  stream.close()
+excep Exception as e:
+  print('an error occured:', e)
+
+Let's run this code now and let's see what's happened.
+We are going to close this file and reopen it.
+And as you can see, the previous content that we created is lost.
+
+So one thing to keep in mind is that when we use the W mode here, Python will either create the file
+for us or if the file already exists, then it will simply erase all the content from it and to put
+new content according to the code.
+
+There are also ways not to delete the current content and to put new characters at the end of an existing
+file.
