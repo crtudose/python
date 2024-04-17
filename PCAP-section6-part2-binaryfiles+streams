@@ -34,78 +34,51 @@ The most generic way is to work with files as binary files.
 In this case, you will need to deal with very raw data that is very hard to handle.
 
 Dealing with single bytes could lead to many errors because bytes are harder to reach by human beings.
-
 That's why Python also offers another way of working with files, working with files as text files.
-
 And you already know how to do that.
-
 Text files are very practical because it is much, much easier to work with specific characters than
-
 with bytes.
-
 Text files can store a lot of useful information for you, so working with text files is the most pragmatic
-
 way to do that.
 
-This video will teach you how to work with files in Python by treating them as raw binary files.
-
+how to work with files in Python by treating them as raw binary files.
 This will be much more abstract and much harder than working with text files, so we are just going
-
 to present the necessary basics for the Pcap examination.
-
 Chances are, however, that you will not need to work with binary files at all.
-
 So don't focus too much on this aspect of Python programming for practical reasons.
-
 Python has a few containers for storing sequences of bytes.
-
 One of them is a class named byte array, just as the name suggests.
-
 It's an array of bytes and the array is conceptually similar to a python list.
-
 It's a container of all elements.
 
 To create a bit array.
-
 In Python, you can simply do the following data equals byte array 100.
-
 This line will create an array with 100 bytes and initially they will all equal zero.
 
+data = bytearray(100)
+
 Recall that a bite is eight bits and with eight bits you are able to represent an integer number in
-
 the range from 0 to 255.
-
 And in Python, you can treat bytes exactly as integer numbers, so you can do something like this.
-
 Data zero equals 100.
-
 This will set the first bite of the bitrate of the binary representation of the number 100.
 
+data[0] = 100
+
 We can simply use square brackets with indexes, just like with lists, to assign values to specific
-
 elements of the array.
-
 Remember that the maximal integer you can store in a byte is to 155.
-
 If you try to store something bigger, you will see an error.
 
-So here we can do something like this.
+data[0] = 270
+o: valuerror - byte must be in range 0, 256
 
-And you can see it fails.
-
-All right.
-
-These are the basics of creating Beatrice in Python.
-
+These are the basics of creating binaries in Python.
 Now it's time to save them into a file.
 
-Take a look at the following code.
-
-I'm going to copy paste the first cell into a new one.
-
-And maybe let's stay to one to.
-
-Something else, like 120.
+data = bytearray(100)
+data[0] = 100
+data[1] 
 
 And now we are going to do the following tri stream open file due to pin WB.
 
