@@ -523,84 +523,68 @@ o: P-I-G- -i-s- -a- -d-o-m-e-s-t-i-c- ...
 
 First, we read the very first bite from the file here, then in a while loop we check if the character
 is an empty string.
-
-We already know that an empty string returned from the right function means the end of the file.
-
+We already know that an empty string returned from the read function means the end of the file.
 So while the string is not empty, in other words, while there still are some characters in the file
-
-we print, the current character put a dash afterwards and we read another character from the file.
-
+we print, the current character, put a dash afterwards and we read another character from the file.
 Once we reach the end of the file, we close the stream.
 
 This technique of reading a file character by character can be very useful for a variety of situations.
-
 For example, you can use it to count the number of characters in a file.
 
-Take a look.
-
-I'm going to again copy paste it and do the following.
+try:
+  stream = open('animals.txt')
+  counter = 0
+  character = stream.read(1)
+  while character is != '':
+    counter += 1
+    print(character, end='-')
+    character = stream.read(1)
+  stream.close()
+  print(\n number of characters: ', counter)
+except Exception as e:
+  print('an error occured: ', e)
+o: P-I-G- -i-s- -a- -d-o-m-e-s-t-i-c- ... 
+number of characters: 103
 
 So here I'm going to define counter equal to zero.
-
 Now I'm going to read one byte.
-
-And now here I'm going to add one to the counter.
-
-Print the character again.
-
 And here, once the stream is closed, I'm going to do print and on a new line number of characters.
 
-And here, the value of counter.
-
-Okay, let's fix the typos.
-
-So I'm better like this.
-
-All right.
-
-You can see 103.
-
 So here we introduce a counter before reading the file.
-
 Character by character, we increased the counter by one every time we read a character and we printed
-
 the total number of characters at the end.
 
-Quite smart, isn't it?
-
 You can also use this technique to count how many times a specific character appears in a file, how
-
 many digits there are in the file.
-
-If a given illegal character can be found in a file and so on, reading a text file, character by character
-
-also has another advantage You protect yourself against corrupting your operating system in terms of
-
+If a given illegal character can be found in a file and so on, 
+reading a text file, character by character also has another advantage 
+You protect yourself against corrupting your operating system in terms of
 very big files.
 
 If the text file you're trying to read is a terabyte long file, then trying to read it all at once.
-
 Using the read method without any argument will probably make your program crash.
-
 The file is simply too big to be read all at once.
-
 In such cases, using read one and reading the file character by character protects you against such
-
 cases.
 
 Another frequently used technique is reading files line by line, not character by character.
-
-If you want to do that, you can use method reach line instead of read.
-
+If you want to do that, you can use method readline instead of read.
 It behaves similarly to read When it reaches the end of the file, it returns an empty string.
 
-So now take a look.
-
-I'm going to use this and do the following here instead of character.
-
-We are going to do line, stream, reach, line.
-
-Like this.
+try:
+  stream = open('animals.txt')
+  counter = 0
+  character = stream.readline()
+  while character is != '':
+    counter += 1
+    print(line, end='-')
+    character = stream.readline()
+  stream.close()
+  print(\n number of lines: ', counter)
+except Exception as e:
+  print('an error occured: ', e)
+o: P-I-G- -i-s- -a- -d-o-m-e-s-t-i-c- ... 
+number of lines: 3
 
 And now while line is not empty, counter plus one.
 
