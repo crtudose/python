@@ -290,118 +290,66 @@ And to put it underneath, like here and now inside the file, we are going to typ
 
 import sys
 for line in sys.stdin:
-	if line
+	if line.rstrip() == 'q':
+		break
+	print(line)
 
-Otherwise sprint the line and after the full loop we're going to write print, he pressed.
-
-Q So I want to quit now.
-
-Why?
-
-All right, save the file.
+print('you pressed q, so i want to quit now. bye!')
 
 And now in the terminal window, we need to navigate to the folder.
-
-So in my case, it's going to be like this file predefined streams.
-
 And now once I'm inside the folder, I will be able to execute the file.
-
 But first of all, let's analyze what happened here.
-
 So this specific code will read whatever you put in the console line by line and print it to the output.
-
 And if you type Q, we will exit the loop and quit the program.
-
 But before that we will print a short message.
 
 So by default you will also get a new line character at the end of each line that you enter.
-
-So we also use the strip function here or actually the strip method to get rid of the new line character
-
+So we also use the rstrip function here or actually the estrip method to get rid of the new line character
 so we can check if the line equals the Q character.
 
-Now to see how the program works, we are going to execute it like Python Seed Index by.
-
+Now to see how the program works, we are going to execute it like Python stdin.py
 And now the program waits for us to input something.
-
-So let's say hello and you can see hello printer to the output.
-
+So let's say hello and you can see hello printed to the output.
 We may want to put something else here, like how are you?
-
 And you can see the very same message in the output.
-
 But now if you press Q, the program terminates.
 
-All right?
-
-The second predefined stream is sorted out and it stands for standard output by default, the print
-
-function outwards, the data to the STD out stream so it can be shown to the console for you instead
-
-of using print.
-
-You could, theoretically speaking, work on the standard output directly, but it's not really convenient.
+The second predefined stream is sys.stdout and it stands for standard output 
+by default, the print function outwards the data to the STD out stream so it can be shown to the console for you 
+instead of using print You could, theoretically speaking, work on the standard output directly, but it's not really convenient.
 
 Anyways, I'll show you a very simple example.
-
 So let's copy paste this file.
-
-And let's name it stood out instead.
-
+And let's name it stdout.py instead.
 Now let's open the file.
+And here we are going to keep the import of the sysmodule 
 
-And here we are going to keep the input of the CIS module and we are going to do cis std alt right.
-
-Hello.
-
-Save the file and run it like python std alt py.
-
-And you can simply see.
-
-Hello.
-
-Print to the output.
-
-So this code will work.
-
-Just like using print.
-
-Hello.
+import sys
+sys.stdout.write('hello') # works like print('hello')
 
 But this one takes more time to write.
-
 And it's actually less useful because you can't provide the SEP or end arguments and you can't provide
-
 more than one argument at all.
-
 If you want to print an integer to the output using this technique, you would have to turn it into
-
 a string first.
-
 So you would have to do something like this.
 
-So if you want a string like here, you need to do str string.
+import sys
+sys.stdout.write('hello')
+sys.stdout.write(str(3))
+o: hello3
 
+So if you want a string like here, you need to do str string.
 And now if we save the file and open it again, you can see three to the output again.
 
 You can see that there is no new line character between the characters and so on.
-
 So in general it's not recommended to print to the console this way, but you should be aware that this
-
 stream at least exists.
-
-Finally, the third predefined stream is cis std e w r, which stands for Standard Error.
-
+Finally, the third predefined stream is stderr, which stands for Standard Error.
 Standard error is very similar to standard output.
-
 It also outputs strings to the console.
-
 There is just a semantic distinction.
 
 Useful results produced by our programs should be directed to the standard output, while error messages
-
 should be directed to the standard error.
 
-The details of using the standard error stream are beyond the scope of this course.
-
-Just keep in mind the stream exists for the examination purposes.
