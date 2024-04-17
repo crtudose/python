@@ -137,7 +137,7 @@ You already know the right methods from Python streams, and you can use the same
 
 try:
   bf = open('file.bin', 'rb')
-  byte_array = bf_read()
+  byte_array = bf.read()
   bf.close()
 except Exception as e:
   print('an error occured', e)
@@ -180,7 +180,7 @@ so that the next time we use read it will start from the byte with number 11.
 
 try:
   bf = open('file.bin', 'rb')
-  byte_array = bf_read(10)
+  byte_array = bf.read(10)
   bf.close()
 except Exception as e:
   print('an error occured', e)
@@ -190,3 +190,78 @@ o: 100 120 0 0 0 0 0 0 0 0
 
 And if we now use, for instance, this specific version of the code, you can see only ten bytes read
 into the memory and that's it.
+
+==============================
+Reading binary files: read() vs readinto()
+---------------------------------
+The read() method mentioned in the previous lesson reads all the contents of the file into the memory. This method creates an object of a special class called bytes (see variable newly_created below):
+
+try:
+	bf = open('file.bin', 'rb')
+	newly_created = bf.read()
+	bf.close()
+except Exception as e:
+	print('An error occured:', e)
+
+The bytes class is very similar to bytearray that we mentioned in that video. There is one difference: the bytes class is immutable (once created, it can't be changed).
+If, for some reason, you need a bytearray object rather than a bytes object, you can simply wrap the bf.read() method call like this: bytearray(bf.read()). This will return a bytearray rather than a bytes object.
+Another option to get a bytearray is to create it manually and then use bf.readinto(bytearray) instead of bf.read():
+
+data = bytearray(10)
+try:
+    bf = open('file.bin', 'rb')
+    bf.readinto(data)
+    bf.close()
+except Exception as e:
+    print('An error occured:', e)
+ 
+==============================
+file handle modes
+---------------------------------
+We've already worked with the open function that tries to access a specific file and create a handle
+for it.
+However, we haven't seen all the options it offers
+
+The open function that creates a stream for us can take many arguments, as you can see in the documentation
+The most important ones are the first and the second argument.
+The first argument is the file to be associated with the stream.
+This argument is mandatory and we've used it all the time.
+The second argument is the mode.
+The default is R, which stands for Read Text Files mode.
+
+You could see that we changed the mode on a couple of occasions when we instead wanted to write into
+a file or we wanted to work on binary files.
+In general, there are seven characters that you can use when specifying the mode.
+You can also use a combination of these characters to create more sophisticated modes.
+
+The characters are R, which means open the file for reading.
+The given file must exist and be readable.
+Otherwise you'll see an exception.
+This is the default mode and we've used it already.
+
+W which means open for writing.
+If the given file exists, all of its content will be erased.
+So you can push your own data into an empty file.
+If the file doesn't exist, it will be created for you from scratch.
+We've also used this mode already 
+
+x which means open for exclusive creation similar to W, but the file must not exist.
+Otherwise you'll see an error 
+
+a which means append or open for writing at the end of the file.
+This mode is similar to the right mode, but if the file exists, the existing content of the file will
+not be deleted.
+Instead, you will be able to add data at the end of the file b which means binary.
+This will open the file as a general binary file, not as a text file.
+
+T, which means text mode.
+This is the default mode, and you don't need to add this letter at all.
+
+And finally, plus, which means open for updating both reading and writing.
+So for instance, you can create the following combinations are A plus b open the file as binary in
+their read mode, but also allow writing without deleting the existing content.
+Or W plus open the file as text in the right mode, but also allow reading its content.
+It would take a long time to show you all of the combinations in practice and I guess it would be quite
+boring to go through all of them if already seen the most useful modes in the previous videos.
+So if you feel like trying any other, just carry out your own experiments.
+As always, if you have any questions, simply write to me and I'll be glad to help.
