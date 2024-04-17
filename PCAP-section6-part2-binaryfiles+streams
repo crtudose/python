@@ -353,3 +353,83 @@ There is just a semantic distinction.
 Useful results produced by our programs should be directed to the standard output, while error messages
 should be directed to the standard error.
 
+==============================
+error streams
+---------------------------------
+We already know that we can get nasty exceptions when working with files.
+
+A file may not exist.
+
+We may not have the proper permissions to open it and so on.
+
+So far we've used a very simplified try except statement like this one.
+
+And we used a very general exception type here, simply named exception.
+
+And then we printed this object to the output here.
+
+Let's see what we get when we try opening a file that doesn't really exist.
+
+Let's run the cell and you can see an error occurred.
+
+Arid no to no such file or directory non existent.
+
+Can you see that part in square brackets?
+
+Error?
+
+No.
+
+Two stands for error number two.
+
+It turns out that each problem that we may encounter when working with files has a specific number assigned.
+
+And if you want to access that number, you can simply do the following.
+
+Let's copy paste this into a new cell.
+
+And here we're just going to do e dot or no.
+
+If you're curious about all the possible error numbers, like number two here, you can take a look
+
+at the documentation.
+
+These are all the possible problems when trying to work with file streams in Python.
+
+These symbols like E again, they all translate into corresponding integers.
+
+Naturally, you don't need to memorize all of these.
+
+It just good to know that such a list exists and that there are many things that can go wrong here.
+
+Interestingly, Python provides a function in the OS module that accepts the error number and then prints
+
+a nice and short text explanation of what actually went wrong.
+
+Let's use it now.
+
+So we are going to copy paste this into a new cell and I'm going to do the following from OS import.
+
+So our error.
+
+And now I'm going to use it here like this.
+
+So first we import the extra function from the O.S module and then in the except clause we use the function
+
+and provide the error node property of the exception object.
+
+If we now run the code, you can see a nice short message print to the output, no such file or directory.
+
+In practice, however, you don't really need to work with error numbers.
+
+That's because by default when you print the exception such as here.
+
+Python also includes a descriptive error message that explains what went wrong.
+
+And it's actually very similar to what is shown here with the STR error function.
+
+Error numbers, however, could be useful when you want to check the specific kind of problem with handling
+
+your file and then react differentially to different problems.
+
+In such cases, it's better to operate on integer error codes rather than string error messages.
