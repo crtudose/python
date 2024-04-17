@@ -357,60 +357,48 @@ should be directed to the standard error.
 error streams
 ---------------------------------
 We already know that we can get nasty exceptions when working with files.
-
 A file may not exist.
-
 We may not have the proper permissions to open it and so on.
-
 So far we've used a very simplified try except statement like this one.
 
+try:
+	stream = open('nonexistent.txt')
+	stream.close()
+except Exception as e:
+	print('an error occured: ', e)
+
 And we used a very general exception type here, simply named exception.
-
 And then we printed this object to the output here.
-
 Let's see what we get when we try opening a file that doesn't really exist.
-
 Let's run the cell and you can see an error occurred.
 
-Arid no to no such file or directory non existent.
+o: An error occured: [error 2] no such file or directory
 
 Can you see that part in square brackets?
-
-Error?
-
-No.
-
 Two stands for error number two.
-
 It turns out that each problem that we may encounter when working with files has a specific number assigned.
-
 And if you want to access that number, you can simply do the following.
-
-Let's copy paste this into a new cell.
-
 And here we're just going to do e dot or no.
 
-If you're curious about all the possible error numbers, like number two here, you can take a look
+try:
+	stream = open('nonexistent.txt')
+	stream.close()
+except Exception as e:
+	print(e.errno)
 
+If you're curious about all the possible error numbers, like number two here, you can take a look
 at the documentation.
 
 These are all the possible problems when trying to work with file streams in Python.
-
-These symbols like E again, they all translate into corresponding integers.
-
+These symbols like Eagain, they all translate into corresponding integers.
 Naturally, you don't need to memorize all of these.
-
 It just good to know that such a list exists and that there are many things that can go wrong here.
 
 Interestingly, Python provides a function in the OS module that accepts the error number and then prints
-
 a nice and short text explanation of what actually went wrong.
 
-Let's use it now.
+I'm going to do the following from OS import.
 
-So we are going to copy paste this into a new cell and I'm going to do the following from OS import.
-
-So our error.
 
 And now I'm going to use it here like this.
 
