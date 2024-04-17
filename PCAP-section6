@@ -583,71 +583,36 @@ try:
   print(\n number of lines: ', counter)
 except Exception as e:
   print('an error occured: ', e)
-o: P-I-G- -i-s- -a- -d-o-m-e-s-t-i-c- ... 
+o: PIG is a domestic animal ...
 number of lines: 3
 
-And now while line is not empty, counter plus one.
-
-Print the line and line now should equal stream reach line like this.
-
 And now instead of number of characters, we will have number of lines.
-
-Let's see how that works.
-
-All right.
-
-So here, instead of counting characters, we count the lines.
-
-The code looks similar, but instead of using read one, we use each line.
-
+The code looks similar, but instead of using read(1), we use readline.
 Note that even though we instruct the print function not to put a new line character at the end of the
-
 print invocation, the lines are still shown in the output separated by new line characters.
-
 That's because each line read from the file contains a new line character at the end by itself.
 
-One more method worth mentioning is reach lines with an S at the end.
-
+One more method worth mentioning is read lines with an S at the end.
 If you invoke this method without any argument, it reads all the file contents line by line and returns
-
 a list of strings.
-
 One string per file line.
-
 Again, if the file you're trying to read is very big, you may run into performance problems.
 
-So take a look at the following code.
-
-I'm going to copy paste this one.
-
-And here, let's get rid of the counter.
-
-Here instead of line will have lines.
-
-Read lines.
-
-Let's get rid of the loop.
-
-And here we'll do print content of the lines far.
-
-And let's show lines here.
-
-Then we can do the following print.
-
-Number of lines in the file.
-
-And this will be the line of lines.
-
-And now we can do the following.
-
-Full line in lines.
-
-Print line.
-
-And finish it up with an empty string.
-
-And at the end, we want to close this tree and get rid of this.
-
+try:
+  stream = open('animals.txt')
+  character = stream.readlines()
+  print('content of the lines var:' lines)
+  print('number of lines in the file:', len(lines))
+  for line in lines:
+    print(line, end='')
+  stream.close()
+except Exception as e:
+  print('an error occured: ', e)
+o: Content of the lines var: ['PIG is a domestic animal.\n', 'LION is a wild animal.\n', 'FOX is a wild animal.'],
+number of lines in the file: 3
+PIG is a domestic animal.
+LION is a wild animal.
+FOX is a wild animal.
 Let's see how that works in practice.
 
 And here the lines variable keeps a list with strings representing individual lines, as you can see
