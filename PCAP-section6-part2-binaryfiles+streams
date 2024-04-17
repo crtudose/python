@@ -88,104 +88,50 @@ try:
 except Exception as e:
   print('an error occured', e)
 
-Stream close to hand, except it's usual and we going to do the usual stuff here.
-
-And error occurred like this at the beginning.
-
 We create a byte array with 100 bytes inside, then we completely randomly set the first two bytes.
-
 There's no specific reason that we used 100 and 120.
-
 These are just some random values I came up with without thinking.
-
 Then follows the typical try accept block that you can see many times already.
-
 Two things that are noteworthy are.
-
 First of all, look at the second argument for the open function.
-
 It says WB, which stands for write binary.
-
 This B letter is very important because it informs Python that it should not treat the file as a text
-
 file.
-
-Second of all, note how we passed the binary as an argument for the right function.
+Second of all, note how we passed the binary as an argument for the write function.
 
 As you can see, the write function is quite flexible.
-
 If you open the file in the text mode, you can pass strings as arguments.
-
-If until you open the file in the binary mode, you can provide betrays as arguments.
-
-All right, let's now run the code.
-
-We can see no errors, which pretty much means everything went smoothly.
+If you open the file in the binary mode, you can provide byte arrays as arguments.
+if we run code, We can see no errors, which pretty much means everything went smoothly.
 
 Now, let's try to locate the file in the file system and see what it contains.
-
-The file is here and first will try to open it with Jupyter Notebook.
-
-Quite strange, isn't it?
-
 Jupiter is trying to interpret the file as a text file.
-
 We set the first two bytes to some random numbers, and Jupiter is trying to interpret them as ASCII
-
 characters.
-
 After the first two bytes, we didn't do anything.
-
 The bytes were set by defaults to zero and bytes zero in the ASCII table represents null a void character
-
 that does not contain any data.
 
 As you can see, Jupiter shows the nulls as strange red dots.
-
 We can also try opening the file in another editor like Notepad Plus Plus on Windows, for example,
-
 here, instead of the red dots, you can see null.
-
-Text.
-
-Editors, as you can see, are not ideal tools to open binary files so you can instead try a binary
-
+text Editors, as you can see, are not ideal tools to open binary files so you can instead try a binary
 file viewer.
 
 There are many such tools available for download or online.
-
 I personally just typed online binary file viewer into Google and found this particular website, but
-
 you can try another tool as well.
-
 So let's open the file here and look how the binary file is shown in the binary editor.
-
 We can see much more data into binary editor here.
-
-If you click on a particular byte like this one or this one, you will see its value as an integer.
-
+If you click on a particular byte you will see its value as an integer.
 You will also see the ASCII representation here on the right of the given byte.
 
 You may be also wondering why we can see numbers 78 here and 64 here instead of the integer values of
-
 100 and 120.
-
 That's because these two numbers are hexadecimal values, not decimal ones.
-
 That's just another numerical representation system other than binary and decimal.
 
-While all of this is quite complex, right?
-
-As I told you, binary files are much more difficult to handle in Python than text files, so we usually
-
-stick to the text files for most operations.
-
-All right.
-
-Let's go back to The Notebook now.
-
 We know how to write bytes into a binary file.
-
 Now let's take a look at how we can read them from a binary file.
 
 You already know the right methods from Python streams, and you can use the same method to read bytes.
