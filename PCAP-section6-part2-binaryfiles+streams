@@ -133,47 +133,46 @@ That's just another numerical representation system other than binary and decima
 
 We know how to write bytes into a binary file.
 Now let's take a look at how we can read them from a binary file.
-
 You already know the right methods from Python streams, and you can use the same method to read bytes.
 
-Take a look.
-
-So let's analyze this code.
+try:
+  bf = open('file.bin', 'rb')
+  byte_array = bf_read()
+  bf.close()
+except Exception as e:
+  print('an error occured', e)
 
 We open file that bin, the very same file that we created earlier on in the RB mode, which stands
-
 for Read Binary.
-
 Then we use the read method without arguments to read the bytes.
-
 We get a special object similar to a byte array as a result, and then we close the stream.
-
 And now we can actually use the print method to show the content of the variable like this.
 
+print(by_array)
+o: b'dx\x00 ... 
+
 The print result isn't particularly pretty, but at least we can see that we successfully read device
-
-into the betray.
-
+into the byte array.
 If you want to, you can print all the numbers as hexadecimal ones using the following construction
 
-for byte in byte array.
+for byte in byte_array:
+  print(hex(byte), end='')
+o: 0x640x780x00x00 ...
 
 Print hex of the byte.
-
 And finish up with an empty string like this.
-
 Or if you prefer, you can print the bytes as plain old integer values in the decimal system so you
-
 can do the following.
+
+for byte in byte_array:
+  print(int(byte), end=' ')
+o: 100 120 0 0 0 ...
 
 Instead of hex we can do int and then maybe use a space between the characters like here.
 
 Now there's one problem with the code.
-
 If the binary file is very big, the content of the file may not fit into the available memory.
-
 That's why there's also an alternative way to read binary data.
-
 You can provide the rate method with an argument that will denote the maximum number of bytes to read.
 
 After the reading operation, the cursor in the binary file will be placed after the first ten bytes
