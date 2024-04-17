@@ -633,7 +633,7 @@ If you get an empty list, it means that you've reached the end of the file.
 Take a look at this version of the code.
 inside a while loop, we check if the number of elements in lines is zero, which would mean that
 we've reached the end of the file and it's time to say goodbye.
-But if we still have some elements in the list, we enter the why loop and then use a nested for loop
+But if we still have some elements in the list, we enter the while loop and then use a nested for loop
 to print all the lines one by one.
 Afterwards we call the read lines function again.
 
@@ -641,12 +641,11 @@ try:
   stream = open('animals.txt')
   character = stream.readlines(2)
   while len(lines) != 0:
-    for line(lines) != 0:
-      print(line in lines):
-  print('content of the lines var:' lines)
-  print('number of lines in the file:', len(lines))
+    for line in lines:
+      print(line, sep='')
   for line in lines:
-    print(line, end='')
+    print(line, sep='')
+  lines = stream.readlines(2)
   stream.close()
 except Exception as e:
   print('an error occured: ', e)
@@ -655,68 +654,45 @@ number of lines in the file: 3
 PIG is a domestic animal.
 LION is a wild animal.
 FOX is a wild animal.
-Let's see how that works in practice.
 
-You may be wondering if this version of the script makes sense.
-
-It's more complicated than the version with Ridge Line where we read single lines because we need to
-
+It's more complicated than the version with ReadLines where we read single lines because we need to
 introduce a nested loop here.
-
 But there's a good reason to do that.
-
 The performance may increase.
-
 Typically, reading more than one line at a time means better performance.
-
 But remember that reading all the lines at once may crush your program.
-
 If the text file is very big.
 
 There is no golden number here, so I can't tell you that you should always read, I don't know, ten
-
 or 200 lines at a time.
-
 It all depends on your operating system, your machine power, and the text file.
-
 You need to perform your own experiments to find the best number of lines to read.
 
-Finally, there's one more way you can reach files line by line.
-
+Finally, there's one more way you can readliles line by line.
 It's actually quite surprising.
-
 You may use the stream itself.
-
 That's because by default, the stream that you get by calling the open function is an object that is
-
 iterable.
-
-Iterable objects can be iterated using the full loop, just like sequences.
-
+Iterable objects can be iterated using the for loop, just like sequences.
 This way the stream will return another line of the file in each iteration of the loop, and it turns
-
 out that you don't even need to close the stream if you use this technique.
 
 When you reach the end of the stream with this technique, Python will automatically close the stream
-
 for you.
-
 All of that means that you can use the following short code.
 
-We are going to use the very first cell copy paste it.
-
-Into a new one.
-
-And we are going to do the following.
-
-Get rid of this and do full line in stream.
+try:
+  stream = open('animals.txt')
+  for line in stream:
+    print(line, end='')
+except Exception as e:
+  print('An error occured: ', e)
+o: PIG is a domestic animal.
+LION is a wild animal.
+FOX is a wild animal.
 
 Print line and end it with an empty string just like this.
-
 Note how short, clear and easy to read this code is.
-
 Again, that's the power behind Python.
-
 You can perform many typical tasks very easily because Python has ready made solutions for you.
-
 Reading a file line by line is one of them, as you can see.
