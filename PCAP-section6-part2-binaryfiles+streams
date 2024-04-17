@@ -1,2 +1,278 @@
 binary files basics
 ------------------
+So far we've only worked with text files.
+Python can also treat files as binary files, but what is the difference between text files and binary
+files in the first place?
+In a way, there is no difference because both text files and binary files are simply files.
+Files in the most general sense are just containers for data, and the data is stored as very long sequences
+of bytes.
+Sound files with your favorite music.
+Image files with the pictures from your holiday.
+A simple video game in an executable file and text files behind the scenes.
+They are actually all the same.
+
+They are just very long sequences of bytes or in other words, very long sequences of ones and zeros.
+These bytes are always organized in a certain way.
+For instance, image files could be stored as bitmaps with groups of bytes representing individual pixels
+in the picture.
+So your bitmap file could be just a long sequence of bytes providing information about the image pixel
+by pixel.
+
+You then need a specific program on your computer that understands the bitmap format to interpret the
+bytes correctly as pixels so it can show you a picture as a result.
+Other file formats, such as MP three sound files or executable game files, will use bytes in a different
+way, and you will need different programs to open them.
+But essentially they are all the same.
+
+Long sequences of bytes text files are also binary files.
+They are just a special type of them.
+It's a type where the bytes are translated into ASCII or UTF eight characters by your text editor.
+Deep down, however, they are all the same bytes.
+Python allows you to work with files in two way.
+
+The most generic way is to work with files as binary files.
+In this case, you will need to deal with very raw data that is very hard to handle.
+
+Dealing with single bytes could lead to many errors because bytes are harder to reach by human beings.
+
+That's why Python also offers another way of working with files, working with files as text files.
+
+And you already know how to do that.
+
+Text files are very practical because it is much, much easier to work with specific characters than
+
+with bytes.
+
+Text files can store a lot of useful information for you, so working with text files is the most pragmatic
+
+way to do that.
+
+This video will teach you how to work with files in Python by treating them as raw binary files.
+
+This will be much more abstract and much harder than working with text files, so we are just going
+
+to present the necessary basics for the Pcap examination.
+
+Chances are, however, that you will not need to work with binary files at all.
+
+So don't focus too much on this aspect of Python programming for practical reasons.
+
+Python has a few containers for storing sequences of bytes.
+
+One of them is a class named byte array, just as the name suggests.
+
+It's an array of bytes and the array is conceptually similar to a python list.
+
+It's a container of all elements.
+
+To create a bit array.
+
+In Python, you can simply do the following data equals byte array 100.
+
+This line will create an array with 100 bytes and initially they will all equal zero.
+
+Recall that a bite is eight bits and with eight bits you are able to represent an integer number in
+
+the range from 0 to 255.
+
+And in Python, you can treat bytes exactly as integer numbers, so you can do something like this.
+
+Data zero equals 100.
+
+This will set the first bite of the bitrate of the binary representation of the number 100.
+
+We can simply use square brackets with indexes, just like with lists, to assign values to specific
+
+elements of the array.
+
+Remember that the maximal integer you can store in a byte is to 155.
+
+If you try to store something bigger, you will see an error.
+
+So here we can do something like this.
+
+And you can see it fails.
+
+All right.
+
+These are the basics of creating Beatrice in Python.
+
+Now it's time to save them into a file.
+
+Take a look at the following code.
+
+I'm going to copy paste the first cell into a new one.
+
+And maybe let's stay to one to.
+
+Something else, like 120.
+
+And now we are going to do the following tri stream open file due to pin WB.
+
+Stream.
+
+Right, data.
+
+Stream close to hand, except it's usual and we going to do the usual stuff here.
+
+And error occurred like this at the beginning.
+
+We create a byte array with 100 bytes inside, then we completely randomly set the first two bytes.
+
+There's no specific reason that we used 100 and 120.
+
+These are just some random values I came up with without thinking.
+
+Then follows the typical try accept block that you can see many times already.
+
+Two things that are noteworthy are.
+
+First of all, look at the second argument for the open function.
+
+It says WB, which stands for write binary.
+
+This B letter is very important because it informs Python that it should not treat the file as a text
+
+file.
+
+Second of all, note how we passed the binary as an argument for the right function.
+
+As you can see, the write function is quite flexible.
+
+If you open the file in the text mode, you can pass strings as arguments.
+
+If until you open the file in the binary mode, you can provide betrays as arguments.
+
+All right, let's now run the code.
+
+We can see no errors, which pretty much means everything went smoothly.
+
+Now, let's try to locate the file in the file system and see what it contains.
+
+The file is here and first will try to open it with Jupyter Notebook.
+
+Quite strange, isn't it?
+
+Jupiter is trying to interpret the file as a text file.
+
+We set the first two bytes to some random numbers, and Jupiter is trying to interpret them as ASCII
+
+characters.
+
+After the first two bytes, we didn't do anything.
+
+The bytes were set by defaults to zero and bytes zero in the ASCII table represents null a void character
+
+that does not contain any data.
+
+As you can see, Jupiter shows the nulls as strange red dots.
+
+We can also try opening the file in another editor like Notepad Plus Plus on Windows, for example,
+
+here, instead of the red dots, you can see null.
+
+Text.
+
+Editors, as you can see, are not ideal tools to open binary files so you can instead try a binary
+
+file viewer.
+
+There are many such tools available for download or online.
+
+I personally just typed online binary file viewer into Google and found this particular website, but
+
+you can try another tool as well.
+
+So let's open the file here and look how the binary file is shown in the binary editor.
+
+We can see much more data into binary editor here.
+
+If you click on a particular byte like this one or this one, you will see its value as an integer.
+
+You will also see the ASCII representation here on the right of the given byte.
+
+You may be also wondering why we can see numbers 78 here and 64 here instead of the integer values of
+
+100 and 120.
+
+That's because these two numbers are hexadecimal values, not decimal ones.
+
+That's just another numerical representation system other than binary and decimal.
+
+While all of this is quite complex, right?
+
+As I told you, binary files are much more difficult to handle in Python than text files, so we usually
+
+stick to the text files for most operations.
+
+All right.
+
+Let's go back to The Notebook now.
+
+We know how to write bytes into a binary file.
+
+Now let's take a look at how we can read them from a binary file.
+
+You already know the right methods from Python streams, and you can use the same method to read bytes.
+
+Take a look.
+
+So let's analyze this code.
+
+We open file that bin, the very same file that we created earlier on in the RB mode, which stands
+
+for Read Binary.
+
+Then we use the read method without arguments to read the bytes.
+
+We get a special object similar to a byte array as a result, and then we close the stream.
+
+And now we can actually use the print method to show the content of the variable like this.
+
+The print result isn't particularly pretty, but at least we can see that we successfully read device
+
+into the betray.
+
+If you want to, you can print all the numbers as hexadecimal ones using the following construction
+
+for byte in byte array.
+
+Print hex of the byte.
+
+And finish up with an empty string like this.
+
+Or if you prefer, you can print the bytes as plain old integer values in the decimal system so you
+
+can do the following.
+
+Instead of hex we can do int and then maybe use a space between the characters like here.
+
+Now there's one problem with the code.
+
+If the binary file is very big, the content of the file may not fit into the available memory.
+
+That's why there's also an alternative way to read binary data.
+
+You can provide the rate method with an argument that will denote the maximum number of bytes to read.
+
+After the reading operation, the cursor in the binary file will be placed after the first ten bytes
+
+so that the next time we use read it will start from the byte with number 11.
+
+Take a look.
+
+I'm going to use this code again in a new cell.
+
+But now I'm going to do Read ten.
+
+And if we now use, for instance, this specific version of the code, you can see only ten bytes read
+
+into the memory and that's it.
+
+That's all you need to know about binary files in Python.
+
+As I said, don't focus too much on this aspect of Python programming.
+
+Developers rarely need to operate on binary data in real life situations, but it's always good to know
+
+the basics in case you somehow needs that in the future.
