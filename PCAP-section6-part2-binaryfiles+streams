@@ -173,26 +173,20 @@ Instead of hex we can do int and then maybe use a space between the characters l
 Now there's one problem with the code.
 If the binary file is very big, the content of the file may not fit into the available memory.
 That's why there's also an alternative way to read binary data.
-You can provide the rate method with an argument that will denote the maximum number of bytes to read.
+You can provide the read method with an argument that will denote the maximum number of bytes to read.
 
 After the reading operation, the cursor in the binary file will be placed after the first ten bytes
-
 so that the next time we use read it will start from the byte with number 11.
 
-Take a look.
+try:
+  bf = open('file.bin', 'rb')
+  byte_array = bf_read(10)
+  bf.close()
+except Exception as e:
+  print('an error occured', e)
 
-I'm going to use this code again in a new cell.
-
-But now I'm going to do Read ten.
+print(by_array)
+o: 100 120 0 0 0 0 0 0 0 0
 
 And if we now use, for instance, this specific version of the code, you can see only ten bytes read
-
 into the memory and that's it.
-
-That's all you need to know about binary files in Python.
-
-As I said, don't focus too much on this aspect of Python programming.
-
-Developers rarely need to operate on binary data in real life situations, but it's always good to know
-
-the basics in case you somehow needs that in the future.
