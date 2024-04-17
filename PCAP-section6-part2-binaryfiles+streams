@@ -78,13 +78,15 @@ Now it's time to save them into a file.
 
 data = bytearray(100)
 data[0] = 100
-data[1] 
+data[1] = 120
 
-And now we are going to do the following tri stream open file due to pin WB.
-
-Stream.
-
-Right, data.
+And now we are going to do the following:
+try:
+  stream = open('file.bin', 'wb')
+  stream.write(data)
+  stream.close()
+except Exception as e:
+  print('an error occured', e)
 
 Stream close to hand, except it's usual and we going to do the usual stuff here.
 
