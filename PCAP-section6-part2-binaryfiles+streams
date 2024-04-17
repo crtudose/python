@@ -260,8 +260,8 @@ This is the default mode, and you don't need to add this letter at all.
 And finally, plus, which means open for updating both reading and writing.
 So for instance, you can create the following combinations are A plus b open the file as binary in
 their read mode, but also allow writing without deleting the existing content.
-Or W plus open the file as text in the right mode, but also allow reading its content.
+
+Or W+ open the file as text in the right mode, but also allow reading its content.
 It would take a long time to show you all of the combinations in practice and I guess it would be quite
-boring to go through all of them if already seen the most useful modes in the previous videos.
-So if you feel like trying any other, just carry out your own experiments.
-As always, if you have any questions, simply write to me and I'll be glad to help.
+boring to go through all of them if already seen the most useful modes in the previous lesson.
+
