@@ -399,25 +399,22 @@ a nice and short text explanation of what actually went wrong.
 
 I'm going to do the following from OS import.
 
-
-And now I'm going to use it here like this.
+from os import strerror
+try:
+	stream = open('nonexistent.txt')
+	stream.close()
+except Exception as e:
+	print(e.errno)
+o: no such file or directory
 
 So first we import the extra function from the O.S module and then in the except clause we use the function
-
 and provide the error node property of the exception object.
-
 If we now run the code, you can see a nice short message print to the output, no such file or directory.
 
 In practice, however, you don't really need to work with error numbers.
-
 That's because by default when you print the exception such as here.
-
 Python also includes a descriptive error message that explains what went wrong.
-
 And it's actually very similar to what is shown here with the STR error function.
-
 Error numbers, however, could be useful when you want to check the specific kind of problem with handling
-
 your file and then react differentially to different problems.
-
 In such cases, it's better to operate on integer error codes rather than string error messages.
