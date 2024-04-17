@@ -696,3 +696,7 @@ Note how short, clear and easy to read this code is.
 Again, that's the power behind Python.
 You can perform many typical tasks very easily because Python has ready made solutions for you.
 Reading a file line by line is one of them, as you can see.
+
+========================
+text file writing basics
+------------------------
