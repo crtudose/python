@@ -100,4 +100,4 @@ print('contents of d2:', d2.__dict__)
 
 __dict__ lists the contents of each object
 modifying the instance variable of any object has no impact on all the remaining objects
-instance variables are completely isolated from each other.
+instance variables are completely isolated from each other
