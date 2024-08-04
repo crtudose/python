@@ -31,6 +31,18 @@ Output: Quack
 // Class attributes are most often addressed with 'dot' notation, i.e., <class>dot<attribute>. The other way to access 
 // attributes (variables) it to use the getattr() and setattr() functions.
 // In our 'duckish' example, there are the following attributes:
+
+class Demo:
+    def __init__(self, value):
+        self.instance_var = value
+
+d1 = Demo(100)
+d2 = Demo(200)
+
+d1.another_var = 'another variable in the object'
+
+print('contents of d1:', d1.__dict__)
+print('contents of d2:', d2.__dict__)
 // variables: self.height, self.weight, self.sex — containing different values for each object;
 // methods: __init__, walk, quack — common to all objects so far.
 // To call a method, issue: drake.quack();
@@ -82,3 +94,10 @@ print("d2's instance variable is equal to:", d2.instance_var)
 is created coherently and individually for the instance to make it independent from other instances of the same class;
  - we instantiate the class twice, each time passing a different value to be stored inside the object;
  - the print instructions prove the fact that instance variable values are kept independently, because the printed values differ.
+
+print('contents of d1:', d1.__dict__)
+print('contents of d2:', d2.__dict__)
+
+__dict__ lists the contents of each object
+modifying the instance variable of any object has no impact on all the remaining objects
+instance variables are completely isolated from each other.
