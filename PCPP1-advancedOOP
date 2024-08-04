@@ -1,3 +1,5 @@
+Classes, instances, attributes, methods
+---------------------------------------
 // class — an idea, blueprint, or recipe for an instance; 
 // instance — an instantiation of the class; very often used interchangeably with the term 'object';//
 // - instantiation of a class that occupies memory and has data elements. 'self' refers to when we deal with class instances
@@ -21,13 +23,62 @@ class Duck:
 duckling = Duck(height=10, weight=3.4, sex="male")
 drake = Duck(height=25, weight=3.7, sex="male")
 hen = Duck(height=20, weight=3.4, sex="female")
+
 Output: Quack
 10
-//In the example presented above, we have created three different instances based on the Duck class: duckling, drake and hen.
-//Class attributes are most often addressed with 'dot' notation, i.e., <class>dot<attribute>. The other way to access 
-//attributes (variables) it to use the getattr() and setattr() functions.
-//In our 'duckish' example, there are the following attributes:
-//variables: self.height, self.weight, self.sex — containing different values for each object;
-//methods: __init__, walk, quack — common to all objects so far.
-//To call a method, issue: drake.quack();
-//To access an attribute, issue: print(duckling.height).
+
+// In the example presented above, we have created three different instances based on the Duck class: duckling, drake and hen.
+// Class attributes are most often addressed with 'dot' notation, i.e., <class>dot<attribute>. The other way to access 
+// attributes (variables) it to use the getattr() and setattr() functions.
+// In our 'duckish' example, there are the following attributes:
+// variables: self.height, self.weight, self.sex — containing different values for each object;
+// methods: __init__, walk, quack — common to all objects so far.
+// To call a method, issue: drake.quack();
+// To access an attribute, issue: print(duckling.height).
+
+print(Duck.__class__)
+print(duckling.__class__)
+print(duckling.sex.__class__)
+print(duckling.quack.__class__)
+
+Output:
+<class 'type'>
+<class '__main__.Duck'>
+<class 'str'>
+<class 'method'>
+
+// the Duck class is of the 'type' type;
+// the duckling object is an instance type built on the basis of the Duck class, and residing in the __main__ scope;
+// the duckling.sex is an attribute of the 'str' type;
+// duckling.quack is an attribute of the 'method' type.
+
+Class and instance data - instance variables
+------------------------------------------
+// Python allows for variables to be used at the instance level or the class level. Those used at the instance level 
+// are referred to as instance variables, whereas variables used at the class level are referred to as class variables.
+
+Instance variable exist when and only when it is explicitly created and added to an object. 
+This can be done during the object's initialization, performed by the __init__ method, or later at any moment 
+of the object's life. Furthermore, any existing property can be removed at any time.
+
+Each object carries its own set of variables – they don't interfere with one another in any way. 
+The word instance suggests that they are closely connected to the objects (which are class instances), 
+not to the classes themselves. To get access to the instance variable, you should address the variable in the 
+following way: object <dot> variable_name.
+
+Let's look at how the instance variable is created and accessed in the code presented below.
+
+class Demo:
+    def __init__(self, value):
+        self.instance_var = value
+
+d1 = Demo(100)
+d2 = Demo(200)
+
+print("d1's instance variable is equal to:", d1.instance_var)
+print("d2's instance variable is equal to:", d2.instance_var)
+
+ - __init__ creates an instance_var variable for the instance. The keyword self is used to indicate that this variable 
+is created coherently and individually for the instance to make it independent from other instances of the same class;
+ - we instantiate the class twice, each time passing a different value to be stored inside the object;
+ - the print instructions prove the fact that instance variable values are kept independently, because the printed values differ.
