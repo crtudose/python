@@ -1,0 +1,256 @@
+Classes, instances, attributes, methods
+---------------------------------------
+// class — an idea, blueprint, or recipe for an instance; 
+// instance — an instantiation of the class; very often used interchangeably with the term 'object';//
+// - instantiation of a class that occupies memory and has data elements. 'self' refers to when we deal with class instances
+// object — Python's representation of data and methods; objects could be aggregates of instances (can be class, instance, list, or dictionary.)
+// attribute — any object or class trait; could be a variable or method;
+// method — a function built into a class that is executed on behalf of the class or object; some say that it’s a 'callable attribute';
+// type — refers to the class that was used to instantiate the object.
+
+class Duck:
+    def __init__(self, height, weight, sex):
+        self.height = height
+        self.weight = weight
+        self.sex = sex
+
+    def walk(self):
+        pass
+
+    def quack(self):
+        return print('Quack')
+
+duckling = Duck(height=10, weight=3.4, sex="male")
+drake = Duck(height=25, weight=3.7, sex="male")
+hen = Duck(height=20, weight=3.4, sex="female")
+
+Output: Quack
+10
+
+// In the example presented above, we have created three different instances based on the Duck class: duckling, drake and hen.
+// Class attributes are most often addressed with 'dot' notation, i.e., <class>dot<attribute>. The other way to access 
+// attributes (variables) it to use the getattr() and setattr() functions.
+// In our 'duckish' example, there are the following attributes:
+
+class Demo:
+    def __init__(self, value):
+        self.instance_var = value
+
+d1 = Demo(100)
+d2 = Demo(200)
+
+d1.another_var = 'another variable in the object'
+
+print('contents of d1:', d1.__dict__)
+print('contents of d2:', d2.__dict__)
+// variables: self.height, self.weight, self.sex — containing different values for each object;
+// methods: __init__, walk, quack — common to all objects so far.
+// To call a method, issue: drake.quack();
+// To access an attribute, issue: print(duckling.height).
+
+print(Duck.__class__)
+print(duckling.__class__)
+print(duckling.sex.__class__)
+print(duckling.quack.__class__)
+
+Output:
+<class 'type'>
+<class '__main__.Duck'>
+<class 'str'>
+<class 'method'>
+
+// the Duck class is of the 'type' type;
+// the duckling object is an instance type built on the basis of the Duck class, and residing in the __main__ scope;
+// the duckling.sex is an attribute of the 'str' type;
+// duckling.quack is an attribute of the 'method' type.
+
+Class and instance data - instance variables
+------------------------------------------
+// Python allows for variables to be used at the instance level or the class level. Those used at the instance level 
+// are referred to as instance variables, whereas variables used at the class level are referred to as class variables.
+
+Instance variable exist when and only when it is explicitly created and added to an object. 
+This can be done during the object's initialization, performed by the __init__ method, or later at any moment 
+of the object's life. Furthermore, any existing property can be removed at any time.
+
+Each object carries its own set of variables – they don't interfere with one another in any way. 
+The word instance suggests that they are closely connected to the objects (which are class instances), 
+not to the classes themselves. To get access to the instance variable, you should address the variable in the 
+following way: object <dot> variable_name.
+
+Let's look at how the instance variable is created and accessed in the code presented below.
+
+class Demo:
+    def __init__(self, value):
+        self.instance_var = value
+
+d1 = Demo(100)
+d2 = Demo(200)
+
+print("d1's instance variable is equal to:", d1.instance_var)
+print("d2's instance variable is equal to:", d2.instance_var)
+
+ - __init__ creates an instance_var variable for the instance. The keyword self is used to indicate that this variable 
+is created coherently and individually for the instance to make it independent from other instances of the same class;
+ - we instantiate the class twice, each time passing a different value to be stored inside the object;
+ - the print instructions prove the fact that instance variable values are kept independently, because the printed values differ.
+
+print('contents of d1:', d1.__dict__)
+print('contents of d2:', d2.__dict__)
+
+__dict__ lists the contents of each object
+modifying the instance variable of any object has no impact on all the remaining objects
+instance variables are completely isolated from each other
+
+Class variables
+-------------
+Class variables are defined within the class construction, so these variables are available before any class instance 
+is created. To get access to a class variable, simply access it using the class name, and then provide the variable name.
+
+class Demo:
+    class_var = 'shared variable'
+print(Demo.class_var)
+print(Demo.__dict__)
+
+Similarly to instance variables, class variables are shown in the class's __dict__ dictionary.
+
+output:
+shared variable
+{'__module__': '__main__', 'class_var'
+
+As a class variable is present before any instance of the class is created, it can be used to store some meta data 
+relevant to the class, rather than to the instances:
+ - fixed information like description, configuration, or identification values;
+ - mutable information like the number of instances created (if we add a code to increment the value of a designated 
+variable every time we create a class instance)
+
+A class variable is a class property that exists in just one copy, and it is stored outside any class instance. 
+Because it is owned by the class itself, all class variables are shared by all instances of the class. 
+They will therefore generally have the same value for every instance; but as the class variable is defined outside 
+the object, it is not listed in the object's __dict__.
+
+class Demo:
+    class_var = 'shared variable'
+
+d1 = Demo()
+d2 = Demo()
+
+print(Demo.class_var)
+print(d1.class_var)
+print(d2.class_var)
+
+print('contents of d1:', d1.__dict__)
+
+output:
+shared variable
+shared variable
+shared variable
+contents of d1: {}
+output
+
+Conclusion: when you want to read the class variable value, you can use a class or class instance to access it.
+
+When you want to set or change a value of the class variable, you should access it via the class, 
+but not the class instance, as you can do for reading
+When you try to set a value for the class variable using the object (a variable referring to the object or self keyword) 
+but not the class, you are creating an instance variable that holds the same name as the class variable. 
+
+class Demo:
+    class_var = 'shared variable'
+
+d1 = Demo()
+d2 = Demo()
+
+# both instances allow access to the class variable
+print(d1.class_var)
+print(d2.class_var)
+print('.' * 20)
+
+# d1 object has no instance variable
+print('contents of d1:', d1.__dict__)
+print('.' * 20)
+
+# d1 object receives an instance variable named 'class_var'
+d1.class_var = "I'm messing with the class variable"
+
+# d1 object owns the variable named 'class_var' which holds a different value than the class variable named in the same way
+print('contents of d1:', d1.__dict__)
+print(d1.class_var)
+print('.' * 20)
+
+# d2 object variables were not influenced
+print('contents of d2:', d2.__dict__)
+
+# d2 object variables were not influenced
+print('contents of class variable accessed via d2:', d2.class_var)
+
+output:
+shared variable
+shared variable
+....................
+contents of d1: {}
+....................
+contents of d1: {'class_var': "I'm messing with the class variable"}
+I'm messing with the class variable
+....................
+contents of d2: {}
+contents of class variable accessed via d2: shared variable 
+
+Class variables and instance variables are often utilized at the same time, but for different purposes. 
+As mentioned before, class variables can refer to some meta information or common information shared amongst 
+instances of the same class.
+
+The example below demonstrates both topics: each class owns a counter variable that holds the number of class 
+instances created. Moreover, each class owns information that helps identify the class instance origins. 
+Similar functionality could be achieved with the isinstance() function, but we want to check if class variables 
+can be helpful in this domain.
+
+Both the Duck and Chicken classes own a class variable named species, which holds a value unique to each class. 
+When we iterate over all objects, we can examine the value of this variable to take appropriate action.
+
+class Duck:
+    counter = 0
+    species = 'duck'
+
+    def __init__(self, height, weight, sex):
+        self.height = height
+        self.weight = weight
+        self.sex = sex
+        Duck.counter +=1
+
+    def walk(self):
+        pass
+
+    def quack(self):
+        print('quacks')
+
+class Chicken:
+    species = 'chicken'
+
+    def walk(self):
+        pass
+
+    def cluck(self):
+        print('clucks')
+
+duckling = Duck(height=10, weight=3.4, sex="male")
+drake = Duck(height=25, weight=3.7, sex="male")
+hen = Duck(height=20, weight=3.4, sex="female")
+
+chicken = Chicken()
+
+print('So many ducks were born:', Duck.counter)
+
+for poultry in duckling, drake, hen, chicken:
+    print(poultry.species, end=' ')
+    if poultry.species == 'duck':
+        poultry.quack()
+    elif poultry.species == 'chicken':
+        poultry.cluck()
+
+output:
+So many ducks were born: 3
+duck quacks
+duck quacks
+duck quacks
+chicken clucks
