@@ -21,5 +21,13 @@ class Duck:
 duckling = Duck(height=10, weight=3.4, sex="male")
 drake = Duck(height=25, weight=3.7, sex="male")
 hen = Duck(height=20, weight=3.4, sex="female")
-
+Output: Quack
+10
 //In the example presented above, we have created three different instances based on the Duck class: duckling, drake and hen.
+//Class attributes are most often addressed with 'dot' notation, i.e., <class>dot<attribute>. The other way to access 
+//attributes (variables) it to use the getattr() and setattr() functions.
+//In our 'duckish' example, there are the following attributes:
+//variables: self.height, self.weight, self.sex — containing different values for each object;
+//methods: __init__, walk, quack — common to all objects so far.
+//To call a method, issue: drake.quack();
+//To access an attribute, issue: print(duckling.height).
